@@ -129,8 +129,9 @@
             -moz-appearance: textfield;
         }
 
-        /* Anti-Save & Anti-Long-Press Protection for Images */
-        img {
+        /* Anti-Save & Anti-Long-Press Protection for Images (Desktop & Mobile) */
+        img,
+        .no-save-wrap {
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
@@ -138,9 +139,9 @@
         }
         .no-save-wrap {
             position: relative;
-            user-select: none;
-            -webkit-touch-callout: none;
-            -webkit-user-drag: none;
+        }
+        .no-save-wrap img {
+            pointer-events: none;
         }
         .no-save-shield {
             position: absolute;
@@ -148,9 +149,6 @@
             z-index: 10;
             background: transparent;
             pointer-events: auto;
-            user-select: none;
-            -webkit-touch-callout: none;
-            -webkit-user-drag: none;
         }
     </style>
 </head>
@@ -247,7 +245,7 @@
              + Layer Foto Background (id="hero-bg-img") yang mudah diganti di SITE_IMAGES
         ====================================================================== -->
         <section id="beranda" class="relative bg-hero-gradient text-white overflow-hidden scroll-mt-20 border-b border-white/10">
-            <!-- GANTI FOTO BACKGROUND HERO: Ubah URL pada konstanta SITE_IMAGES.heroBg di bagian <script> bawah, atau langsung ganti atribut src di bawah ini -->
+            <!-- GANTI FOTO BACKGROUND HERO: Ubah URL pada konstanta SITE_IMAGES.heroBg di bagian <script> bawah -->
             <div class="no-save-wrap absolute inset-0 pointer-events-none">
                 <img
                     id="hero-bg-img"
@@ -257,7 +255,7 @@
                     onerror="this.style.display='none'"
                     class="w-full h-full object-cover opacity-20 mix-blend-luminosity"
                 />
-                <div class="no-save-shield"></div>
+                <span class="no-save-shield" aria-hidden="true"></span>
             </div>
             <!-- Dark Maroon Gradient Overlay + Subtle Dot Grid -->
             <div class="absolute inset-0 bg-gradient-to-br from-[#121214]/90 via-[#2E090C]/80 to-[#5A1015]/85 pointer-events-none"></div>
@@ -408,16 +406,16 @@
                     <div class="lg:col-span-6">
                         <div class="relative bg-white border-2 border-cieng-black rounded-3xl p-3 sm:p-4 shadow-editorial-red">
                             <div class="no-save-wrap relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-cieng-charcoal">
-                                <!-- GANTI FOTO PRODUK ASLI: Ubah URL pada konstanta SITE_IMAGES.aboutProduct di <script> bawah, atau langsung ganti atribut src di bawah ini -->
+                                <!-- GANTI FOTO PRODUK ASLI: Ubah URL pada konstanta SITE_IMAGES.aboutProduct di <script> bawah -->
                                 <img
                                     id="about-product-img"
-                                    src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1000&q=80"
+                                    src="foto propesional cireng.png"
                                     alt="Foto Produk THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181B/FFFFFF?text=Foto+Produk+THE+CIENG';"
                                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                                 />
-                                <div class="no-save-shield"></div>
+                                <span class="no-save-shield" aria-hidden="true"></span>
                                 <div class="relative z-20 w-full h-full pointer-events-none">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
                                     <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
@@ -709,7 +707,7 @@
              + Layer Foto Background subtle (id="order-bg-img")
         ====================================================================== -->
         <section id="order" class="relative py-20 lg:py-28 bg-order-gradient border-b border-white/10 scroll-mt-20 overflow-hidden">
-            <!-- GANTI FOTO BACKGROUND ORDER: Ubah URL pada konstanta SITE_IMAGES.orderBg di <script> bawah, atau langsung ganti atribut src di bawah ini -->
+            <!-- GANTI FOTO BACKGROUND ORDER: Ubah URL pada konstanta SITE_IMAGES.orderBg di <script> bawah -->
             <div class="no-save-wrap absolute inset-0 pointer-events-none">
                 <img
                     id="order-bg-img"
@@ -719,7 +717,7 @@
                     onerror="this.style.display='none'"
                     class="w-full h-full object-cover opacity-15 mix-blend-luminosity"
                 />
-                <div class="no-save-shield"></div>
+                <span class="no-save-shield" aria-hidden="true"></span>
             </div>
             <div class="absolute inset-0 bg-gradient-to-br from-[#141416]/92 via-[#2B0A0D]/85 to-[#191213]/92 pointer-events-none"></div>
 
@@ -1082,13 +1080,13 @@
                             <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial-red">
                                 <img
                                     id="team-img-1"
-                                    src="https://placehold.co/240x240/111111/FFFFFF?text=RP"
+                                    src="fotoraka.png"
                                     alt="Rakha Pandu - CEO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/111111/FFFFFF?text=RP';"
                                     class="w-full h-full object-cover"
                                 />
-                                <div class="no-save-shield"></div>
+                                <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
                             <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CEO
@@ -1114,7 +1112,7 @@
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/BA1E24/FFFFFF?text=GI';"
                                     class="w-full h-full object-cover"
                                 />
-                                <div class="no-save-shield"></div>
+                                <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
                             <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 COO
@@ -1134,13 +1132,13 @@
                             <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial-red">
                                 <img
                                     id="team-img-3"
-                                    src="https://placehold.co/240x240/18181B/FFFFFF?text=ES"
+                                    src="fotoerinaa.png"
                                     alt="Erina Suhaima - CMO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/18181B/FFFFFF?text=ES';"
                                     class="w-full h-full object-cover"
                                 />
-                                <div class="no-save-shield"></div>
+                                <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
                             <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-black text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CMO
@@ -1160,13 +1158,13 @@
                             <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial">
                                 <img
                                     id="team-img-4"
-                                    src="https://placehold.co/240x240/99161B/FFFFFF?text=RN"
+                                    src="fotoranti.png"
                                     alt="Ranti - CFO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/99161B/FFFFFF?text=RN';"
                                     class="w-full h-full object-cover"
                                 />
-                                <div class="no-save-shield"></div>
+                                <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
                             <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CFO
@@ -1255,7 +1253,6 @@
 
         // =========================================================================
         // 2. KONFIGURASI FOTO BACKGROUND, PRODUK, & TIM (TINGGAL GANTI URL/PATH FOTO)
-        // Contoh jika pakai foto lokal di folder yang sama: 'foto-cireng.jpg'
         // =========================================================================
         const SITE_IMAGES = {
             heroBg: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1920&q=80',
@@ -1308,6 +1305,7 @@
         function showToast(message) {
             const toast = document.getElementById('toast-notification');
             const toastMsg = document.getElementById('toast-message');
+            if (!toast || !toastMsg) return;
             toastMsg.textContent = message;
 
             toast.classList.remove('opacity-0', 'translate-y-3');
@@ -1335,23 +1333,26 @@
         let clickScrollTimeout = null;
 
         function closeMobileMenu() {
+            if (!mobileDropdown || !hamburgerIcon || !closeIcon || !mobileMenuToggle) return;
             mobileDropdown.classList.add('hidden');
             hamburgerIcon.classList.remove('hidden');
             closeIcon.classList.add('hidden');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
         }
 
-        mobileMenuToggle.addEventListener('click', () => {
-            const isHidden = mobileDropdown.classList.contains('hidden');
-            if (isHidden) {
-                mobileDropdown.classList.remove('hidden');
-                hamburgerIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-                mobileMenuToggle.setAttribute('aria-expanded', 'true');
-            } else {
-                closeMobileMenu();
-            }
-        });
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isHidden = mobileDropdown.classList.contains('hidden');
+                if (isHidden) {
+                    mobileDropdown.classList.remove('hidden');
+                    hamburgerIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                } else {
+                    closeMobileMenu();
+                }
+            });
+        }
 
         // Set class active merah crimson secara sinkron di desktop & mobile nav
         function setActiveNavLink(targetId) {
@@ -1391,7 +1392,6 @@
                 behavior: 'smooth'
             });
 
-            // Lepas lock setelah animasi scroll selesai
             clickScrollTimeout = setTimeout(() => {
                 isClickScrolling = false;
             }, 800);
@@ -1410,10 +1410,12 @@
 
         // Scroll-Spy akurat saat user scroll manual
         function handleWindowScroll() {
-            if (window.scrollY > 12) {
-                navbar.classList.add('shadow-md');
-            } else {
-                navbar.classList.remove('shadow-md');
+            if (navbar) {
+                if (window.scrollY > 12) {
+                    navbar.classList.add('shadow-md');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
             }
 
             if (isClickScrolling) return;
@@ -1455,7 +1457,7 @@
 
         function syncQuantityUI() {
             const qtyInput = document.getElementById('cup-qty-input');
-            qtyInput.value = cupQuantity;
+            if (qtyInput) qtyInput.value = cupQuantity;
 
             const totalPcs = cupQuantity * PCS_PER_CUP;
             const totalPrice = cupQuantity * PRICE_PER_CUP;
@@ -1502,6 +1504,7 @@
             const checkEsJeruk = document.getElementById('drink-check-esjeruk');
 
             function styleDrinkButton(btn, badgeEl, active) {
+                if (!btn || !badgeEl) return;
                 if (active) {
                     btn.classList.remove('border-gray-200', 'bg-[#F9F9F9]');
                     btn.classList.add('border-cieng-red', 'bg-cieng-redTint');
@@ -1605,6 +1608,7 @@
         // =========================================================================
         function applyFillingTemplate(templateText) {
             const notesInput = document.getElementById('filling-notes');
+            if (!notesInput) return;
             notesInput.value = templateText;
             notesInput.focus();
             updateLiveOrderPreview();
@@ -1640,16 +1644,19 @@
             const nameInput = document.getElementById('customer-name');
             const notesInput = document.getElementById('filling-notes');
 
-            if (nameInput.value.trim().length > 0) {
+            if (nameInput && nameInput.value.trim().length > 0) {
                 document.getElementById('error-name').classList.add('hidden');
                 nameInput.classList.remove('border-cieng-red');
             }
-            if (notesInput.value.trim().length > 0) {
+            if (notesInput && notesInput.value.trim().length > 0) {
                 document.getElementById('error-notes').classList.add('hidden');
                 notesInput.classList.remove('border-cieng-red');
             }
 
-            document.getElementById('live-wa-preview').textContent = buildWhatsAppOrderMessage();
+            const previewEl = document.getElementById('live-wa-preview');
+            if (previewEl) {
+                previewEl.textContent = buildWhatsAppOrderMessage();
+            }
         }
 
         function submitOrderToWhatsApp() {
@@ -1695,27 +1702,75 @@
         }
 
         // =========================================================================
-        // 7. ANTI RIGHT-CLICK & MOBILE LONG-PRESS ON IMAGES
+        // 7. ANTI RIGHT-CLICK, DRAG, & MOBILE LONG-PRESS ON IMAGES
+        // Pesan khusus "ganteng" hanya untuk foto Rakha (#team-img-1);
+        // foto lainnya memakai pesan biasa.
         // =========================================================================
+        function getProtectedPhotoMessage(targetEl) {
+            if (!targetEl) return 'Gabisa asal sembarang save foto orang yaa.';
+            const wrap = targetEl.closest('.no-save-wrap');
+            const isRakhaPhoto =
+                Boolean(targetEl.closest('#team-img-1')) ||
+                Boolean(wrap && wrap.querySelector('#team-img-1'));
+
+            if (isRakhaPhoto) {
+                return 'Eits, foto ganteng gaboleh asal di-save sembarangan ya 😎';
+            }
+            return 'Gabisa asal sembarang save foto orang yaa.';
+        }
+
+        function triggerPhotoGuardToast(targetEl) {
+            showToast(getProtectedPhotoMessage(targetEl));
+        }
+
         function initAntiImageSave() {
             const blockImageAction = (e) => {
                 const target = e.target;
                 if (!target) return;
-                const isProtectedMedia = Boolean(
-                    target.closest('img') ||
-                    target.closest('.no-save-wrap') ||
-                    target.classList?.contains('no-save-shield')
-                );
-                if (!isProtectedMedia) return;
+                const protectedEl = target.closest('img, .no-save-wrap, .no-save-shield');
+                if (!protectedEl) return;
 
                 e.preventDefault();
                 if (e.type === 'contextmenu') {
-                    showToast('Eits, foto gantengnya gabisa sembarangan di-save ya 😎');
+                    triggerPhotoGuardToast(protectedEl);
                 }
             };
 
             document.addEventListener('contextmenu', blockImageAction, { capture: true });
             document.addEventListener('dragstart', blockImageAction, { capture: true });
+
+            let longPressTimer = null;
+            let longPressTarget = null;
+
+            document.addEventListener('touchstart', (e) => {
+                const protectedEl = e.target && e.target.closest
+                    ? e.target.closest('img, .no-save-wrap, .no-save-shield')
+                    : null;
+                if (!protectedEl) return;
+
+                longPressTarget = protectedEl;
+                clearTimeout(longPressTimer);
+                longPressTimer = setTimeout(() => {
+                    if (longPressTarget) {
+                        triggerPhotoGuardToast(longPressTarget);
+                    }
+                }, 450);
+            }, { passive: true });
+
+            document.addEventListener('touchmove', () => {
+                clearTimeout(longPressTimer);
+                longPressTarget = null;
+            }, { passive: true });
+
+            document.addEventListener('touchend', () => {
+                clearTimeout(longPressTimer);
+                longPressTarget = null;
+            });
+
+            document.addEventListener('touchcancel', () => {
+                clearTimeout(longPressTimer);
+                longPressTarget = null;
+            });
         }
 
         // Initialize safely on load
