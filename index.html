@@ -13,8 +13,6 @@
 
     <!-- FontAwesome 6 Free CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <link rel="icon" type="image/png" href="/logocieng.png">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -130,6 +128,30 @@
         input[type="number"] {
             -moz-appearance: textfield;
         }
+
+        /* Anti-Save & Anti-Long-Press Protection for Images */
+        img {
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+        }
+        .no-save-wrap {
+            position: relative;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+        }
+        .no-save-shield {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            background: transparent;
+            pointer-events: auto;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-cieng-red selection:text-white">
@@ -226,13 +248,17 @@
         ====================================================================== -->
         <section id="beranda" class="relative bg-hero-gradient text-white overflow-hidden scroll-mt-20 border-b border-white/10">
             <!-- GANTI FOTO BACKGROUND HERO: Ubah URL pada konstanta SITE_IMAGES.heroBg di bagian <script> bawah, atau langsung ganti atribut src di bawah ini -->
-            <img
-                id="hero-bg-img"
-                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1920&q=80"
-                alt="Background Cireng Renyah THE CIENG"
-                onerror="this.style.display='none'"
-                class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity pointer-events-none"
-            />
+            <div class="no-save-wrap absolute inset-0 pointer-events-none">
+                <img
+                    id="hero-bg-img"
+                    src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1920&q=80"
+                    alt="Background Cireng Renyah THE CIENG"
+                    draggable="false"
+                    onerror="this.style.display='none'"
+                    class="w-full h-full object-cover opacity-20 mix-blend-luminosity"
+                />
+                <div class="no-save-shield"></div>
+            </div>
             <!-- Dark Maroon Gradient Overlay + Subtle Dot Grid -->
             <div class="absolute inset-0 bg-gradient-to-br from-[#121214]/90 via-[#2E090C]/80 to-[#5A1015]/85 pointer-events-none"></div>
             <div class="absolute inset-0 bg-dot-grid-light opacity-20 pointer-events-none"></div>
@@ -381,24 +407,28 @@
                     <!-- Product Photo Card (Easy to replace with real product photo) -->
                     <div class="lg:col-span-6">
                         <div class="relative bg-white border-2 border-cieng-black rounded-3xl p-3 sm:p-4 shadow-editorial-red">
-                            <div class="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-cieng-charcoal">
+                            <div class="no-save-wrap relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-cieng-charcoal">
                                 <!-- GANTI FOTO PRODUK ASLI: Ubah URL pada konstanta SITE_IMAGES.aboutProduct di <script> bawah, atau langsung ganti atribut src di bawah ini -->
                                 <img
                                     id="about-product-img"
                                     src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1000&q=80"
                                     alt="Foto Produk THE CIENG"
+                                    draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181B/FFFFFF?text=Foto+Produk+THE+CIENG';"
                                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                                 />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-                                    <span class="inline-flex items-center gap-2 bg-cieng-black/90 backdrop-blur-md text-white border border-white/15 font-display font-bold text-xs px-3.5 py-2 rounded-xl">
-                                        <i class="fa-solid fa-camera text-cieng-red"></i>
-                                        <span>Bukti Nyata, Bukan Cuma Wacana</span>
-                                    </span>
-                                    <span class="bg-cieng-red text-white font-display font-extrabold text-xs px-3 py-1.5 rounded-lg">
-                                        Rp 10K / Cup
-                                    </span>
+                                <div class="no-save-shield"></div>
+                                <div class="relative z-20 w-full h-full pointer-events-none">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
+                                        <span class="inline-flex items-center gap-2 bg-cieng-black/90 backdrop-blur-md text-white border border-white/15 font-display font-bold text-xs px-3.5 py-2 rounded-xl">
+                                            <i class="fa-solid fa-camera text-cieng-red"></i>
+                                            <span>Bukti Nyata, Bukan Cuma Wacana</span>
+                                        </span>
+                                        <span class="bg-cieng-red text-white font-display font-extrabold text-xs px-3 py-1.5 rounded-lg">
+                                            Rp 10K / Cup
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -680,13 +710,17 @@
         ====================================================================== -->
         <section id="order" class="relative py-20 lg:py-28 bg-order-gradient border-b border-white/10 scroll-mt-20 overflow-hidden">
             <!-- GANTI FOTO BACKGROUND ORDER: Ubah URL pada konstanta SITE_IMAGES.orderBg di <script> bawah, atau langsung ganti atribut src di bawah ini -->
-            <img
-                id="order-bg-img"
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80"
-                alt="Background Order THE CIENG"
-                onerror="this.style.display='none'"
-                class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity pointer-events-none"
-            />
+            <div class="no-save-wrap absolute inset-0 pointer-events-none">
+                <img
+                    id="order-bg-img"
+                    src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80"
+                    alt="Background Order THE CIENG"
+                    draggable="false"
+                    onerror="this.style.display='none'"
+                    class="w-full h-full object-cover opacity-15 mix-blend-luminosity"
+                />
+                <div class="no-save-shield"></div>
+            </div>
             <div class="absolute inset-0 bg-gradient-to-br from-[#141416]/92 via-[#2B0A0D]/85 to-[#191213]/92 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1027,7 +1061,7 @@
                         </div>
                         <div>
                             <p class="font-display font-extrabold text-[11px] uppercase tracking-[0.16em] text-cieng-red">
-                                JAM OPERASIONAL BOOTH &amp; ORDER TERAKHIR TANGAL 23 NOVEMBER
+                                JAM OPERASIONAL BOOTH &amp; ORDER
                             </p>
                             <p class="font-display font-black text-xl sm:text-2xl text-cieng-black leading-tight">
                                 08.00 &ndash; 17.00 <span class="text-xs sm:text-sm font-bold text-gray-500">WIB</span>
@@ -1045,14 +1079,18 @@
                     <!-- 1. Rakha Pandu — CEO -->
                     <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
-                            <img
-                                id="team-img-1"
-                                src="https://placehold.co/240x240/111111/FFFFFF?text=RP"
-                                alt="Rakha Pandu - CEO THE CIENG"
-                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/111111/FFFFFF?text=RP';"
-                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial-red"
-                            />
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial-red">
+                                <img
+                                    id="team-img-1"
+                                    src="https://placehold.co/240x240/111111/FFFFFF?text=RP"
+                                    alt="Rakha Pandu - CEO THE CIENG"
+                                    draggable="false"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/240x240/111111/FFFFFF?text=RP';"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div class="no-save-shield"></div>
+                            </div>
+                            <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CEO
                             </span>
                         </div>
@@ -1067,14 +1105,18 @@
                     <!-- 2. Gunung Iskandar — COO -->
                     <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
-                            <img
-                                id="team-img-2"
-                                src="https://placehold.co/240x240/BA1E24/FFFFFF?text=GI"
-                                alt="Gunung Iskandar - COO THE CIENG"
-                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/BA1E24/FFFFFF?text=GI';"
-                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial"
-                            />
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial">
+                                <img
+                                    id="team-img-2"
+                                    src="https://placehold.co/240x240/BA1E24/FFFFFF?text=GI"
+                                    alt="Gunung Iskandar - COO THE CIENG"
+                                    draggable="false"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/240x240/BA1E24/FFFFFF?text=GI';"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div class="no-save-shield"></div>
+                            </div>
+                            <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 COO
                             </span>
                         </div>
@@ -1089,14 +1131,18 @@
                     <!-- 3. Erina Suhaima — CMO -->
                     <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
-                            <img
-                                id="team-img-3"
-                                src="https://placehold.co/240x240/18181B/FFFFFF?text=ES"
-                                alt="Erina Suhaima - CMO THE CIENG"
-                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/18181B/FFFFFF?text=ES';"
-                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial-red"
-                            />
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-black text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial-red">
+                                <img
+                                    id="team-img-3"
+                                    src="https://placehold.co/240x240/18181B/FFFFFF?text=ES"
+                                    alt="Erina Suhaima - CMO THE CIENG"
+                                    draggable="false"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/240x240/18181B/FFFFFF?text=ES';"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div class="no-save-shield"></div>
+                            </div>
+                            <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-black text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CMO
                             </span>
                         </div>
@@ -1111,14 +1157,18 @@
                     <!-- 4. Ranti — CFO -->
                     <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
-                            <img
-                                id="team-img-4"
-                                src="https://placehold.co/240x240/99161B/FFFFFF?text=RN"
-                                alt="Ranti - CFO THE CIENG"
-                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/99161B/FFFFFF?text=RN';"
-                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial"
-                            />
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <div class="no-save-wrap w-full h-full rounded-2xl overflow-hidden border-2 border-cieng-black shadow-editorial">
+                                <img
+                                    id="team-img-4"
+                                    src="https://placehold.co/240x240/99161B/FFFFFF?text=RN"
+                                    alt="Ranti - CFO THE CIENG"
+                                    draggable="false"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/240x240/99161B/FFFFFF?text=RN';"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div class="no-save-shield"></div>
+                            </div>
+                            <span class="z-20 absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CFO
                             </span>
                         </div>
@@ -1644,10 +1694,35 @@
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
 
+        // =========================================================================
+        // 7. ANTI RIGHT-CLICK & MOBILE LONG-PRESS ON IMAGES
+        // =========================================================================
+        function initAntiImageSave() {
+            const blockImageAction = (e) => {
+                const target = e.target;
+                if (!target) return;
+                const isProtectedMedia = Boolean(
+                    target.closest('img') ||
+                    target.closest('.no-save-wrap') ||
+                    target.classList?.contains('no-save-shield')
+                );
+                if (!isProtectedMedia) return;
+
+                e.preventDefault();
+                if (e.type === 'contextmenu') {
+                    showToast('Eits, foto gantengnya gabisa sembarangan di-save ya 😎');
+                }
+            };
+
+            document.addEventListener('contextmenu', blockImageAction, { capture: true });
+            document.addEventListener('dragstart', blockImageAction, { capture: true });
+        }
+
         // Initialize safely on load
         function initCiengApp() {
             try {
                 applySiteImages();
+                initAntiImageSave();
                 syncQuantityUI();
                 syncSeasoningPillsUI();
             } catch (err) {
