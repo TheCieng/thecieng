@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE CIENG | Cireng Isi Rp 10.000 / 4 Pcs — Order via WhatsApp</title>
+    <meta name="description" content="THE CIENG — Cireng isi renyah di luar, kenyal & lumer di dalam. 1 Paket/Cup = 4 Pcs = Rp 10.000 (Bebas Mix Isian Kornet, Ayam Suwir, Keju + 4 Pilihan Bumbu). Order langsung via WhatsApp!">
+
+    <!-- Google Fonts: Montserrat (Display) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        cieng: {
+                            red: '#BA1E24',
+                            redDark: '#99161B',
+                            redTint: '#FDF2F2',
+                            black: '#111111',
+                            charcoal: '#18181B',
+                            footer: '#0E0E10',
+                            wa: '#25D366',
+                            waDark: '#1EBE5D',
+                        }
+                    },
+                    boxShadow: {
+                        'editorial': '6px 6px 0px 0px #111111',
+                        'editorial-red': '6px 6px 0px 0px #BA1E24',
+                        'editorial-white': '6px 6px 0px 0px rgba(255,255,255,0.18)',
+                        'card': '0 12px 32px -10px rgba(17, 17, 17, 0.10)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            overflow-x: hidden;
+            color: #111111;
+            background-color: #FFF9F9;
+        }
+
+        /* Section Custom Rich Gradients (Anti Plain White) */
+        .bg-hero-gradient {
+            background: linear-gradient(135deg, #121214 0%, #2E090C 55%, #5A1015 100%);
+        }
+        .bg-about-gradient {
+            background: linear-gradient(180deg, #FFF9F9 0%, #FDECEC 52%, #FFF7F5 100%);
+        }
+        .bg-menu-gradient {
+            background: linear-gradient(180deg, #FAF6F6 0%, #F5E6E7 50%, #FDF9F8 100%);
+        }
+        .bg-order-gradient {
+            background: linear-gradient(135deg, #141416 0%, #2B0A0D 55%, #191213 100%);
+        }
+        .bg-team-gradient {
+            background: linear-gradient(180deg, #FFF9F9 0%, #F8E8E9 100%);
+        }
+
+        /* Subtle Logo 4-Dot Pattern Texture */
+        .bg-dot-grid {
+            background-image: radial-gradient(#BA1E24 1.15px, transparent 1.15px);
+            background-size: 26px 26px;
+        }
+        .bg-dot-grid-light {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+            background-size: 26px 26px;
+        }
+
+        /* Active Navigation Link Underline & Crimson Color */
+        .nav-link {
+            position: relative;
+            transition: color 0.2s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            border-radius: 999px;
+            background-color: #BA1E24;
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: #BA1E24 !important;
+            font-weight: 800;
+        }
+
+        /* Active Mobile Navigation Item */
+        .mobile-nav-item.active {
+            background-color: #FDF2F2;
+            color: #BA1E24;
+            font-weight: 800;
+            border-left: 4px solid #BA1E24;
+        }
+
+        /* Hide default number input arrows */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-cieng-red selection:text-white">
+
+    <!-- =====================================================================
+         1. STICKY TOP NAVIGATION BAR
+         Urutan Link HARUS sama dengan urutan Section dari atas ke bawah:
+         1. Beranda (#beranda)
+         2. Tentang Kami (#tentang)
+         3. Menu (#menu)
+         4. Order (#order)
+         5. Tim Kami (#tim)
+    ====================================================================== -->
+    <header id="navbar" class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 transition-shadow duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Left: Custom SVG Logo + Brand Name -->
+                <a href="#beranda" data-target="beranda" class="nav-trigger flex items-center gap-3 group focus:outline-none" aria-label="THE CIENG Beranda">
+                    <svg class="w-11 h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo THE CIENG">
+                        <!-- White Square Background -->
+                        <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
+                        <!-- Crimson Red Square Frame -->
+                        <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
+                        <!-- 4 Black Circular Dots (Decreasing Size from Left to Right) -->
+                        <circle cx="57" cy="59" r="13" fill="#111111"/>
+                        <circle cx="84" cy="84" r="8.5" fill="#111111"/>
+                        <circle cx="115" cy="56" r="5.5" fill="#111111"/>
+                        <circle cx="151" cy="56" r="5.5" fill="#111111"/>
+                        <!-- Thick White Cutout Outline Protruding Slightly Below Red Frame -->
+                        <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
+                        <!-- Black Crimped Cireng Silhouette -->
+                        <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#111111"/>
+                        <!-- Crisp White Crimp Ridges -->
+                        <path d="M46 144 C68 156, 118 148, 156 112" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+                        <path d="M74 156 L77 165 M103 155 L105 165 M131 144 L136 153 M153 125 L161 131" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="font-display font-extrabold text-lg sm:text-xl tracking-[0.22em] text-cieng-black uppercase leading-none">THE CIENG</span>
+                        <span class="text-[10px] font-bold tracking-[0.14em] text-cieng-red uppercase mt-1">Rp 10.000 / 4 Pcs</span>
+                    </div>
+                </a>
+
+                <!-- Center: Desktop Navigation Links (Exact Order: Beranda -> Tentang Kami -> Menu -> Order -> Tim Kami) -->
+                <nav class="hidden lg:flex items-center space-x-8" aria-label="Navigasi Utama">
+                    <a href="#beranda" data-target="beranda" class="nav-link nav-trigger active text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Beranda</a>
+                    <a href="#tentang" data-target="tentang" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Tentang Kami</a>
+                    <a href="#menu" data-target="menu" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Menu</a>
+                    <a href="#order" data-target="order" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Order</a>
+                    <a href="#tim" data-target="tim" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Tim Kami</a>
+                </nav>
+
+                <!-- Right: Desktop Direct WhatsApp Order Jump Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="#order" data-target="order" class="nav-trigger inline-flex items-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Order Sekarang</span>
+                    </a>
+                </div>
+
+                <!-- Mobile / Tablet Hamburger Toggle -->
+                <div class="flex items-center lg:hidden">
+                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-cieng-black hover:bg-gray-100 border border-gray-200 min-w-[44px] min-h-[44px] focus:outline-none cursor-pointer" aria-expanded="false" aria-label="Buka Menu Navigasi">
+                        <i id="hamburger-icon" class="fa-solid fa-bars text-xl"></i>
+                        <i id="close-icon" class="fa-solid fa-xmark text-xl hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu (Exact Same Order) -->
+        <div id="mobile-dropdown" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-xl">
+            <div class="px-4 pt-3 pb-5 space-y-1.5">
+                <a href="#beranda" data-target="beranda" class="mobile-nav-item nav-trigger active block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Beranda</a>
+                <a href="#tentang" data-target="tentang" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Tentang Kami</a>
+                <a href="#menu" data-target="menu" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Menu</a>
+                <a href="#order" data-target="order" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Order</a>
+                <a href="#tim" data-target="tim" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Tim Kami</a>
+                <div class="pt-2">
+                    <a href="#order" data-target="order" class="nav-trigger w-full flex items-center justify-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-sm uppercase tracking-wider py-3.5 rounded-xl transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Order via WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =====================================================================
+             SECTION 1: BERANDA / HERO (#beranda)
+             Background: Gradasi gelap hitam arang ke merah marun (#121214 -> #2E090C -> #5A1015)
+             + Layer Foto Background (id="hero-bg-img") yang mudah diganti di SITE_IMAGES
+        ====================================================================== -->
+        <section id="beranda" class="relative bg-hero-gradient text-white overflow-hidden scroll-mt-20 border-b border-white/10">
+            <!-- GANTI FOTO BACKGROUND HERO: Ubah URL pada konstanta SITE_IMAGES.heroBg di bagian <script> bawah, atau langsung ganti atribut src di bawah ini -->
+            <img
+                id="hero-bg-img"
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1920&q=80"
+                alt="Background Cireng Renyah THE CIENG"
+                onerror="this.style.display='none'"
+                class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity pointer-events-none"
+            />
+            <!-- Dark Maroon Gradient Overlay + Subtle Dot Grid -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#121214]/90 via-[#2E090C]/80 to-[#5A1015]/85 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-dot-grid-light opacity-20 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+                    <!-- Left Column: Promo Badge, Headline, Deal Card & CTA -->
+                    <div class="lg:col-span-7 text-left">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-display font-extrabold text-xs sm:text-sm tracking-wide mb-6">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cieng-red animate-pulse"></span>
+                            <span>Rp 10.000 / 4 Pcs (1 Paket/Cup)</span>
+                        </div>
+
+                        <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.12] tracking-tight mb-5">
+                            Renyah di Luar, <br class="hidden sm:inline">
+                            <span class="text-[#FF4D54]">Kenyal &amp; Lumer</span> di Dalam!
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl mb-7">
+                            Cireng isi hangat kreasi <strong class="font-display font-extrabold text-white tracking-wider">THE CIENG</strong> untuk Event Kewirausahaan Kampus. Cukup <strong>Rp 10.000 per Paket/Cup (isi 4 pcs)</strong>, bebas mix 3 varian isian dan pilih racikan bumbu favoritmu!
+                        </p>
+
+                        <!-- Highlighted Pricing & Deal Summary Box -->
+                        <div class="bg-white/10 backdrop-blur-md border-2 border-white/25 rounded-2xl p-5 sm:p-6 mb-8 max-w-xl shadow-editorial-white">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div>
+                                    <span class="inline-block bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-md mb-2">
+                                        1 PAKET / CUP = 4 PCS
+                                    </span>
+                                    <p class="font-display font-black text-2xl sm:text-3xl text-white">
+                                        Rp 10.000 <span class="text-sm sm:text-base font-bold text-rose-300">/ Paket (Cup)</span>
+                                    </p>
+                                    <p class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">
+                                        <i class="fa-solid fa-circle-check text-[#FF4D54] mr-1"></i> Bebas Mix Kornet, Ayam Suwir, &amp; Keju
+                                    </p>
+                                </div>
+                                <div class="flex sm:flex-col gap-2 text-xs font-bold text-white">
+                                    <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">3 Varian Isian</span>
+                                    <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">4 Pilihan Bumbu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Primary & Secondary CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                            <a href="#order" data-target="order" class="nav-trigger inline-flex items-center justify-center gap-2.5 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:-translate-y-0.5">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Order via WhatsApp</span>
+                            </a>
+                            <a href="#menu" data-target="menu" class="nav-trigger inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white text-white hover:text-cieng-black border-2 border-white/40 hover:border-white font-display font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 backdrop-blur-sm">
+                                <span>Lihat Menu &amp; Bumbu</span>
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Crisp White Emblem Showcase Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative bg-white text-cieng-black border-2 border-white rounded-3xl p-6 sm:p-8 shadow-2xl">
+                            <div class="flex items-center justify-between gap-2 mb-6">
+                                <span class="inline-flex items-center gap-1.5 bg-cieng-black text-white font-display font-bold text-[11px] uppercase tracking-widest px-3.5 py-1.5 rounded-full">
+                                    <i class="fa-solid fa-fire text-cieng-red"></i> FRESHLY FRIED
+                                </span>
+                                <span class="inline-flex items-center gap-1 bg-cieng-redTint text-cieng-red border border-cieng-red/25 font-display font-extrabold text-xs px-3 py-1.5 rounded-full">
+                                    Rp 10K / Cup
+                                </span>
+                            </div>
+
+                            <!-- Centered Brand Emblem -->
+                            <div class="bg-[#FDF8F8] border border-rose-100 rounded-2xl py-8 px-6 flex flex-col items-center justify-center text-center mb-6">
+                                <svg class="w-36 h-36 sm:w-44 sm:h-44 mb-4" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblem Utama THE CIENG">
+                                    <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
+                                    <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
+                                    <circle cx="57" cy="59" r="13" fill="#111111"/>
+                                    <circle cx="84" cy="84" r="8.5" fill="#111111"/>
+                                    <circle cx="115" cy="56" r="5.5" fill="#111111"/>
+                                    <circle cx="151" cy="56" r="5.5" fill="#111111"/>
+                                    <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
+                                    <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#111111"/>
+                                    <path d="M46 144 C68 156, 118 148, 156 112" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+                                    <path d="M74 156 L77 165 M103 155 L105 165 M131 144 L136 153 M153 125 L161 131" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+                                </svg>
+                                <p class="font-display font-extrabold text-2xl sm:text-3xl tracking-[0.28em] text-cieng-black uppercase pl-[0.28em]">THE CIENG</p>
+                                <p class="text-xs font-semibold text-gray-500 mt-1.5">1 Paket / Cup = 4 Pcs Cireng Isi + Bumbu</p>
+                            </div>
+
+                            <!-- Quick Pill Overview -->
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between gap-2 text-xs">
+                                    <span class="font-display font-bold uppercase text-gray-500">Isian:</span>
+                                    <div class="flex flex-wrap justify-end gap-1.5 font-bold text-cieng-black">
+                                        <span class="px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/70">Kornet</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/70">Ayam Suwir</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/70">Keju</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-2 text-xs">
+                                    <span class="font-display font-bold uppercase text-gray-500">Bumbu:</span>
+                                    <div class="flex flex-wrap justify-end gap-1.5 font-bold">
+                                        <span class="px-2.5 py-1 rounded-md bg-cieng-red text-white">Chili Oil</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-gray-100 border border-gray-200 text-cieng-black">Asin</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-gray-100 border border-gray-200 text-cieng-black">Jagung</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-gray-100 border border-gray-200 text-cieng-black">Balado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 2: TENTANG KAMI (#tentang)
+             Background: Gradasi lembut putih hangat ke semburat merah muda/krem
+             (#FFF9F9 -> #FDECEC -> #FFF7F5) + Foto Produk (id="about-product-img")
+        ====================================================================== -->
+        <section id="tentang" class="relative py-20 lg:py-24 bg-about-gradient border-b border-rose-200/60 scroll-mt-20 overflow-hidden">
+            <!-- 4-Dot Motif Accent in Corner -->
+            <div class="hidden md:flex items-center gap-2.5 absolute top-10 right-10 opacity-15 pointer-events-none" aria-hidden="true">
+                <span class="w-5 h-5 rounded-full bg-cieng-black"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-cieng-red"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-cieng-black"></span>
+                <span class="w-2 h-2 rounded-full bg-cieng-red"></span>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <!-- Top Row: Story + Product Photo Showcase Card -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16">
+                    <div class="lg:col-span-6">
+                        <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">TENTANG KAMI</span>
+                        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight leading-tight mb-5">
+                            Cireng Isi Kekinian untuk <span class="text-cieng-red">Event Kewirausahaan Kampus</span>
+                        </h2>
+                        <p class="text-gray-700 text-base leading-relaxed mb-4">
+                            <strong>THE CIENG</strong> lahir dari semangat kewirausahaan mahasiswa untuk menghadirkan jajanan cireng isi berkualitas tinggi—kulit luar yang renyah garing, bagian dalam kenyal lembut, digoreng dadakan saat dipesan dengan isian melimpah dan racikan bumbu khas.
+                        </p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Setiap cup dikemas rapi dan higienis dengan harga ramah kantong mahasiswa: <strong>Rp 10.000 untuk 4 pcs cireng isi</strong> yang bisa di-mix bebas sesuai selera!
+                        </p>
+                    </div>
+
+                    <!-- Product Photo Card (Easy to replace with real product photo) -->
+                    <div class="lg:col-span-6">
+                        <div class="relative bg-white border-2 border-cieng-black rounded-3xl p-3 sm:p-4 shadow-editorial-red">
+                            <div class="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-cieng-charcoal">
+                                <!-- GANTI FOTO PRODUK ASLI: Ubah URL pada konstanta SITE_IMAGES.aboutProduct di <script> bawah, atau langsung ganti atribut src di bawah ini -->
+                                <img
+                                    id="about-product-img"
+                                    src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1000&q=80"
+                                    alt="Foto Produk THE CIENG"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181B/FFFFFF?text=Foto+Produk+THE+CIENG';"
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
+                                    <span class="inline-flex items-center gap-2 bg-cieng-black/90 backdrop-blur-md text-white border border-white/15 font-display font-bold text-xs px-3.5 py-2 rounded-xl">
+                                        <i class="fa-solid fa-camera text-cieng-red"></i>
+                                        <span>Foto Produk THE CIENG </span>
+                                    </span>
+                                    <span class="bg-cieng-red text-white font-display font-extrabold text-xs px-3 py-1.5 rounded-lg">
+                                        Rp 10K / Cup
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Quality Pillars -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                            <i class="fa-solid fa-fire-burner text-xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">Fresh &amp; Digoreng Dadakan</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Digoreng hangat saat pesanan masuk supaya kerenyahan kulit luarnya tetap maksimal dan tidak alot.</p>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                            <i class="fa-solid fa-utensils text-xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">Renyah Luar, Kenyal Dalam</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Takaran adonan tepung tapioka pilihan yang menghasilkan tekstur kriuk di luar namun lembut kenyal di dalam.</p>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                            <i class="fa-solid fa-shuffle text-xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">Bebas Mix 3 Isian</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Dalam 1 Paket/Cup (4 pcs), kamu bebas mencampur isian Kornet, Ayam Suwir, dan Keju sesuai seleramu.</p>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                            <i class="fa-solid fa-pepper-hot text-xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">4 Racikan Bumbu Nampol</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Lengkapi cireng hangatmu dengan Chili Oil pedas wangi, Bumbu Asin, Bumbu Jagung, atau Bumbu Balado.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 3: MENU & BUMBU (#menu)
+             Background: Gradasi lembut (#FAF6F6 -> #F5E6E7 -> #FDF9F8) + dot texture
+        ====================================================================== -->
+        <section id="menu" class="relative py-20 lg:py-28 bg-menu-gradient border-b border-rose-200/60 scroll-mt-20">
+            <div class="absolute inset-0 bg-dot-grid opacity-[0.045] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">MENU &amp; BUMBU</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight mb-4">
+                        3 Varian Isian &amp; 4 Pilihan Bumbu
+                    </h2>
+                    <p class="text-gray-600 text-base">
+                        Kenali varian isian dan racikan bumbu <strong>THE CIENG</strong> di bawah ini, lalu langsung atur jumlah cup, bumbu, dan catatan isianmu di form WhatsApp Order!
+                    </p>
+                </div>
+
+                <!-- Clear Pricing Banner -->
+                <div class="bg-cieng-black text-white rounded-2xl p-5 sm:p-6 mb-14 border-2 border-cieng-black shadow-editorial-red flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4 text-center md:text-left">
+                        <div class="hidden sm:flex w-12 h-12 rounded-xl bg-cieng-red text-white items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-tags text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-display font-black text-lg sm:text-2xl tracking-tight">
+                                1 Paket / Cup = 4 Pcs Cireng = <span class="text-[#FF4D54]">Rp 10.000 (Bebas Mix Isian)</span>
+                            </p>
+                            <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                                Rincian kombinasi isian (Kornet / Ayam Suwir / Keju) cukup ditulis di kolom catatan saat order.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="#order" data-target="order" class="nav-trigger inline-flex items-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors whitespace-nowrap">
+                        <span>Pesan Sekarang</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+
+                <!-- PART A: 3 Filling Variants -->
+                <div class="mb-16">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-cieng-black flex items-center gap-2.5">
+                            <span class="w-3 h-7 bg-cieng-black rounded-sm inline-block"></span>
+                            <span>Varian Isian (Bebas Mix per Paket/Cup)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-cieng-red bg-white border border-cieng-red/25 px-3 py-1.5 rounded-full self-start sm:self-auto shadow-xs">
+                            <i class="fa-solid fa-pen-to-square mr-1"></i> Pilihan isian ditulis di Catatan Order
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+                        <!-- Filling 1: Kornet -->
+                        <article class="bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
+                            <div class="relative h-48 bg-gradient-to-br from-[#FFF9F9] to-[#F7ECEC] border-b border-gray-200 flex items-center justify-center p-6">
+                                <span class="absolute top-3.5 left-3.5 bg-cieng-black text-white font-display font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                                    Isian 01
+                                </span>
+                                <svg class="w-36 h-36 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Isian Kornet">
+                                    <circle cx="90" cy="92" r="60" fill="#FFFFFF"/>
+                                    <path d="M30 112 C52 90, 92 78, 132 64 C140 72, 138 86, 130 94 C134 105, 125 117, 112 118 C105 130, 90 134, 77 129 C63 137, 47 132, 41 122 C31 123, 25 117, 30 112 Z" fill="#111111" stroke="#FFFFFF" stroke-width="4"/>
+                                    <path d="M64 102 C78 92, 100 86, 116 82 C110 96, 94 108, 76 110 Z" fill="#BA1E24"/>
+                                    <circle cx="88" cy="96" r="3" fill="#FFFFFF" opacity="0.85"/>
+                                    <circle cx="100" cy="91" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+                                    <path d="M46 116 C68 123, 102 112, 124 90" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h4 class="font-display font-extrabold text-xl text-cieng-black mb-2">Kornet</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Isian kornet sapi gurih berbumbu yang padat dan juicy di dalam balutan cireng renyah hangat. Cocok untuk pencinta rasa gurih klasik!
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Filling 2: Ayam Suwir -->
+                        <article class="bg-white border-2 border-cieng-red rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
+                            <div class="relative h-48 bg-gradient-to-br from-cieng-redTint to-[#FADBD8] border-b border-cieng-red/20 flex items-center justify-center p-6">
+                                <span class="absolute top-3.5 left-3.5 bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                                    <i class="fa-solid fa-star mr-1"></i> Favorit Kampus
+                                </span>
+                                <svg class="w-36 h-36 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Isian Ayam Suwir">
+                                    <circle cx="90" cy="92" r="60" fill="#FFFFFF"/>
+                                    <path d="M30 112 C52 90, 92 78, 132 64 C140 72, 138 86, 130 94 C134 105, 125 117, 112 118 C105 130, 90 134, 77 129 C63 137, 47 132, 41 122 C31 123, 25 117, 30 112 Z" fill="#111111" stroke="#BA1E24" stroke-width="4"/>
+                                    <path d="M68 100 L96 86 M74 106 L108 90 M84 109 L114 96" stroke="#BA1E24" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M126 116 C138 116, 148 124, 150 138 C140 136, 130 128, 126 116 Z" fill="#BA1E24" stroke="#111111" stroke-width="2.5"/>
+                                </svg>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h4 class="font-display font-extrabold text-xl text-cieng-black mb-2">Ayam Suwir</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Suwiran daging ayam melimpah yang dimasak dengan bumbu rempah gurih-pedas meresap. Paling pas dipadukan dengan Chili Oil!
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Filling 3: Keju -->
+                        <article class="bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
+                            <div class="relative h-48 bg-gradient-to-br from-[#FFF9F9] to-[#F7ECEC] border-b border-gray-200 flex items-center justify-center p-6">
+                                <span class="absolute top-3.5 left-3.5 bg-cieng-black text-white font-display font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                                    Isian 03
+                                </span>
+                                <svg class="w-36 h-36 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Isian Keju">
+                                    <circle cx="90" cy="92" r="60" fill="#FFFFFF"/>
+                                    <path d="M26 112 C40 94, 60 86, 76 82 L80 122 C62 128, 40 126, 26 112 Z" fill="#111111" stroke="#FFFFFF" stroke-width="3"/>
+                                    <path d="M74 84 C88 88, 102 86, 114 78 L118 114 C104 112, 92 114, 78 120 Z" fill="#F59E0B" stroke="#111111" stroke-width="2.5"/>
+                                    <circle cx="95" cy="98" r="3" fill="#FFFFFF" opacity="0.85"/>
+                                    <path d="M112 76 C128 70, 144 66, 154 68 C160 80, 154 98, 140 108 C130 114, 120 116, 114 114 Z" fill="#111111" stroke="#FFFFFF" stroke-width="3"/>
+                                </svg>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h4 class="font-display font-extrabold text-xl text-cieng-black mb-2">Keju</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Potongan keju gurih creamy yang meleleh hangat saat cireng digigit. Perpaduan renyah, kenyal, dan gurih kejunya bikin nagih!
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- PART B: 4 Interactive Seasoning Cards -->
+                <div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-cieng-black flex items-center gap-2.5">
+                            <span class="w-3 h-7 bg-cieng-red rounded-sm inline-block"></span>
+                            <span>Pilihan Bumbu (Klik untuk Pilih &amp; Lanjut Order)</span>
+                        </h3>
+                        <span class="text-xs font-semibold text-gray-600">Klik kartu bumbu untuk langsung memilihnya di form order</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                        <!-- Seasoning 1: Chili Oil -->
+                        <button type="button" onclick="selectSeasoningAndScroll('Chili Oil')" class="seasoning-showcase-card text-left bg-white border-2 border-cieng-red rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group relative flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center">
+                                        <i class="fa-solid fa-fire text-lg"></i>
+                                    </div>
+                                    <span class="bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                        Best Seller
+                                    </span>
+                                </div>
+                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Chili Oil</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                    Minyak cabai aromatik dengan bawang putih goreng renyah dan pedas gurih yang nampol.
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-red group-hover:translate-x-1 transition-transform">
+                                <span>Pilih Bumbu Ini</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </button>
+
+                        <!-- Seasoning 2: Bumbu Asin -->
+                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Asin')" class="seasoning-showcase-card text-left bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-cieng-black text-white flex items-center justify-center">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                                    </div>
+                                    <span class="bg-gray-100 border border-gray-200 text-cieng-black font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                        Original
+                                    </span>
+                                </div>
+                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Bumbu Asin</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                    Taburan bumbu gurih klasik yang pas menonjolkan cita rasa asli isian cireng.
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-black group-hover:text-cieng-red group-hover:translate-x-1 transition-all">
+                                <span>Pilih Bumbu Ini</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </button>
+
+                        <!-- Seasoning 3: Bumbu Jagung -->
+                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Jagung')" class="seasoning-showcase-card text-left bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-amber-500 text-white flex items-center justify-center">
+                                        <i class="fa-solid fa-seedling text-lg"></i>
+                                    </div>
+                                    <span class="bg-gray-100 border border-gray-200 text-cieng-black font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                        Manis Gurih
+                                    </span>
+                                </div>
+                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Bumbu Jagung</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                    Rasa manis gurih harum khas jagung bakar yang cocok untuk semua varian isian.
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-black group-hover:text-cieng-red group-hover:translate-x-1 transition-all">
+                                <span>Pilih Bumbu Ini</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </button>
+
+                        <!-- Seasoning 4: Bumbu Balado -->
+                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Balado')" class="seasoning-showcase-card text-left bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center">
+                                        <i class="fa-solid fa-pepper-hot text-lg"></i>
+                                    </div>
+                                    <span class="bg-gray-100 border border-gray-200 text-cieng-black font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                        Pedas Manis
+                                    </span>
+                                </div>
+                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Bumbu Balado</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                    Perpaduan pedas, manis, dan gurih khas balado Nusantara yang bikin susah berhenti ngemil.
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-black group-hover:text-cieng-red group-hover:translate-x-1 transition-all">
+                                <span>Pilih Bumbu Ini</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 4: ORDER VIA WHATSAPP (#order) — SEBELUM TIM KAMI!
+             Background: Gradasi gelap crimson-hitam (#141416 -> #2B0A0D -> #191213)
+             + Layer Foto Background subtle (id="order-bg-img")
+        ====================================================================== -->
+        <section id="order" class="relative py-20 lg:py-28 bg-order-gradient border-b border-white/10 scroll-mt-20 overflow-hidden">
+            <!-- GANTI FOTO BACKGROUND ORDER: Ubah URL pada konstanta SITE_IMAGES.orderBg di <script> bawah, atau langsung ganti atribut src di bawah ini -->
+            <img
+                id="order-bg-img"
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80"
+                alt="Background Order THE CIENG"
+                onerror="this.style.display='none'"
+                class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity pointer-events-none"
+            />
+            <div class="absolute inset-0 bg-gradient-to-br from-[#141416]/92 via-[#2B0A0D]/85 to-[#191213]/92 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-[#FF4D54] mb-3">LANGSUNG TERHUBUNG KE WHATSAPP</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
+                        Form <span class="text-[#FF4D54]">Order</span> THE CIENG
+                    </h2>
+                    <p class="text-gray-300 text-base">
+                        Tentukan jumlah Paket/Cup, pilih bumbu favoritmu, dan tulis rincian isiannya. Teks pesanan otomatis terisi saat chat WhatsApp terbuka—tinggal pencet <strong>Kirim</strong>!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Left Column (7 cols): High-Contrast White Interactive Order Form -->
+                    <div class="lg:col-span-7 bg-white text-cieng-black border-2 border-white rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <form id="wa-order-form" onsubmit="event.preventDefault(); submitOrderToWhatsApp();" novalidate class="space-y-7">
+
+                            <!-- 1. Nama Pemesan -->
+                            <div>
+                                <label for="customer-name" class="block font-display font-extrabold text-sm text-cieng-black mb-2">
+                                    1. Nama Pemesan <span class="text-cieng-red">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="customer-name"
+                                    placeholder="Contoh: Dimas Pratama (atau tambah Kelas/NIM)"
+                                    oninput="updateLiveOrderPreview()"
+                                    class="w-full px-4 py-3.5 rounded-xl bg-[#F9F9F9] border-2 border-gray-200 focus:border-cieng-black focus:bg-white focus:outline-none text-sm sm:text-base font-medium transition-colors"
+                                    required
+                                >
+                                <p id="error-name" class="hidden text-xs font-bold text-cieng-red mt-1.5">
+                                    <i class="fa-solid fa-circle-exclamation mr-1"></i> Nama pemesan wajib diisi ya!
+                                </p>
+                            </div>
+
+                            <!-- 2. Jumlah Paket / Cup (Stepper + Numeric Input + Quick Select) -->
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                    <label for="cup-qty-input" class="font-display font-extrabold text-sm text-cieng-black">
+                                        2. Jumlah Paket / Cup <span class="text-cieng-red">*</span>
+                                    </label>
+                                    <span class="text-xs font-bold text-gray-500">1 Paket/Cup = 4 Pcs = Rp 10.000</span>
+                                </div>
+
+                                <div class="bg-[#FDF8F8] border-2 border-rose-200/80 rounded-2xl p-4 sm:p-5">
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                        <!-- Stepper Controls -->
+                                        <div class="flex items-center gap-3">
+                                            <button
+                                                type="button"
+                                                onclick="adjustCupQuantity(-1)"
+                                                class="w-12 h-12 rounded-xl bg-white border-2 border-cieng-black hover:bg-cieng-black hover:text-white text-cieng-black font-bold flex items-center justify-center transition-colors cursor-pointer"
+                                                aria-label="Kurangi 1 Paket/Cup"
+                                            >
+                                                <i class="fa-solid fa-minus"></i>
+                                            </button>
+
+                                            <div class="relative">
+                                                <input
+                                                    type="number"
+                                                    id="cup-qty-input"
+                                                    value="1"
+                                                    min="1"
+                                                    max="99"
+                                                    oninput="handleManualQtyInput(this.value)"
+                                                    class="w-20 h-12 text-center font-display font-black text-xl text-cieng-black bg-white border-2 border-cieng-black rounded-xl focus:outline-none focus:border-cieng-red"
+                                                    aria-label="Jumlah Paket atau Cup"
+                                                >
+                                            </div>
+
+                                            <button
+                                                type="button"
+                                                onclick="adjustCupQuantity(1)"
+                                                class="w-12 h-12 rounded-xl bg-cieng-red hover:bg-cieng-redDark text-white font-bold flex items-center justify-center transition-colors cursor-pointer"
+                                                aria-label="Tambah 1 Paket/Cup"
+                                            >
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+
+                                            <span class="font-display font-bold text-sm text-cieng-black ml-1">Paket / Cup</span>
+                                        </div>
+
+                                        <!-- Dynamic Total Pcs & Total Rupiah -->
+                                        <div class="sm:text-right border-t sm:border-t-0 pt-3 sm:pt-0 border-rose-200/80">
+                                            <p class="text-xs font-bold text-gray-500">
+                                                Total: <strong id="calc-total-pcs" class="text-cieng-black">4 Pcs</strong>
+                                            </p>
+                                            <p id="calc-total-price" class="font-display font-black text-2xl text-cieng-red">
+                                                Rp 10.000
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick-Select Cup Buttons (1, 2, 3, 5 Cup) -->
+                                    <div class="mt-4 pt-3.5 border-t border-rose-200/80 flex flex-wrap items-center gap-2">
+                                        <span class="text-xs font-bold text-gray-500 mr-1">Pilih Cepat:</span>
+                                        <button type="button" onclick="setCupQuantity(1)" data-quick-qty="1" class="quick-qty-btn px-3.5 py-2 rounded-lg text-xs font-display font-bold bg-cieng-black text-white border border-cieng-black transition-colors cursor-pointer">
+                                            1 Cup
+                                        </button>
+                                        <button type="button" onclick="setCupQuantity(2)" data-quick-qty="2" class="quick-qty-btn px-3.5 py-2 rounded-lg text-xs font-display font-bold bg-white text-cieng-black border border-gray-300 hover:border-cieng-black transition-colors cursor-pointer">
+                                            2 Cup
+                                        </button>
+                                        <button type="button" onclick="setCupQuantity(3)" data-quick-qty="3" class="quick-qty-btn px-3.5 py-2 rounded-lg text-xs font-display font-bold bg-white text-cieng-black border border-gray-300 hover:border-cieng-black transition-colors cursor-pointer">
+                                            3 Cup
+                                        </button>
+                                        <button type="button" onclick="setCupQuantity(5)" data-quick-qty="5" class="quick-qty-btn px-3.5 py-2 rounded-lg text-xs font-display font-bold bg-white text-cieng-black border border-gray-300 hover:border-cieng-black transition-colors cursor-pointer">
+                                            5 Cup
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Pilihan Bumbu (Interactive Multi-Select Pills) -->
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                    <label class="font-display font-extrabold text-sm text-cieng-black">
+                                        3. Pilihan Bumbu <span class="text-cieng-red">*</span>
+                                    </label>
+                                    <span class="text-xs font-semibold text-gray-500">Bisa pilih lebih dari 1 bumbu</span>
+                                </div>
+
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="seasoning-pills-container">
+                                    <button type="button" data-seasoning="Chili Oil" onclick="toggleSeasoningPill('Chili Oil')" class="seasoning-pill-btn flex items-center justify-center gap-2 px-3.5 py-3.5 rounded-xl border-2 border-cieng-red bg-cieng-red text-white font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                        <span>Chili Oil</span>
+                                    </button>
+
+                                    <button type="button" data-seasoning="Bumbu Asin" onclick="toggleSeasoningPill('Bumbu Asin')" class="seasoning-pill-btn flex items-center justify-center gap-2 px-3.5 py-3.5 rounded-xl border-2 border-gray-200 bg-[#F9F9F9] text-cieng-black hover:border-cieng-black font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                        <i class="fa-solid fa-plus text-xs opacity-60"></i>
+                                        <span>Bumbu Asin</span>
+                                    </button>
+
+                                    <button type="button" data-seasoning="Bumbu Jagung" onclick="toggleSeasoningPill('Bumbu Jagung')" class="seasoning-pill-btn flex items-center justify-center gap-2 px-3.5 py-3.5 rounded-xl border-2 border-gray-200 bg-[#F9F9F9] text-cieng-black hover:border-cieng-black font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                        <i class="fa-solid fa-plus text-xs opacity-60"></i>
+                                        <span>Bumbu Jagung</span>
+                                    </button>
+
+                                    <button type="button" data-seasoning="Bumbu Balado" onclick="toggleSeasoningPill('Bumbu Balado')" class="seasoning-pill-btn flex items-center justify-center gap-2 px-3.5 py-3.5 rounded-xl border-2 border-gray-200 bg-[#F9F9F9] text-cieng-black hover:border-cieng-black font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                        <i class="fa-solid fa-plus text-xs opacity-60"></i>
+                                        <span>Bumbu Balado</span>
+                                    </button>
+                                </div>
+                                <p id="error-seasoning" class="hidden text-xs font-bold text-cieng-red mt-1.5">
+                                    <i class="fa-solid fa-circle-exclamation mr-1"></i> Pilih minimal 1 varian bumbu dulu ya!
+                                </p>
+                            </div>
+
+                            <!-- 4. Catatan Pemilihan Isian -->
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                    <label for="filling-notes" class="font-display font-extrabold text-sm text-cieng-black">
+                                        4. Catatan Pemilihan Isian <span class="text-cieng-red">*</span>
+                                    </label>
+                                    <span class="text-xs font-semibold text-gray-500">Kornet / Ayam Suwir / Keju</span>
+                                </div>
+
+                                <textarea
+                                    id="filling-notes"
+                                    rows="3"
+                                    placeholder="Contoh: 1 Cup: 2 Kornet, 1 Ayam Suwir, 1 Keju (tulis rincian isian per cup di sini)"
+                                    oninput="updateLiveOrderPreview()"
+                                    class="w-full px-4 py-3.5 rounded-xl bg-[#F9F9F9] border-2 border-gray-200 focus:border-cieng-black focus:bg-white focus:outline-none text-sm font-medium transition-colors resize-none"
+                                    required
+                                ></textarea>
+
+                                <!-- Quick-Template Helper Chips for Filling Breakdown -->
+                                <div class="mt-2.5 flex flex-wrap items-center gap-2">
+                                    <span class="text-[11px] font-bold text-gray-500">Contoh Cepat:</span>
+                                    <button type="button" onclick="applyFillingTemplate('1 Cup: 2 Kornet, 1 Ayam Suwir, 1 Keju')" class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-[#F9F9F9] hover:bg-cieng-redTint text-gray-700 hover:text-cieng-red border border-gray-200 transition-colors cursor-pointer">
+                                        Mix 3 Rasa
+                                    </button>
+                                    <button type="button" onclick="applyFillingTemplate('Semua Ayam Suwir (4 Pcs)')" class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-[#F9F9F9] hover:bg-cieng-redTint text-gray-700 hover:text-cieng-red border border-gray-200 transition-colors cursor-pointer">
+                                        Full Ayam Suwir
+                                    </button>
+                                    <button type="button" onclick="applyFillingTemplate('2 Ayam Suwir, 2 Keju')" class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-[#F9F9F9] hover:bg-cieng-redTint text-gray-700 hover:text-cieng-red border border-gray-200 transition-colors cursor-pointer">
+                                        2 Ayam + 2 Keju
+                                    </button>
+                                </div>
+
+                                <p id="error-notes" class="hidden text-xs font-bold text-cieng-red mt-1.5">
+                                    <i class="fa-solid fa-circle-exclamation mr-1"></i> Tulis pilihan isiannya dulu ya (misal: 2 Kornet, 1 Ayam Suwir, 1 Keju)!
+                                </p>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Right Column (5 cols): Real-Time Live WhatsApp Message Preview & Direct Send Button -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 rounded-3xl p-6 sm:p-7 shadow-2xl sticky top-24">
+                            <div class="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-white/15">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="w-8 h-8 rounded-full bg-cieng-wa text-white flex items-center justify-center">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    </span>
+                                    <div>
+                                        <p class="font-display font-extrabold text-sm text-white leading-tight">Live Preview Pesan WhatsApp</p>
+                                        <p class="text-[11px] text-gray-300">Otomatis terisi saat chat dibuka</p>
+                                    </div>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 text-[10px] font-display font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 text-cieng-wa border border-cieng-wa/30">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cieng-wa animate-ping"></span> Live
+                                </span>
+                            </div>
+
+                            <!-- WhatsApp Bubble-Style Message Preview -->
+                            <div class="bg-[#ECE5DD] rounded-2xl p-4 mb-6">
+                                <div class="bg-[#DCF8C6] text-cieng-black rounded-xl rounded-tr-none p-4 shadow-sm border border-black/5">
+                                    <pre id="live-wa-preview" class="font-sans text-xs sm:text-[13px] text-gray-900 whitespace-pre-wrap leading-relaxed"></pre>
+                                    <div class="flex items-center justify-end gap-1 mt-2 text-[10px] text-gray-500">
+                                        <span>Siap dikirim</span>
+                                        <i class="fa-solid fa-check-double text-sky-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Prominent Direct WhatsApp CTA Button -->
+                            <button
+                                type="button"
+                                onclick="submitOrderToWhatsApp()"
+                                class="w-full flex items-center justify-center gap-3 bg-cieng-wa hover:bg-cieng-waDark active:scale-98 text-cieng-black font-display font-black text-sm sm:text-base uppercase tracking-wider py-4 px-6 rounded-2xl transition-all shadow-lg cursor-pointer"
+                            >
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Order via WhatsApp Sekarang</span>
+                            </button>
+
+                            <p class="text-xs text-gray-300 text-center mt-3.5 leading-relaxed">
+                                Klik tombol di atas untuk langsung membuka chat WhatsApp <strong>THE CIENG</strong> dengan format order terisi otomatis—tinggal pencet <strong>Kirim</strong>!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 5: TIM KAMI (#tim) — PALING BAWAH SEBELUM FOOTER!
+             Background: Gradasi hangat lembut (#FFF9F9 -> #F8E8E9)
+             + Foto Avatar Anggota yang mudah diganti di SITE_IMAGES
+        ====================================================================== -->
+        <section id="tim" class="py-20 lg:py-28 bg-team-gradient border-b border-rose-200/60 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">TIM KAMI</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight mb-4">
+                        Jajaran Direksi <span class="text-cieng-red">THE CIENG</span>
+                    </h2>
+                    <p class="text-gray-600 text-base">
+                        Dikelola secara profesional oleh 4 mahasiswa dengan pembagian peran perusahaan yang solid untuk menyukseskan penjualan di event kampus.
+                    </p>
+                </div>
+
+                <!-- 4 Company Officers Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+
+                    <!-- 1. Rakha Pandu — CEO -->
+                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                        <div class="relative w-24 h-24 mb-5">
+                            <img
+                                id="team-img-1"
+                                src="https://placehold.co/240x240/111111/FFFFFF?text=RP"
+                                alt="Rakha Pandu - CEO THE CIENG"
+                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/111111/FFFFFF?text=RP';"
+                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial-red"
+                            />
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                                CEO
+                            </span>
+                        </div>
+                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Rakha Pandu</h3>
+                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Executive Officer</p>
+                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Strategi Bisnis &amp; Kemitraan</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                            Memimpin arah visi usaha, koordinasi seluruh divisi, pengambilan keputusan strategis, dan kemitraan selama event kampus.
+                        </p>
+                    </div>
+
+                    <!-- 2. Gunung Iskandar — COO -->
+                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                        <div class="relative w-24 h-24 mb-5">
+                            <img
+                                id="team-img-2"
+                                src="https://placehold.co/240x240/BA1E24/FFFFFF?text=GI"
+                                alt="Gunung Iskandar - COO THE CIENG"
+                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/BA1E24/FFFFFF?text=GI';"
+                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial"
+                            />
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                                COO
+                            </span>
+                        </div>
+                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Gunung Iskandar</h3>
+                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Operating Officer</p>
+                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Produksi &amp; Quality Control</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                            Mengawasi kualitas bahan baku, standar higienitas produksi, penggorengan dadakan, dan kelancaran operasional booth.
+                        </p>
+                    </div>
+
+                    <!-- 3. Erina Suhaima — CMO -->
+                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                        <div class="relative w-24 h-24 mb-5">
+                            <img
+                                id="team-img-3"
+                                src="https://placehold.co/240x240/18181B/FFFFFF?text=ES"
+                                alt="Erina Suhaima - CMO THE CIENG"
+                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/18181B/FFFFFF?text=ES';"
+                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial-red"
+                            />
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-black text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                                CMO
+                            </span>
+                        </div>
+                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Erina Suhaima</h3>
+                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Marketing Officer</p>
+                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Branding, Sosmed &amp; Promosi</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                            Mengelola identitas brand THE CIENG, materi promosi visual, kampanye media sosial, dan pelayanan pelanggan di booth.
+                        </p>
+                    </div>
+
+                    <!-- 4. Ranti — CFO -->
+                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                        <div class="relative w-24 h-24 mb-5">
+                            <img
+                                id="team-img-4"
+                                src="https://placehold.co/240x240/99161B/FFFFFF?text=RN"
+                                alt="Ranti - CFO THE CIENG"
+                                onerror="this.onerror=null; this.src='https://placehold.co/240x240/99161B/FFFFFF?text=RN';"
+                                class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial"
+                            />
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                                CFO
+                            </span>
+                        </div>
+                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Ranti</h3>
+                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Financial Officer</p>
+                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Keuangan, HPP &amp; Kasir</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                            Mengelola anggaran modal, perhitungan HPP paket Rp 10.000/4 pcs, pencatatan transaksi kasir, dan laporan keuangan usaha.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         6. DARK FOOTER (#kontak)
+         Background: Hitam pekat (#0E0E10) + Aksen garis atas merah crimson (#BA1E24)
+    ====================================================================== -->
+    <footer id="kontak" class="bg-cieng-footer text-white border-t-4 border-cieng-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/15">
+
+                <!-- Footer Brand Logo & Campus Event Info -->
+                <div class="flex items-center gap-4">
+                    <div class="bg-white p-1.5 rounded-xl shadow-sm flex-shrink-0">
+                        <svg class="w-11 h-11" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Footer THE CIENG">
+                            <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
+                            <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
+                            <circle cx="57" cy="59" r="13" fill="#111111"/>
+                            <circle cx="84" cy="84" r="8.5" fill="#111111"/>
+                            <circle cx="115" cy="56" r="5.5" fill="#111111"/>
+                            <circle cx="151" cy="56" r="5.5" fill="#111111"/>
+                            <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
+                            <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#111111"/>
+                            <path d="M46 144 C68 156, 118 148, 156 112" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-display font-extrabold text-xl tracking-[0.25em] text-white uppercase">THE CIENG</p>
+                        <p class="text-xs text-gray-300 mt-1">Event Kewirausahaan Kampus &bull; 1 Paket/Cup = 4 Pcs = Rp 10.000</p>
+                        <p class="text-[11px] text-gray-400 mt-0.5">Lokasi: Area Bazar Kewirausahaan Kampus (09.00 &ndash; 16.00 WIB)</p>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Links (Exact Same Order) -->
+                <nav class="flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-gray-300" aria-label="Navigasi Footer">
+                    <a href="#beranda" data-target="beranda" class="nav-trigger hover:text-white transition-colors">Beranda</a>
+                    <a href="#tentang" data-target="tentang" class="nav-trigger hover:text-white transition-colors">Tentang Kami</a>
+                    <a href="#menu" data-target="menu" class="nav-trigger hover:text-white transition-colors">Menu</a>
+                    <a href="#order" data-target="order" class="nav-trigger hover:text-white transition-colors">Order</a>
+                    <a href="#tim" data-target="tim" class="nav-trigger hover:text-white transition-colors">Tim Kami</a>
+                </nav>
+            </div>
+
+            <!-- Bottom Copyright Row -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                <p>&copy; 2026 THE CIENG &mdash; Project Kewirausahaan Kampus. All rights reserved.</p>
+                <p>Rakha Pandu &bull; Gunung Iskandar &bull; Erina Suhaima &bull; Ranti</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         NON-BLOCKING TOAST FEEDBACK
+    ====================================================================== -->
+    <div id="toast-notification" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[70] pointer-events-none opacity-0 transition-all duration-300 translate-y-3 w-[92%] max-w-md">
+        <div class="bg-cieng-black text-white border border-white/15 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-semibold">
+            <span class="w-2.5 h-2.5 rounded-full bg-cieng-red flex-shrink-0"></span>
+            <span id="toast-message">Notifikasi</span>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT: KONFIGURASI FOTO & WA, SCROLL-SPY AKURAT, & ORDER WA
+    ====================================================================== -->
+    <script>
+        // =========================================================================
+        // 1. KONFIGURASI NOMOR WHATSAPP ADMIN THE CIENG
+        // Ganti nomor di bawah ini dengan nomor WhatsApp admin (format 628xxx tanpa +)
+        // =========================================================================
+        const ADMIN_WHATSAPP_NUMBER = '6289653303014';
+
+        // =========================================================================
+        // 2. KONFIGURASI FOTO BACKGROUND, PRODUK, & TIM (TINGGAL GANTI URL/PATH FOTO)
+        // Contoh jika pakai foto lokal di folder yang sama: 'foto-cireng.jpg'
+        // =========================================================================
+        const SITE_IMAGES = {
+            heroBg: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1920&q=80',
+            aboutProduct: 'foto propesional cireng.png',
+            orderBg: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80',
+            teamRakha: 'fotoraka.png',
+            teamGunung: 'https://placehold.co/240x240/BA1E24/FFFFFF?text=GI',
+            teamErina: 'https://placehold.co/240x240/18181B/FFFFFF?text=ES',
+            teamRanti: 'https://placehold.co/240x240/99161B/FFFFFF?text=RN',
+        };
+
+        // Terapkan URL gambar dari SITE_IMAGES ke elemen HTML
+        function applySiteImages() {
+            const mappings = [
+                ['hero-bg-img', SITE_IMAGES.heroBg],
+                ['about-product-img', SITE_IMAGES.aboutProduct],
+                ['order-bg-img', SITE_IMAGES.orderBg],
+                ['team-img-1', SITE_IMAGES.teamRakha],
+                ['team-img-2', SITE_IMAGES.teamGunung],
+                ['team-img-3', SITE_IMAGES.teamErina],
+                ['team-img-4', SITE_IMAGES.teamRanti],
+            ];
+            mappings.forEach(([elId, imgUrl]) => {
+                const el = document.getElementById(elId);
+                if (el && imgUrl) {
+                    el.src = imgUrl;
+                }
+            });
+        }
+
+        // Harga & Isi per 1 Paket / Cup
+        const PRICE_PER_CUP = 10000;
+        const PCS_PER_CUP = 4;
+
+        // State Order
+        let cupQuantity = 1;
+        let selectedSeasonings = ['Chili Oil'];
+        let toastTimer = null;
+
+        function formatRupiah(amount) {
+            return 'Rp ' + amount.toLocaleString('id-ID');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast-notification');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+
+            toast.classList.remove('opacity-0', 'translate-y-3');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-3');
+            }, 2800);
+        }
+
+        // =========================================================================
+        // 3. NAVIGASI, SMOOTH SCROLL & ACCURATE SCROLL-SPY
+        // Urutan section dari atas ke bawah: beranda -> tentang -> menu -> order -> tim
+        // =========================================================================
+        const sectionOrder = ['beranda', 'tentang', 'menu', 'order', 'tim'];
+        const navbar = document.getElementById('navbar');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileDropdown = document.getElementById('mobile-dropdown');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        let isClickScrolling = false;
+        let clickScrollTimeout = null;
+
+        function closeMobileMenu() {
+            mobileDropdown.classList.add('hidden');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isHidden = mobileDropdown.classList.contains('hidden');
+            if (isHidden) {
+                mobileDropdown.classList.remove('hidden');
+                hamburgerIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        // Set class active merah crimson secara sinkron di desktop & mobile nav
+        function setActiveNavLink(targetId) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('data-target') === targetId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                if (item.getAttribute('data-target') === targetId) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth scroll dengan offset tinggi navbar + langsung kunci active state link yang diklik
+        function navigateToSection(targetId) {
+            const targetEl = document.getElementById(targetId);
+            if (!targetEl) return;
+
+            closeMobileMenu();
+            setActiveNavLink(targetId);
+
+            isClickScrolling = true;
+            clearTimeout(clickScrollTimeout);
+
+            const navHeight = navbar ? navbar.offsetHeight : 80;
+            const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - navHeight + 2;
+
+            window.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: 'smooth'
+            });
+
+            // Lepas lock setelah animasi scroll selesai
+            clickScrollTimeout = setTimeout(() => {
+                isClickScrolling = false;
+            }, 800);
+        }
+
+        // Pasang click handler pada semua link navigasi
+        document.querySelectorAll('.nav-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                const targetId = trigger.getAttribute('data-target');
+                if (targetId && document.getElementById(targetId)) {
+                    e.preventDefault();
+                    navigateToSection(targetId);
+                }
+            });
+        });
+
+        // Scroll-Spy akurat saat user scroll manual
+        function handleWindowScroll() {
+            if (window.scrollY > 12) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+
+            if (isClickScrolling) return;
+
+            const navHeight = navbar ? navbar.offsetHeight : 80;
+            const scrollPosition = window.scrollY + navHeight + 50;
+
+            // Cek apakah sudah menyentuh bagian bawah halaman / footer -> pastikan "Tim Kami" (#tim) tetap aktif
+            const reachedPageBottom = (window.innerHeight + Math.ceil(window.scrollY)) >= (document.documentElement.scrollHeight - 35);
+            if (reachedPageBottom) {
+                setActiveNavLink('tim');
+                return;
+            }
+
+            let currentSectionId = sectionOrder[0];
+            for (let i = 0; i < sectionOrder.length; i++) {
+                const id = sectionOrder[i];
+                const el = document.getElementById(id);
+                if (el && scrollPosition >= el.offsetTop) {
+                    currentSectionId = id;
+                }
+            }
+
+            setActiveNavLink(currentSectionId);
+        }
+
+        window.addEventListener('scroll', handleWindowScroll, { passive: true });
+
+        // =========================================================================
+        // 4. QUANTITY STEPPER & QUICK-SELECT LOGIC
+        // =========================================================================
+        function syncQuantityUI() {
+            const qtyInput = document.getElementById('cup-qty-input');
+            qtyInput.value = cupQuantity;
+
+            const totalPcs = cupQuantity * PCS_PER_CUP;
+            const totalPrice = cupQuantity * PRICE_PER_CUP;
+
+            document.getElementById('calc-total-pcs').textContent = `${totalPcs} Pcs`;
+            document.getElementById('calc-total-price').textContent = formatRupiah(totalPrice);
+
+            document.querySelectorAll('.quick-qty-btn').forEach(btn => {
+                const btnQty = parseInt(btn.getAttribute('data-quick-qty'), 10);
+                if (btnQty === cupQuantity) {
+                    btn.classList.remove('bg-white', 'text-cieng-black', 'border-gray-300');
+                    btn.classList.add('bg-cieng-black', 'text-white', 'border-cieng-black');
+                } else {
+                    btn.classList.remove('bg-cieng-black', 'text-white', 'border-cieng-black');
+                    btn.classList.add('bg-white', 'text-cieng-black', 'border-gray-300');
+                }
+            });
+
+            updateLiveOrderPreview();
+        }
+
+        function adjustCupQuantity(delta) {
+            const nextQty = cupQuantity + delta;
+            if (nextQty >= 1 && nextQty <= 99) {
+                cupQuantity = nextQty;
+                syncQuantityUI();
+            }
+        }
+
+        function setCupQuantity(qty) {
+            cupQuantity = qty;
+            syncQuantityUI();
+        }
+
+        function handleManualQtyInput(rawVal) {
+            const parsed = parseInt(rawVal, 10);
+            if (!isNaN(parsed) && parsed >= 1) {
+                cupQuantity = Math.min(parsed, 99);
+            } else {
+                cupQuantity = 1;
+            }
+            syncQuantityUI();
+        }
+
+        // =========================================================================
+        // 5. SEASONING MULTI-SELECT PILLS & SHOWCASE CARD SELECTION
+        // =========================================================================
+        function syncSeasoningPillsUI() {
+            document.querySelectorAll('.seasoning-pill-btn').forEach(btn => {
+                const seasoning = btn.getAttribute('data-seasoning');
+                const isSelected = selectedSeasonings.includes(seasoning);
+                const iconEl = btn.querySelector('i');
+
+                if (isSelected) {
+                    btn.classList.remove('border-gray-200', 'bg-[#F9F9F9]', 'text-cieng-black');
+                    btn.classList.add('border-cieng-red', 'bg-cieng-red', 'text-white');
+                    if (iconEl) iconEl.className = 'fa-solid fa-check text-xs';
+                } else {
+                    btn.classList.remove('border-cieng-red', 'bg-cieng-red', 'text-white');
+                    btn.classList.add('border-gray-200', 'bg-[#F9F9F9]', 'text-cieng-black');
+                    if (iconEl) iconEl.className = 'fa-solid fa-plus text-xs opacity-60';
+                }
+            });
+
+            if (selectedSeasonings.length > 0) {
+                document.getElementById('error-seasoning').classList.add('hidden');
+            }
+
+            updateLiveOrderPreview();
+        }
+
+        function toggleSeasoningPill(seasoning) {
+            if (selectedSeasonings.includes(seasoning)) {
+                selectedSeasonings = selectedSeasonings.filter(item => item !== seasoning);
+            } else {
+                selectedSeasonings.push(seasoning);
+            }
+            syncSeasoningPillsUI();
+        }
+
+        function selectSeasoningAndScroll(seasoning) {
+            if (!selectedSeasonings.includes(seasoning)) {
+                selectedSeasonings.push(seasoning);
+            }
+            syncSeasoningPillsUI();
+            showToast(`Bumbu "${seasoning}" dipilih! Lengkapi detail order di bawah.`);
+            navigateToSection('order');
+        }
+
+        // =========================================================================
+        // 6. QUICK TEMPLATE HELPER & DIRECT WHATSAPP ORDER BUILDER
+        // =========================================================================
+        function applyFillingTemplate(templateText) {
+            const notesInput = document.getElementById('filling-notes');
+            notesInput.value = templateText;
+            notesInput.focus();
+            updateLiveOrderPreview();
+        }
+
+        function buildWhatsAppOrderMessage() {
+            const nameVal = document.getElementById('customer-name').value.trim() || '(Belum diisi)';
+            const notesVal = document.getElementById('filling-notes').value.trim() || '(Belum diisi)';
+            const bumbuList = selectedSeasonings.length > 0 ? selectedSeasonings.join(', ') : '(Belum dipilih)';
+
+            const totalPcs = cupQuantity * PCS_PER_CUP;
+            const totalPrice = formatRupiah(cupQuantity * PRICE_PER_CUP);
+
+            return [
+                'Halo Admin *THE CIENG*! Saya mau pesan cireng isi:',
+                '',
+                `*Nama Pemesan:* ${nameVal}`,
+                `*Jumlah Order:* ${cupQuantity} Paket/Cup (${totalPcs} Pcs)`,
+                `*Pilihan Bumbu:* ${bumbuList}`,
+                `*Catatan Isian:* ${notesVal}`,
+                `*Total Bayar:* ${totalPrice}`,
+                '',
+                'Terima kasih!'
+            ].join('\n');
+        }
+
+        function updateLiveOrderPreview() {
+            const nameInput = document.getElementById('customer-name');
+            const notesInput = document.getElementById('filling-notes');
+
+            if (nameInput.value.trim().length > 0) {
+                document.getElementById('error-name').classList.add('hidden');
+                nameInput.classList.remove('border-cieng-red');
+            }
+            if (notesInput.value.trim().length > 0) {
+                document.getElementById('error-notes').classList.add('hidden');
+                notesInput.classList.remove('border-cieng-red');
+            }
+
+            document.getElementById('live-wa-preview').textContent = buildWhatsAppOrderMessage();
+        }
+
+        function submitOrderToWhatsApp() {
+            const nameInput = document.getElementById('customer-name');
+            const notesInput = document.getElementById('filling-notes');
+
+            const nameError = document.getElementById('error-name');
+            const seasoningError = document.getElementById('error-seasoning');
+            const notesError = document.getElementById('error-notes');
+
+            let isValid = true;
+
+            if (!nameInput.value.trim()) {
+                nameError.classList.remove('hidden');
+                nameInput.classList.add('border-cieng-red');
+                if (isValid) nameInput.focus();
+                isValid = false;
+            }
+
+            if (selectedSeasonings.length === 0) {
+                seasoningError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (!notesInput.value.trim()) {
+                notesError.classList.remove('hidden');
+                notesInput.classList.add('border-cieng-red');
+                if (isValid) notesInput.focus();
+                isValid = false;
+            }
+
+            if (!isValid) {
+                showToast('Lengkapi Nama, Bumbu, & Catatan Isian dulu ya!');
+                return;
+            }
+
+            const messageText = buildWhatsAppOrderMessage();
+            const encodedMessage = encodeURIComponent(messageText);
+            const whatsappUrl = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            showToast('Membuka WhatsApp dengan rincian orderanmu...');
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Initialize on load
+        applySiteImages();
+        syncQuantityUI();
+        syncSeasoningPillsUI();
+    </script>
+</body>
+</html>
