@@ -251,7 +251,7 @@
                         </h1>
 
                         <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl mb-7">
-                            Cireng isi hangat bikinan <strong class="font-display font-extrabold text-white tracking-wider">THE CIENG</strong> buat meramaikan event kewirausahaan kampus. Cuma <strong>Rp 10.000 per Paket/Cup (dapat 4 pcs)</strong>—bebas mix isian, nggak pelit rasa, dan pastinya nggak bikin kantong menangis.
+                            Cireng isi hangat bikinan <strong class="font-display font-extrabold text-white tracking-wider">THE CIENG</strong> buat meramaikan event kewirausahaan kampus. Cuma <strong>Rp 10.000 per Paket/Cup (dapat 4 pcs)</strong>—bebas mix isian, nggak pelit rasa, dan beli 2 paket udah dapat minuman gratis. Lumayan kan, nggak perlu pura-pura lupa bayar.
                         </p>
 
                         <!-- Highlighted Pricing & Deal Summary Box -->
@@ -259,18 +259,18 @@
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                 <div>
                                     <span class="inline-block bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-md mb-2">
-                                        1 PAKET / CUP = 4 PCS • ANTI PELIT
+                                        1 PAKET / CUP = 4 PCS • BELI 2 GRATIS MINUM
                                     </span>
                                     <p class="font-display font-black text-2xl sm:text-3xl text-white">
                                         Rp 10.000 <span class="text-sm sm:text-base font-bold text-rose-300">/ Paket (Cup)</span>
                                     </p>
                                     <p class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">
-                                        <i class="fa-solid fa-circle-check text-[#FF4D54] mr-1"></i> Bebas Mix Kornet, Ayam Suwir, &amp; Keju (yang penting sopan nulisnya)
+                                        <i class="fa-solid fa-circle-check text-[#FF4D54] mr-1"></i> Bebas Mix Kornet, Ayam Suwir, &amp; Keju + Promo Es Teh / Es Jeruk
                                     </p>
                                 </div>
                                 <div class="flex sm:flex-col gap-2 text-xs font-bold text-white">
                                     <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">3 Isian Mantap</span>
-                                    <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">4 Bumbu Menggoda</span>
+                                    <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">Beli 2 Gratis Minum</span>
                                 </div>
                             </div>
                         </div>
@@ -703,6 +703,32 @@
 
                     <!-- Left Column (7 cols): High-Contrast White Interactive Order Form -->
                     <div class="lg:col-span-7 bg-white text-cieng-black border-2 border-white rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <!-- Promo Card: Beli 2 Paket Gratis 1 Minuman -->
+                        <div class="mb-7 bg-gradient-to-r from-[#FFF5F5] via-[#FDECEC] to-[#FFF8F6] border-2 border-cieng-red/40 rounded-2xl p-4 sm:p-5">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <div class="flex items-start sm:items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                                        <i class="fa-solid fa-mug-hot text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-cieng-black text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-1">
+                                            PROMO SPESIAL KAMPUS
+                                        </span>
+                                        <h3 class="font-display font-black text-base sm:text-lg text-cieng-black leading-snug">
+                                            Beli 2 Paket/Cup Gratis 1 Minuman <span class="text-cieng-red">(Es Teh / Es Jeruk)</span>
+                                        </h3>
+                                        <p class="text-xs text-gray-600 mt-0.5 leading-relaxed">
+                                            Berlaku kelipatan tiap 2 Paket/Cup (8 pcs): beli 2 gratis 1, beli 4 gratis 2, dst. Nggak perlu nanya &ldquo;beneran gratis?&rdquo;—iya, asal ngambilnya genap minimal 2 cup.
+                                        </p>
+                                    </div>
+                                </div>
+                                <span id="promo-status-badge" class="self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white text-gray-600 border border-gray-300 whitespace-nowrap">
+                                    <i class="fa-solid fa-lock text-[11px]"></i>
+                                    <span>Tambah 1 Cup Lagi</span>
+                                </span>
+                            </div>
+                        </div>
+
                         <form id="wa-order-form" onsubmit="event.preventDefault(); submitOrderToWhatsApp();" novalidate class="space-y-7">
 
                             <!-- 1. Nama Pemesan -->
@@ -713,7 +739,7 @@
                                 <input
                                     type="text"
                                     id="customer-name"
-                                    placeholder="Tulis nama lu (boleh tambah kelas/NIM biar nggak ketuker)"
+                                    placeholder="Tulis nama kamu (boleh tambah kelas/NIM biar nggak ketuker)"
                                     oninput="updateLiveOrderPreview()"
                                     class="w-full px-4 py-3.5 rounded-xl bg-[#F9F9F9] border-2 border-gray-200 focus:border-cieng-black focus:bg-white focus:outline-none text-sm sm:text-base font-medium transition-colors"
                                     required
@@ -798,6 +824,57 @@
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+
+                            <!-- 2B. Pilihan Minuman Gratis (Promo Beli 2 Paket Gratis 1 Minuman) -->
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                    <label class="font-display font-extrabold text-sm text-cieng-black">
+                                        Pilihan Minuman Gratis <span class="text-cieng-red">(Promo Beli 2 Paket)</span>
+                                    </label>
+                                    <span id="free-drink-quota-label" class="text-xs font-bold text-gray-500">
+                                        0 Minuman Gratis (Minimal 2 Paket/Cup)
+                                    </span>
+                                </div>
+
+                                <div id="free-drink-selector" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <button
+                                        type="button"
+                                        id="drink-btn-esteh"
+                                        data-drink="Es Teh"
+                                        onclick="selectFreeDrink('Es Teh')"
+                                        class="free-drink-btn flex items-center justify-between px-4 py-3.5 rounded-xl border-2 border-cieng-red bg-cieng-redTint text-cieng-black font-display font-bold text-sm transition-all cursor-pointer"
+                                    >
+                                        <span class="flex items-center gap-2.5">
+                                            <i class="fa-solid fa-glass-water text-cieng-red text-base"></i>
+                                            <span>Es Teh</span>
+                                        </span>
+                                        <span id="drink-check-esteh" class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cieng-red text-white">
+                                            Dipilih
+                                        </span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        id="drink-btn-esjeruk"
+                                        data-drink="Es Jeruk"
+                                        onclick="selectFreeDrink('Es Jeruk')"
+                                        class="free-drink-btn flex items-center justify-between px-4 py-3.5 rounded-xl border-2 border-gray-200 bg-[#F9F9F9] text-cieng-black hover:border-cieng-black font-display font-bold text-sm transition-all cursor-pointer"
+                                    >
+                                        <span class="flex items-center gap-2.5">
+                                            <i class="fa-solid fa-lemon text-amber-500 text-base"></i>
+                                            <span>Es Jeruk</span>
+                                        </span>
+                                        <span id="drink-check-esjeruk" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-600">
+                                            Pilih
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <p id="free-drink-helper-note" class="mt-2 text-xs font-semibold text-gray-600">
+                                    <i class="fa-solid fa-circle-info text-cieng-red mr-1"></i>
+                                    <span>Baru 1 Paket/Cup nih. Tambah minimal jadi <strong>2 Paket/Cup</strong> biar bonus <strong>Es Teh</strong> atau <strong>Es Jeruk</strong>-nya kebuka—nggak usah malu nambah, lumayan banget buat nyegerin tenggorokan.</span>
+                                </p>
                             </div>
 
                             <!-- 3. Pilihan Bumbu (Interactive Multi-Select Pills) -->
@@ -932,14 +1009,32 @@
         <section id="tim" class="py-20 lg:py-28 bg-team-gradient border-b border-rose-200/60 scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center max-w-2xl mx-auto mb-14">
+                <div class="text-center max-w-2xl mx-auto mb-10">
                     <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">TIM KAMI</span>
                     <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight mb-4">
                         Orang-Orang di Balik <span class="text-cieng-red">THE CIENG</span>
                     </h2>
-                    <p class="text-gray-600 text-base">
+                    <p class="text-gray-600 text-base mb-6">
                         Empat mahasiswa dengan pembagian peran yang jelas biar kerjaan nggak saling lempar. (Ya, satu orang fotonya masih nyusul—namanya juga proses).
                     </p>
+
+                    <!-- Prominent Operational Hours Info Card in Tim Kami -->
+                    <div class="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-5 bg-white border-2 border-cieng-black rounded-2xl px-6 py-4 shadow-editorial text-left">
+                        <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="font-display font-extrabold text-[11px] uppercase tracking-[0.16em] text-cieng-red">
+                                JAM OPERASIONAL BOOTH &amp; ORDER
+                            </p>
+                            <p class="font-display font-black text-xl sm:text-2xl text-cieng-black leading-tight">
+                                08.00 &ndash; 17.00 <span class="text-xs sm:text-sm font-bold text-gray-500">WIB</span>
+                            </p>
+                            <p class="text-xs text-gray-600">
+                                Datang di jam segitu ya—kalau datang jam 9 malam, yang ada cuma kenangan dan wajan dingin.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 4 Company Officers Cards -->
@@ -985,7 +1080,7 @@
                         <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Operating Officer</p>
                         <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Produksi &amp; Dapur Booth</p>
                         <p class="text-sm text-gray-600 leading-relaxed mt-4">
-                            Jaga mutu isian, kebersihan, dan ritme goreng-menggoreng biar cireng tetap hangat.(temennya chef juna)
+                            Jaga mutu isian, kebersihan, dan ritme goreng-menggoreng biar cireng tetap hangat. Fotonya emang masih inisial, tapi kerjanya nyata.
                         </p>
                     </div>
 
@@ -1063,8 +1158,8 @@
                     </div>
                     <div>
                         <p class="font-display font-extrabold text-xl tracking-[0.25em] text-white uppercase">THE CIENG</p>
-                        <p class="text-xs text-gray-300 mt-1">Event Kewirausahaan Kampus &bull; 1 Paket/Cup = 4 Pcs = Rp 10.000</p>
-                        <p class="text-[11px] text-gray-400 mt-0.5">Lokasi: Area Bazar Kewirausahaan Kampus (08.00 &ndash; 17.00 WIB, selama belum ludes)</p>
+                        <p class="text-xs text-gray-300 mt-1">Event Kewirausahaan Kampus &bull; 1 Paket/Cup = 4 Pcs = Rp 10.000 &bull; Beli 2 Gratis 1 Minuman</p>
+                        <p class="text-[11px] text-gray-400 mt-0.5">Lokasi: Area Bazar Kewirausahaan Kampus &bull; Jam Operasional: 08.00 &ndash; 17.00 WIB</p>
                     </div>
                 </div>
 
@@ -1146,10 +1241,16 @@
         // State Order
         let cupQuantity = 1;
         let selectedSeasonings = ['Chili Oil'];
+        let selectedFreeDrink = 'Es Teh';
         let toastTimer = null;
 
+        function getFreeDrinkCount(qty = cupQuantity) {
+            return qty >= 2 ? Math.floor(qty / 2) : 0;
+        }
+
         function formatRupiah(amount) {
-            return 'Rp ' + amount.toLocaleString('id-ID');
+            const safeAmount = Number.isFinite(amount) ? amount : 0;
+            return 'Rp ' + safeAmount.toLocaleString('id-ID');
         }
 
         function showToast(message) {
@@ -1292,6 +1393,14 @@
         // =========================================================================
         // 4. QUANTITY STEPPER & QUICK-SELECT LOGIC
         // =========================================================================
+        function adjustCupQuantity(delta) {
+            const nextQty = cupQuantity + delta;
+            if (nextQty >= 1 && nextQty <= 99) {
+                cupQuantity = nextQty;
+                syncQuantityUI();
+            }
+        }
+
         function syncQuantityUI() {
             const qtyInput = document.getElementById('cup-qty-input');
             qtyInput.value = cupQuantity;
@@ -1313,14 +1422,69 @@
                 }
             });
 
+            syncPromoDrinkUI();
             updateLiveOrderPreview();
         }
 
-        function adjustCupQuantity(delta) {
-            const nextQty = cupQuantity + delta;
-            if (nextQty >= 1 && nextQty <= 99) {
-                cupQuantity = nextQty;
-                syncQuantityUI();
+        function selectFreeDrink(drinkName) {
+            selectedFreeDrink = drinkName;
+            syncPromoDrinkUI();
+            updateLiveOrderPreview();
+            if (cupQuantity < 2) {
+                showToast(`Pilihan minuman "${drinkName}" dicatat. Tambah jadi minimal 2 Paket/Cup biar aktif gratisnya!`);
+            } else {
+                showToast(`Bonus minuman "${selectedFreeDrink}" (${getFreeDrinkCount()}x) udah kepilih.`);
+            }
+        }
+
+        function syncPromoDrinkUI() {
+            const freeCount = getFreeDrinkCount();
+            const statusBadge = document.getElementById('promo-status-badge');
+            const quotaLabel = document.getElementById('free-drink-quota-label');
+            const helperNote = document.getElementById('free-drink-helper-note');
+
+            const isEsTeh = selectedFreeDrink === 'Es Teh';
+            const btnEsTeh = document.getElementById('drink-btn-esteh');
+            const btnEsJeruk = document.getElementById('drink-btn-esjeruk');
+            const checkEsTeh = document.getElementById('drink-check-esteh');
+            const checkEsJeruk = document.getElementById('drink-check-esjeruk');
+
+            function styleDrinkButton(btn, badgeEl, active) {
+                if (active) {
+                    btn.classList.remove('border-gray-200', 'bg-[#F9F9F9]');
+                    btn.classList.add('border-cieng-red', 'bg-cieng-redTint');
+                    badgeEl.textContent = freeCount > 0 ? `Gratis ${freeCount}x` : 'Dipilih';
+                    badgeEl.classList.remove('bg-gray-200', 'text-gray-600');
+                    badgeEl.classList.add('bg-cieng-red', 'text-white');
+                } else {
+                    btn.classList.remove('border-cieng-red', 'bg-cieng-redTint');
+                    btn.classList.add('border-gray-200', 'bg-[#F9F9F9]');
+                    badgeEl.textContent = 'Pilih';
+                    badgeEl.classList.remove('bg-cieng-red', 'text-white');
+                    badgeEl.classList.add('bg-gray-200', 'text-gray-600');
+                }
+            }
+
+            styleDrinkButton(btnEsTeh, checkEsTeh, isEsTeh);
+            styleDrinkButton(btnEsJeruk, checkEsJeruk, !isEsTeh);
+
+            if (freeCount > 0) {
+                statusBadge.className = 'self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-display font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300 whitespace-nowrap';
+                statusBadge.innerHTML = `<i class="fa-solid fa-gift text-[11px]"></i><span>Gratis ${freeCount}x ${selectedFreeDrink}</span>`;
+
+                quotaLabel.className = 'text-xs font-extrabold text-cieng-red';
+                quotaLabel.textContent = `Aktif: Gratis ${freeCount}x ${selectedFreeDrink}`;
+
+                const nextMilestone = (freeCount + 1) * 2;
+                helperNote.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i><span>Mantap! Dengan <strong>${cupQuantity} Paket/Cup</strong>, kamu dapat <strong>GRATIS ${freeCount}x ${selectedFreeDrink}</strong>. Mau nambah sampai <strong>${nextMilestone} Paket/Cup</strong> buat gratis ${freeCount + 1} minuman? Bebas!</span>`;
+            } else {
+                statusBadge.className = 'self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-display font-extrabold bg-white text-gray-600 border border-gray-300 whitespace-nowrap';
+                statusBadge.innerHTML = `<i class="fa-solid fa-lock text-[11px]"></i><span>Tambah 1 Cup Lagi</span>`;
+
+                quotaLabel.className = 'text-xs font-bold text-gray-500';
+                quotaLabel.textContent = `0 Minuman Gratis (Min. 2 Paket/Cup • Pilihan: ${selectedFreeDrink})`;
+
+                helperNote.innerHTML = `<i class="fa-solid fa-circle-info text-cieng-red mr-1"></i><span>Baru <strong>${cupQuantity} Paket/Cup</strong> nih. Tambah minimal jadi <strong>2 Paket/Cup</strong> biar bonus <strong>${selectedFreeDrink}</strong> (atau Es Teh / Es Jeruk) gratisnya kebuka—nggak usah sungkan, lumayan banget buat nyegerin tenggorokan.</span>`;
             }
         }
 
@@ -1401,6 +1565,10 @@
 
             const totalPcs = cupQuantity * PCS_PER_CUP;
             const totalPrice = formatRupiah(cupQuantity * PRICE_PER_CUP);
+            const freeDrinkCount = getFreeDrinkCount();
+            const bonusLine = freeDrinkCount > 0
+                ? `*Bonus Promo:* Gratis ${freeDrinkCount}x ${selectedFreeDrink} (Beli 2 Paket Gratis 1 Minuman)`
+                : `*Bonus Promo:* Belum aktif (Min. 2 Paket/Cup gratis 1 ${selectedFreeDrink} / Es Teh / Es Jeruk)`;
 
             return [
                 'Halo Admin *THE CIENG*, saya mau order cireng isi (bukan janji manis):',
@@ -1409,6 +1577,7 @@
                 `*Jumlah Order:* ${cupQuantity} Paket/Cup (${totalPcs} Pcs)`,
                 `*Pilihan Bumbu:* ${bumbuList}`,
                 `*Catatan Isian:* ${notesVal}`,
+                bonusLine,
                 `*Total Bayar:* ${totalPrice}`,
                 '',
                 'Siap dibayar dan disantap!'
@@ -1473,10 +1642,22 @@
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
 
-        // Initialize on load
-        applySiteImages();
-        syncQuantityUI();
-        syncSeasoningPillsUI();
+        // Initialize safely on load
+        function initCiengApp() {
+            try {
+                applySiteImages();
+                syncQuantityUI();
+                syncSeasoningPillsUI();
+            } catch (err) {
+                console.error('Gagal menginisialisasi THE CIENG:', err);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCiengApp);
+        } else {
+            initCiengApp();
+        }
     </script>
 </body>
 </html>
