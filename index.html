@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE CIENG | Cireng Isi Rp 10.000 / 4 Pcs — Yang Nggak Nyoba Rugi Sendiri</title>
-    <meta name="description" content="THE CIENG — Cireng isi kriuk di luar, kenyal & lumer di dalam. 1 Paket/Cup = 4 Pcs = Rp 10.000. Nggak mahal kok, dompet aman, lidah senang.">
+    <title>THE CIENG // CYBER EDITION — Cireng Isi Rp 10.000 / 4 Pcs</title>
+    <meta name="description" content="THE CIENG — Cireng isi kriuk di luar, kenyal & lumer di dalam. 1 Paket/Cup = 4 Pcs = Rp 10.000. Cyber Futuristic Edition.">
 
-    <!-- Google Fonts: Montserrat (Display) & Plus Jakarta Sans (Body) -->
+    <!-- Google Fonts: Orbitron (Cyber Display), Montserrat & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- FontAwesome 6 Free CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Model Viewer untuk Render 3D (.glb) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,26 +26,30 @@
             theme: {
                 extend: {
                     fontFamily: {
+                        cyber: ['Orbitron', 'sans-serif'],
                         display: ['Montserrat', 'sans-serif'],
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
                         cieng: {
-                            red: '#BA1E24',
-                            redDark: '#99161B',
-                            redTint: '#FDF2F2',
-                            black: '#111111',
-                            charcoal: '#18181B',
-                            footer: '#0E0E10',
+                            red: '#FF2A3C',
+                            redDark: '#C81424',
+                            redTint: 'rgba(255, 42, 60, 0.14)',
+                            cyan: '#00F0FF',
+                            black: '#07070A',
+                            charcoal: '#0E0F15',
+                            panel: '#12141D',
+                            footer: '#050508',
                             wa: '#25D366',
                             waDark: '#1EBE5D',
                         }
                     },
                     boxShadow: {
-                        'editorial': '6px 6px 0px 0px #111111',
-                        'editorial-red': '6px 6px 0px 0px #BA1E24',
-                        'editorial-white': '6px 6px 0px 0px rgba(255,255,255,0.18)',
-                        'card': '0 12px 32px -10px rgba(17, 17, 17, 0.10)',
+                        'cyber-red': '0 0 24px rgba(255, 42, 60, 0.35)',
+                        'cyber-cyan': '0 0 24px rgba(0, 240, 255, 0.28)',
+                        'editorial': '6px 6px 0px 0px #00F0FF',
+                        'editorial-red': '6px 6px 0px 0px #FF2A3C',
+                        'card': '0 14px 36px -10px rgba(0, 0, 0, 0.75)',
                     }
                 }
             }
@@ -55,51 +62,87 @@
         }
         body {
             overflow-x: hidden;
-            color: #111111;
-            background-color: #FFF9F9;
+            color: #F3F4F6;
+            background-color: #07070A;
         }
 
-        /* Section Custom Rich Gradients */
-        .bg-hero-gradient {
-            background: linear-gradient(135deg, #121214 0%, #2E090C 55%, #5A1015 100%);
+        /* Cyber Section Backgrounds & Grids */
+        .bg-hero-cyber {
+            background: radial-gradient(circle at 80% 20%, rgba(255, 42, 60, 0.22) 0%, transparent 45%),
+                        radial-gradient(circle at 15% 80%, rgba(0, 240, 255, 0.14) 0%, transparent 45%),
+                        linear-gradient(135deg, #060609 0%, #14080D 55%, #090C14 100%);
         }
-        .bg-about-gradient {
-            background: linear-gradient(180deg, #FFF9F9 0%, #FDECEC 52%, #FFF7F5 100%);
+        .bg-about-cyber {
+            background: linear-gradient(180deg, #08090E 0%, #110A10 50%, #090B12 100%);
         }
-        .bg-menu-gradient {
-            background: linear-gradient(180deg, #FAF6F6 0%, #F5E6E7 50%, #FDF9F8 100%);
+        .bg-menu-cyber {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 55%),
+                        linear-gradient(180deg, #090B12 0%, #12090E 50%, #08090E 100%);
         }
-        .bg-order-gradient {
-            background: linear-gradient(135deg, #141416 0%, #2B0A0D 55%, #191213 100%);
+        .bg-order-cyber {
+            background: radial-gradient(circle at 20% 30%, rgba(255, 42, 60, 0.18) 0%, transparent 50%),
+                        linear-gradient(135deg, #06070B 0%, #18080E 55%, #080B12 100%);
         }
-        .bg-team-gradient {
-            background: linear-gradient(180deg, #FFF9F9 0%, #F8E8E9 100%);
-        }
-
-        /* Subtle Logo 4-Dot Pattern Texture */
-        .bg-dot-grid {
-            background-image: radial-gradient(#BA1E24 1.15px, transparent 1.15px);
-            background-size: 26px 26px;
-        }
-        .bg-dot-grid-light {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
-            background-size: 26px 26px;
+        .bg-team-cyber {
+            background: linear-gradient(180deg, #080B12 0%, #12090F 100%);
         }
 
-        /* Active Navigation Link Underline & Crimson Color */
+        /* Cyber Tech Grid Overlay */
+        .bg-cyber-grid {
+            background-image:
+                linear-gradient(to right, rgba(0, 240, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 42, 60, 0.06) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        /* Cyber Glass Card */
+        .cyber-glass {
+            background: rgba(16, 18, 27, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        /* Cyber Corner Brackets Accent */
+        .cyber-frame {
+            position: relative;
+        }
+        .cyber-frame::before,
+        .cyber-frame::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+            z-index: 20;
+        }
+        .cyber-frame::before {
+            top: -2px;
+            left: -2px;
+            border-top: 2px solid #00F0FF;
+            border-left: 2px solid #00F0FF;
+        }
+        .cyber-frame::after {
+            bottom: -2px;
+            right: -2px;
+            border-bottom: 2px solid #FF2A3C;
+            border-right: 2px solid #FF2A3C;
+        }
+
+        /* Active Navigation Link Underline & Cyber Glow */
         .nav-link {
             position: relative;
-            transition: color 0.2s ease;
+            transition: color 0.2s ease, text-shadow 0.2s ease;
         }
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -6px;
             left: 0;
             width: 0%;
-            height: 3px;
+            height: 2.5px;
             border-radius: 999px;
-            background-color: #BA1E24;
+            background: linear-gradient(90deg, #FF2A3C, #00F0FF);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
             transition: width 0.25s ease;
         }
         .nav-link:hover::after,
@@ -107,16 +150,17 @@
             width: 100%;
         }
         .nav-link.active {
-            color: #BA1E24 !important;
+            color: #00F0FF !important;
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.55);
             font-weight: 800;
         }
 
         /* Active Mobile Navigation Item */
         .mobile-nav-item.active {
-            background-color: #FDF2F2;
-            color: #BA1E24;
+            background-color: rgba(0, 240, 255, 0.1);
+            color: #00F0FF;
             font-weight: 800;
-            border-left: 4px solid #BA1E24;
+            border-left: 4px solid #00F0FF;
         }
 
         /* Hide default number input arrows */
@@ -127,6 +171,41 @@
         }
         input[type="number"] {
             -moz-appearance: textfield;
+        }
+
+        /* =========================================================
+           SCROLL-TRIGGERED REVEAL ANIMATION (FADE LEFT)
+        ========================================================== */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-42px);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-left {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* =========================================================
+           MODEL-VIEWER 3D STYLING
+        ========================================================== */
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            --poster-color: transparent;
+            --progress-bar-color: #00F0FF;
+            --progress-bar-height: 3px;
         }
 
         /* Proteksi Anti-Download Foto (Desktop & Mobile) */
@@ -158,54 +237,56 @@
             -webkit-user-select: none;
         }
         .cup-drop-card.drop-highlight {
-            border-color: #BA1E24 !important;
-            background-color: #FDF2F2 !important;
+            border-color: #00F0FF !important;
+            background-color: rgba(0, 240, 255, 0.14) !important;
             transform: scale(1.02);
-            box-shadow: 0 0 0 3px rgba(186, 30, 36, 0.25);
+            box-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
         }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-cieng-red selection:text-white">
 
     <!-- =====================================================================
-         1. STICKY TOP NAVIGATION BAR
+         1. STICKY TOP NAVIGATION BAR (CYBER HUD)
     ====================================================================== -->
-    <header id="navbar" class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 transition-shadow duration-200">
+    <header id="navbar" class="sticky top-0 z-50 w-full bg-[#07070A]/90 backdrop-blur-xl border-b border-cyan-500/25 transition-shadow duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
 
-                <!-- Left: Custom SVG Logo + Brand Name -->
+                <!-- Left: Custom SVG Logo + Cyber Brand Name -->
                 <a href="#beranda" data-target="beranda" class="nav-trigger flex items-center gap-3 group focus:outline-none" aria-label="THE CIENG Beranda">
-                    <svg class="w-11 h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo THE CIENG">
-                        <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
-                        <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
-                        <circle cx="57" cy="59" r="13" fill="#111111"/>
-                        <circle cx="84" cy="84" r="8.5" fill="#111111"/>
-                        <circle cx="115" cy="56" r="5.5" fill="#111111"/>
-                        <circle cx="151" cy="56" r="5.5" fill="#111111"/>
-                        <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
-                        <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#111111"/>
-                        <path d="M46 144 C68 156, 118 148, 156 112" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
-                        <path d="M74 156 L77 165 M103 155 L105 165 M131 144 L136 153 M153 125 L161 131" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-                    </svg>
+                    <div class="p-0.5 rounded-xl bg-gradient-to-br from-cieng-cyan to-cieng-red shadow-cyber-cyan transition-transform duration-300 group-hover:scale-105">
+                        <svg class="w-10 h-10 flex-shrink-0 rounded-[10px]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo THE CIENG">
+                            <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
+                            <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
+                            <circle cx="57" cy="59" r="13" fill="#111111"/>
+                            <circle cx="84" cy="84" r="8.5" fill="#111111"/>
+                            <circle cx="115" cy="56" r="5.5" fill="#111111"/>
+                            <circle cx="151" cy="56" r="5.5" fill="#111111"/>
+                            <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
+                            <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#111111"/>
+                            <path d="M46 144 C68 156, 118 148, 156 112" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+                            <path d="M74 156 L77 165 M103 155 L105 165 M131 144 L136 153 M153 125 L161 131" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+                        </svg>
+                    </div>
                     <div class="flex flex-col">
-                        <span class="font-display font-extrabold text-lg sm:text-xl tracking-[0.22em] text-cieng-black uppercase leading-none">THE CIENG</span>
-                        <span class="text-[10px] font-bold tracking-[0.14em] text-cieng-red uppercase mt-1">Rp 10.000 / 4 Pcs • Nggak Bikin Bokek</span>
+                        <span class="font-cyber font-black text-base sm:text-lg tracking-[0.22em] text-white uppercase leading-none">THE CIENG</span>
+                        <span class="text-[10px] font-bold tracking-[0.14em] text-cieng-cyan uppercase mt-1">SYS // RP 10.000 • 4 PCS</span>
                     </div>
                 </a>
 
                 <!-- Center: Desktop Navigation Links -->
                 <nav class="hidden lg:flex items-center space-x-8" aria-label="Navigasi Utama">
-                    <a href="#beranda" data-target="beranda" class="nav-link nav-trigger active text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Beranda</a>
-                    <a href="#tentang" data-target="tentang" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Tentang Kami</a>
-                    <a href="#menu" data-target="menu" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Menu</a>
-                    <a href="#order" data-target="order" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Order</a>
-                    <a href="#tim" data-target="tim" class="nav-link nav-trigger text-sm font-semibold text-cieng-black hover:text-cieng-red py-1">Tim Kami</a>
+                    <a href="#beranda" data-target="beranda" class="nav-link nav-trigger active text-sm font-semibold text-gray-300 hover:text-cieng-cyan py-1">Beranda</a>
+                    <a href="#tentang" data-target="tentang" class="nav-link nav-trigger text-sm font-semibold text-gray-300 hover:text-cieng-cyan py-1">Tentang Kami</a>
+                    <a href="#menu" data-target="menu" class="nav-link nav-trigger text-sm font-semibold text-gray-300 hover:text-cieng-cyan py-1">Menu</a>
+                    <a href="#order" data-target="order" class="nav-link nav-trigger text-sm font-semibold text-gray-300 hover:text-cieng-cyan py-1">Order</a>
+                    <a href="#tim" data-target="tim" class="nav-link nav-trigger text-sm font-semibold text-gray-300 hover:text-cieng-cyan py-1">Tim Kami</a>
                 </nav>
 
                 <!-- Right: Desktop Direct WhatsApp Order Jump Button -->
                 <div class="hidden lg:flex items-center">
-                    <a href="#order" data-target="order" class="nav-trigger inline-flex items-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md">
+                    <a href="#order" data-target="order" class="nav-trigger inline-flex items-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-cyber font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-all duration-200 shadow-cyber-red border border-red-400/40">
                         <i class="fa-brands fa-whatsapp text-base"></i>
                         <span>Gas Order</span>
                     </a>
@@ -213,7 +294,7 @@
 
                 <!-- Mobile / Tablet Hamburger Toggle -->
                 <div class="flex items-center lg:hidden">
-                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-cieng-black hover:bg-gray-100 border border-gray-200 min-w-[44px] min-h-[44px] focus:outline-none cursor-pointer" aria-expanded="false" aria-label="Buka Menu Navigasi">
+                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-white hover:bg-white/10 border border-cyan-500/30 min-w-[44px] min-h-[44px] focus:outline-none cursor-pointer" aria-expanded="false" aria-label="Buka Menu Navigasi">
                         <i id="hamburger-icon" class="fa-solid fa-bars text-xl"></i>
                         <i id="close-icon" class="fa-solid fa-xmark text-xl hidden"></i>
                     </button>
@@ -222,15 +303,15 @@
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-dropdown" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-xl">
+        <div id="mobile-dropdown" class="hidden lg:hidden bg-[#0B0D14] border-t border-cyan-500/25 shadow-2xl">
             <div class="px-4 pt-3 pb-5 space-y-1.5">
-                <a href="#beranda" data-target="beranda" class="mobile-nav-item nav-trigger active block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Beranda</a>
-                <a href="#tentang" data-target="tentang" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Tentang Kami</a>
-                <a href="#menu" data-target="menu" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Menu</a>
-                <a href="#order" data-target="order" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Order</a>
-                <a href="#tim" data-target="tim" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-cieng-black hover:bg-cieng-redTint hover:text-cieng-red transition-colors">Tim Kami</a>
+                <a href="#beranda" data-target="beranda" class="mobile-nav-item nav-trigger active block px-4 py-3 rounded-xl text-base font-semibold text-gray-200 hover:bg-white/5 hover:text-cieng-cyan transition-colors">Beranda</a>
+                <a href="#tentang" data-target="tentang" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-gray-200 hover:bg-white/5 hover:text-cieng-cyan transition-colors">Tentang Kami</a>
+                <a href="#menu" data-target="menu" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-gray-200 hover:bg-white/5 hover:text-cieng-cyan transition-colors">Menu</a>
+                <a href="#order" data-target="order" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-gray-200 hover:bg-white/5 hover:text-cieng-cyan transition-colors">Order</a>
+                <a href="#tim" data-target="tim" class="mobile-nav-item nav-trigger block px-4 py-3 rounded-xl text-base font-semibold text-gray-200 hover:bg-white/5 hover:text-cieng-cyan transition-colors">Tim Kami</a>
                 <div class="pt-2">
-                    <a href="#order" data-target="order" class="nav-trigger w-full flex items-center justify-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-sm uppercase tracking-wider py-3.5 rounded-xl transition-colors">
+                    <a href="#order" data-target="order" class="nav-trigger w-full flex items-center justify-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-cyber font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-colors shadow-cyber-red">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Gas Order via WhatsApp</span>
                     </a>
@@ -241,118 +322,152 @@
 
     <main>
         <!-- =====================================================================
-             SECTION 1: BERANDA / HERO (#beranda)
+             SECTION 1: BERANDA / HERO (#beranda) + 3D MODEL-VIEWER
         ====================================================================== -->
-        <section id="beranda" class="relative bg-hero-gradient text-white overflow-hidden scroll-mt-20 border-b border-white/10">
+        <section id="beranda" class="relative bg-hero-cyber text-white overflow-hidden scroll-mt-20 border-b border-cyan-500/20">
             <img
                 id="hero-bg-img"
                 src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1920&q=80"
                 alt="Background Cireng Renyah THE CIENG"
                 draggable="false"
                 onerror="this.style.display='none'"
-                class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity pointer-events-none"
+                class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity pointer-events-none"
             />
-            <div class="absolute inset-0 bg-gradient-to-br from-[#121214]/90 via-[#2E090C]/80 to-[#5A1015]/85 pointer-events-none"></div>
-            <div class="absolute inset-0 bg-dot-grid-light opacity-20 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-cyber-grid opacity-75 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
 
                     <!-- Left Column -->
-                    <div class="lg:col-span-7 text-left">
-                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-display font-extrabold text-xs sm:text-sm tracking-wide mb-6">
-                            <span class="w-2.5 h-2.5 rounded-full bg-cieng-red animate-pulse"></span>
-                            <span>Rp 10.000 / 4 Pcs — Sepuluh Ribu Masih Nanya Kembalian?</span>
+                    <div class="lg:col-span-7 text-left reveal-left">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-cyan-400/35 text-cieng-cyan font-cyber font-bold text-[11px] sm:text-xs tracking-wider mb-6 shadow-cyber-cyan">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cieng-red animate-ping"></span>
+                            <span>RP 10.000 / 4 PCS — SEPULUH RIBU MASIH NANYA KEMBALIAN?</span>
                         </div>
 
                         <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.12] tracking-tight mb-5">
                             Renyah di Luar, <br class="hidden sm:inline">
-                            <span class="text-[#FF4D54]">Kenyal &amp; Lumer</span> di Dalam!
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF2A3C] via-[#FF5E6C] to-[#00F0FF]">Kenyal &amp; Lumer</span> di Dalam!
                         </h1>
 
-                        <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl mb-7">
-                            Cireng isi hangat bikinan <strong class="font-display font-extrabold text-white tracking-wider">THE CIENG</strong> buat meramaikan event kewirausahaan kampus. Cuma <strong>Rp 10.000 per Paket/Cup (dapat 4 pcs)</strong>—bebas mix isian, nggak pelit rasa, dan beli 2 paket udah dapat minuman gratis. Lumayan kan, nggak perlu pura-pura lupa bayar.
+                        <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mb-7">
+                            Cireng isi hangat bikinan <strong class="font-cyber font-extrabold text-white tracking-wider">THE CIENG</strong> buat meramaikan event kewirausahaan kampus. Cuma <strong class="text-cieng-cyan">Rp 10.000 per Paket/Cup (dapat 4 pcs)</strong>—bebas mix isian, nggak pelit rasa, dan beli 2 paket udah dapat minuman gratis. Lumayan kan, nggak perlu pura-pura lupa bayar.
                         </p>
 
-                        <!-- Highlighted Pricing & Deal Summary Box -->
-                        <div class="bg-white/10 backdrop-blur-md border-2 border-white/25 rounded-2xl p-5 sm:p-6 mb-8 max-w-xl shadow-editorial-white">
+                        <!-- Highlighted Cyber Pricing & Deal Summary Box -->
+                        <div class="cyber-glass cyber-frame border border-cyan-500/30 rounded-2xl p-5 sm:p-6 mb-8 max-w-xl shadow-cyber-cyan">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                 <div>
-                                    <span class="inline-block bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-md mb-2">
+                                    <span class="inline-block bg-cieng-red/20 border border-cieng-red text-cieng-red font-cyber font-bold text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-md mb-2">
                                         1 PAKET / CUP = 4 PCS • BELI 2 GRATIS MINUM
                                     </span>
-                                    <p class="font-display font-black text-2xl sm:text-3xl text-white">
-                                        Rp 10.000 <span class="text-sm sm:text-base font-bold text-rose-300">/ Paket (Cup)</span>
+                                    <p class="font-cyber font-black text-2xl sm:text-3xl text-white">
+                                        Rp 10.000 <span class="text-sm sm:text-base font-sans font-bold text-cieng-cyan">/ Paket (Cup)</span>
                                     </p>
-                                    <p class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">
-                                        <i class="fa-solid fa-circle-check text-[#FF4D54] mr-1"></i> Bebas Mix Kornet, Ayam Suwir, &amp; Keju + Promo Es Teh / Es Jeruk
+                                    <p class="text-xs sm:text-sm font-semibold text-gray-300 mt-1">
+                                        <i class="fa-solid fa-circle-check text-cieng-cyan mr-1"></i> Bebas Mix Kornet, Ayam Suwir, &amp; Keju + Promo Es Teh / Es Jeruk
                                     </p>
                                 </div>
                                 <div class="flex sm:flex-col gap-2 text-xs font-bold text-white">
-                                    <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">3 Isian Mantap</span>
-                                    <span class="bg-black/40 border border-white/15 px-3 py-1.5 rounded-lg text-center">Beli 2 Gratis Minum</span>
+                                    <span class="bg-white/5 border border-white/15 px-3 py-1.5 rounded-lg text-center text-gray-200">3 Isian Mantap</span>
+                                    <span class="bg-cieng-red/20 border border-cieng-red/40 px-3 py-1.5 rounded-lg text-center text-rose-200">Beli 2 Gratis Minum</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Primary & Secondary CTA Buttons -->
                         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                            <a href="#order" data-target="order" class="nav-trigger inline-flex items-center justify-center gap-2.5 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:-translate-y-0.5">
+                            <a href="#order" data-target="order" class="nav-trigger inline-flex items-center justify-center gap-2.5 bg-cieng-red hover:bg-cieng-redDark text-white font-cyber font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 shadow-cyber-red border border-red-400/50 hover:-translate-y-0.5">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                                 <span>Sikat via WhatsApp</span>
                             </a>
-                            <a href="#menu" data-target="menu" class="nav-trigger inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white text-white hover:text-cieng-black border-2 border-white/40 hover:border-white font-display font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 backdrop-blur-sm">
+                            <a href="#menu" data-target="menu" class="nav-trigger inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-cieng-cyan text-white hover:text-cieng-black border border-cyan-400/50 hover:border-cieng-cyan font-cyber font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 backdrop-blur-sm">
                                 <span>Intip Menu &amp; Bumbu</span>
                                 <i class="fa-solid fa-arrow-down text-xs"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Right Column: Crisp White Emblem Showcase Card -->
-                    <div class="lg:col-span-5">
-                        <div class="relative bg-white text-cieng-black border-2 border-white rounded-3xl p-6 sm:p-8 shadow-2xl">
-                            <div class="flex items-center justify-between gap-2 mb-6">
-                                <span class="inline-flex items-center gap-1.5 bg-cieng-black text-white font-display font-bold text-[11px] uppercase tracking-widest px-3.5 py-1.5 rounded-full">
-                                    <i class="fa-solid fa-fire text-cieng-red"></i> BARU DIANGKAT
+                    <!-- Right Column: 3D MODEL-VIEWER SHOWCASE CARD (Cup_The_Cieng_3D.glb) -->
+                    <div class="lg:col-span-5 reveal-left">
+                        <div class="relative cyber-glass cyber-frame border border-cyan-500/35 rounded-3xl p-6 sm:p-7 shadow-2xl">
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="inline-flex items-center gap-1.5 bg-cieng-red/20 border border-cieng-red/50 text-white font-cyber font-bold text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full">
+                                    <i class="fa-solid fa-cube text-cieng-cyan"></i> 3D CUP HOLOGRAM
                                 </span>
-                                <span class="inline-flex items-center gap-1 bg-cieng-redTint text-cieng-red border border-cieng-red/25 font-display font-extrabold text-xs px-3 py-1.5 rounded-full">
+                                <span class="inline-flex items-center gap-1 bg-cyan-500/15 text-cieng-cyan border border-cyan-400/40 font-cyber font-extrabold text-xs px-3 py-1.5 rounded-full">
                                     Rp 10K / Cup
                                 </span>
                             </div>
 
-                            <div class="bg-[#FDF8F8] border border-rose-100 rounded-2xl py-8 px-6 flex flex-col items-center justify-center text-center mb-6">
-                                <svg class="w-36 h-36 sm:w-44 sm:h-44 mb-4" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblem Utama THE CIENG">
-                                    <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
-                                    <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
-                                    <circle cx="57" cy="59" r="13" fill="#111111"/>
-                                    <circle cx="84" cy="84" r="8.5" fill="#111111"/>
-                                    <circle cx="115" cy="56" r="5.5" fill="#111111"/>
-                                    <circle cx="151" cy="56" r="5.5" fill="#111111"/>
-                                    <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
-                                    <path d="M24 134 C58 117, 102 106, 144 86 C156 80, 165 71, 173 68 C181 76, 181 87, 175 94 C182 103, 179 114, 171 119 C174 129, 168 139, 158 141 C156 152, 146 159, 135 158 C128 168, 116 172, 105 168 C94 176, 80 176, 71 168 C58 172, 46 165, 42 154 C30 153, 21 144, 24 134 Z" fill="#111111"/>
-                                    <path d="M46 144 C68 156, 118 148, 156 112" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
-                                    <path d="M74 156 L77 165 M103 155 L105 165 M131 144 L136 153 M153 125 L161 131" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-                                </svg>
-                                <p class="font-display font-extrabold text-2xl sm:text-3xl tracking-[0.28em] text-cieng-black uppercase pl-[0.28em]">THE CIENG</p>
-                                <p class="text-xs font-semibold text-gray-500 mt-1.5">1 Paket / Cup = 4 Pcs Cireng Isi + Bumbu (Nggak Ada Cerita Setengah-Setengah)</p>
+                            <!-- 3D Model Viewer Viewport -->
+                            <div class="relative bg-gradient-to-b from-[#0A0D16] via-[#140B12] to-[#08090F] border border-cyan-500/25 rounded-2xl py-4 px-4 flex flex-col items-center justify-center text-center mb-5 overflow-hidden">
+                                <!-- Subtle Radial Glow Behind 3D Model -->
+                                <div class="absolute w-48 h-48 rounded-full bg-cieng-red/20 blur-3xl pointer-events-none"></div>
+                                <div class="absolute w-36 h-36 rounded-full bg-cieng-cyan/15 blur-2xl pointer-events-none"></div>
+
+                                <div class="relative w-full h-64 sm:h-72 z-10">
+                                    <model-viewer
+                                        id="cieng-3d-cup"
+                                        src="Cup_The_Cieng_3D.glb"
+                                        alt="Model 3D Cup THE CIENG"
+                                        auto-rotate
+                                        rotation-per-second="28deg"
+                                        camera-controls
+                                        touch-action="pan-y"
+                                        shadow-intensity="1"
+                                        exposure="1.15"
+                                        environment-image="neutral"
+                                    >
+                                        <!-- Fallback HUD jika file .glb belum terbaca di lingkungan lokal -->
+                                        <div slot="poster" class="w-full h-full flex flex-col items-center justify-center text-gray-300">
+                                            <i class="fa-solid fa-cube text-4xl text-cieng-cyan animate-bounce mb-2"></i>
+                                            <span class="font-cyber text-[11px] tracking-widest text-cieng-cyan uppercase">Memuat Cup_The_Cieng_3D.glb...</span>
+                                        </div>
+                                    </model-viewer>
+                                </div>
+
+                                <div class="relative z-10 mt-1 flex flex-col items-center">
+                                    <p class="font-cyber font-black text-xl sm:text-2xl tracking-[0.26em] text-white uppercase pl-[0.26em]">THE CIENG</p>
+                                    <p class="text-[11px] font-semibold text-cieng-cyan mt-1">
+                                        <div class="relative z-10 mt-1 flex flex-col items-center">
+    <p class="font-cyber font-black text-xl sm:text-2xl tracking-[0.26em] text-white uppercase pl-[0.26em]">THE CIENG</p>
+    <p class="text-[11px] font-semibold text-cieng-cyan mt-1">
+        <i class="fa-solid fa-hand-pointer mr-1"></i> Geser / Putar 3D Cup • 1 Paket = 4 Pcs Cireng Isi
+    </p>
+
+    <!-- TAMBAHIN TOMBOL INI -->
+    <button
+        type="button"
+        id="btn-toggle-3d-spin"
+        onclick="toggleModelAutoSpin()"
+        class="mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/15 hover:bg-cieng-cyan text-cieng-cyan hover:text-cieng-black border border-cyan-400/50 font-cyber font-bold text-[10px] uppercase tracking-wider transition-all cursor-pointer shadow-cyber-cyan"
+    >
+        <i id="icon-3d-spin" class="fa-solid fa-pause"></i>
+        <span id="text-3d-spin">Stop Spin</span>
+    </button>
+</div>
+                                        <i class="fa-solid fa-hand-pointer mr-1"></i> Geser / Putar 3D Cup • 1 Paket = 4 Pcs Cireng Isi
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between gap-2 text-xs">
-                                    <span class="font-display font-bold uppercase text-gray-500">Isian:</span>
-                                    <div class="flex flex-wrap justify-end gap-1.5 font-bold text-cieng-black">
-                                        <span class="px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/70">Kornet</span>
-                                        <span class="px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/70">Ayam Suwir</span>
-                                        <span class="px-2.5 py-1 rounded-md bg-rose-50 border border-rose-200/70">Keju</span>
+                                    <span class="font-cyber font-bold uppercase text-gray-400">Isian:</span>
+                                    <div class="flex flex-wrap justify-end gap-1.5 font-bold text-white">
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/15">Kornet</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/15">Ayam Suwir</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/15">Keju</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center justify-between gap-2 text-xs">
-                                    <span class="font-display font-bold uppercase text-gray-500">Bumbu:</span>
+                                    <span class="font-cyber font-bold uppercase text-gray-400">Bumbu:</span>
                                     <div class="flex flex-wrap justify-end gap-1.5 font-bold">
-                                        <span class="px-2.5 py-1 rounded-md bg-cieng-red text-white">Chili Oil</span>
-                                        <span class="px-2.5 py-1 rounded-md bg-gray-100 border border-gray-200 text-cieng-black">Asin</span>
-                                        <span class="px-2.5 py-1 rounded-md bg-gray-100 border border-gray-200 text-cieng-black">Jagung</span>
-                                        <span class="px-2.5 py-1 rounded-md bg-gray-100 border border-gray-200 text-cieng-black">Balado</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-cieng-red text-white shadow-cyber-red">Chili Oil</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/15 text-gray-200">Asin</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/15 text-gray-200">Jagung</span>
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/15 text-gray-200">Balado</span>
                                     </div>
                                 </div>
                             </div>
@@ -366,49 +481,44 @@
         <!-- =====================================================================
              SECTION 2: TENTANG KAMI (#tentang)
         ====================================================================== -->
-        <section id="tentang" class="relative py-20 lg:py-24 bg-about-gradient border-b border-rose-200/60 scroll-mt-20 overflow-hidden">
-            <div class="hidden md:flex items-center gap-2.5 absolute top-10 right-10 opacity-15 pointer-events-none" aria-hidden="true">
-                <span class="w-5 h-5 rounded-full bg-cieng-black"></span>
-                <span class="w-3.5 h-3.5 rounded-full bg-cieng-red"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-cieng-black"></span>
-                <span class="w-2 h-2 rounded-full bg-cieng-red"></span>
-            </div>
+        <section id="tentang" class="relative py-20 lg:py-24 bg-about-cyber border-b border-cyan-500/15 scroll-mt-20 overflow-hidden">
+            <div class="absolute inset-0 bg-cyber-grid opacity-45 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16">
-                    <div class="lg:col-span-6">
-                        <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">TENTANG KAMI</span>
-                        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight leading-tight mb-5">
+                    <div class="lg:col-span-6 reveal-left">
+                        <span class="inline-block font-cyber font-bold text-xs uppercase tracking-[0.22em] text-cieng-cyan mb-3">// TENTANG KAMI</span>
+                        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-5">
                             Bukan Sekadar Tugas Kampus, <span class="text-cieng-red">Ini Serius Bikin Nagih</span>
                         </h2>
-                        <p class="text-gray-700 text-base leading-relaxed mb-4">
-                            <strong>THE CIENG</strong> lahir dari semangat kewirausahaan mahasiswa yang nggak mau jualan setengah hati. Kulit luarnya renyah pas digigit, dalamnya kenyal lumer, digoreng hangat pas dipesan—bukan cireng sisa kemarin yang bikin rahang olahraga.
+                        <p class="text-gray-300 text-base leading-relaxed mb-4">
+                            <strong class="text-white">THE CIENG</strong> lahir dari semangat kewirausahaan mahasiswa yang nggak mau jualan setengah hati. Kulit luarnya renyah pas digigit, dalamnya kenyal lumer, digoreng hangat pas dipesan—bukan cireng sisa kemarin yang bikin rahang olahraga.
                         </p>
-                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                            Dikemas rapi dan higienis khusus buat teman-teman kampus yang sering lapar tapi budgetnya sedang mode hemat: <strong>Rp 10.000 dapet 4 pcs cireng isi</strong>, bebas mix sesuka hati.
+                        <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                            Dikemas rapi dan higienis khusus buat teman-teman kampus yang sering lapar tapi budgetnya sedang mode hemat: <strong class="text-cieng-cyan">Rp 10.000 dapet 4 pcs cireng isi</strong>, bebas mix sesuka hati.
                         </p>
                     </div>
 
-                    <div class="lg:col-span-6">
-                        <div class="relative bg-white border-2 border-cieng-black rounded-3xl p-3 sm:p-4 shadow-editorial-red">
+                    <div class="lg:col-span-6 reveal-left">
+                        <div class="relative cyber-glass cyber-frame border border-cyan-500/30 rounded-3xl p-3 sm:p-4 shadow-cyber-red">
                             <div class="no-save-wrap relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-cieng-charcoal">
                                 <img
                                     id="about-product-img"
                                     src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1000&q=80"
                                     alt="Foto Produk THE CIENG"
                                     draggable="false"
-                                    onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181B/FFFFFF?text=Foto+Produk+THE+CIENG';"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/800x500/12141D/00F0FF?text=Foto+Produk+THE+CIENG';"
                                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                                 />
                                 <span class="no-save-shield" aria-hidden="true"></span>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#07070A]/90 via-transparent to-transparent pointer-events-none"></div>
                                 <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-                                    <span class="inline-flex items-center gap-2 bg-cieng-black/90 backdrop-blur-md text-white border border-white/15 font-display font-bold text-xs px-3.5 py-2 rounded-xl">
-                                        <i class="fa-solid fa-camera text-cieng-red"></i>
+                                    <span class="inline-flex items-center gap-2 bg-[#07070A]/90 backdrop-blur-md text-white border border-cyan-400/30 font-cyber font-bold text-[11px] px-3.5 py-2 rounded-xl">
+                                        <i class="fa-solid fa-camera text-cieng-cyan"></i>
                                         <span>Bukti Nyata, Bukan Cuma Wacana</span>
                                     </span>
-                                    <span class="bg-cieng-red text-white font-display font-extrabold text-xs px-3 py-1.5 rounded-lg">
+                                    <span class="bg-cieng-red text-white font-cyber font-extrabold text-xs px-3 py-1.5 rounded-lg shadow-cyber-red">
                                         Rp 10K / Cup
                                     </span>
                                 </div>
@@ -417,38 +527,38 @@
                     </div>
                 </div>
 
-                <!-- 4 Quality Pillars -->
+                <!-- 4 Cyber Quality Pillars -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
-                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                    <div class="reveal-left cyber-glass border border-white/10 hover:border-cieng-cyan/60 rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cieng-red/15 border border-cieng-red/40 text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
                             <i class="fa-solid fa-fire-burner text-xl"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">Digoreng Dadakan</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">Bukan stok dingin yang dipajang seharian nunggu nasib. Masuk wajan pas diorder biar panas dan kriuknya masih sopan di lidah.</p>
+                        <h3 class="font-display font-bold text-lg text-white mb-2">Digoreng Dadakan</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Bukan stok dingin yang dipajang seharian nunggu nasib. Masuk wajan pas diorder biar panas dan kriuknya masih sopan di lidah.</p>
                     </div>
 
-                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
-                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                    <div class="reveal-left cyber-glass border border-white/10 hover:border-cieng-cyan/60 rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-400/40 text-cieng-cyan group-hover:bg-cieng-cyan group-hover:text-cieng-black flex items-center justify-center mb-5 transition-colors">
                             <i class="fa-solid fa-utensils text-xl"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">Kriuk Luar, Lumer Dalam</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">Kulitnya garing pas dikunyah, dalamnya kenyal lembut. Nggak keras kayak batu, nggak lembek kayak janji manis.</p>
+                        <h3 class="font-display font-bold text-lg text-white mb-2">Kriuk Luar, Lumer Dalam</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Kulitnya garing pas dikunyah, dalamnya kenyal lembut. Nggak keras kayak batu, nggak lembek kayak janji manis.</p>
                     </div>
 
-                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
-                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                    <div class="reveal-left cyber-glass border border-white/10 hover:border-cieng-cyan/60 rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cieng-red/15 border border-cieng-red/40 text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
                             <i class="fa-solid fa-shuffle text-xl"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">Bebas Mix 3 Isian</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">Dalam 1 Paket/Cup (4 pcs), kamu bebas mencampur Kornet, Ayam Suwir, dan Keju. Yang penting jangan minta isian masa depan yang pasti.</p>
+                        <h3 class="font-display font-bold text-lg text-white mb-2">Bebas Mix 3 Isian</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Dalam 1 Paket/Cup (4 pcs), kamu bebas mencampur Kornet, Ayam Suwir, dan Keju. Yang penting jangan minta isian masa depan yang pasti.</p>
                     </div>
 
-                    <div class="bg-white/90 backdrop-blur-sm border border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 transition-all duration-200 shadow-card group">
-                        <div class="w-12 h-12 rounded-xl bg-cieng-redTint text-cieng-red group-hover:bg-cieng-red group-hover:text-white flex items-center justify-center mb-5 transition-colors">
+                    <div class="reveal-left cyber-glass border border-white/10 hover:border-cieng-cyan/60 rounded-2xl p-6 transition-all duration-200 shadow-card group">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-400/40 text-cieng-cyan group-hover:bg-cieng-cyan group-hover:text-cieng-black flex items-center justify-center mb-5 transition-colors">
                             <i class="fa-solid fa-pepper-hot text-xl"></i>
                         </div>
-                        <h3 class="font-display font-bold text-lg text-cieng-black mb-2">4 Bumbu Penentu Nasib</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">Tinggal pilih Chili Oil, Bumbu Asin, Bumbu Jagung, atau Bumbu Balado. Pilih sesuai nyali, jangan cuma ikut-ikutan.</p>
+                        <h3 class="font-display font-bold text-lg text-white mb-2">4 Bumbu Penentu Nasib</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Tinggal pilih Chili Oil, Bumbu Asin, Bumbu Jagung, atau Bumbu Balado. Pilih sesuai nyali, jangan cuma ikut-ikutan.</p>
                     </div>
                 </div>
 
@@ -458,37 +568,37 @@
         <!-- =====================================================================
              SECTION 3: MENU & BUMBU (#menu)
         ====================================================================== -->
-        <section id="menu" class="relative py-20 lg:py-28 bg-menu-gradient border-b border-rose-200/60 scroll-mt-20">
-            <div class="absolute inset-0 bg-dot-grid opacity-[0.045] pointer-events-none"></div>
+        <section id="menu" class="relative py-20 lg:py-28 bg-menu-cyber border-b border-cyan-500/15 scroll-mt-20">
+            <div class="absolute inset-0 bg-cyber-grid opacity-50 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                <div class="text-center max-w-3xl mx-auto mb-10">
-                    <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">MENU &amp; BUMBU</span>
-                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight mb-4">
+                <div class="text-center max-w-3xl mx-auto mb-10 reveal-left">
+                    <span class="inline-block font-cyber font-bold text-xs uppercase tracking-[0.22em] text-cieng-cyan mb-3">// MENU &amp; BUMBU</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
                         3 Isian Padat &amp; 4 Bumbu Menggoda
                     </h2>
-                    <p class="text-gray-600 text-base">
+                    <p class="text-gray-400 text-base">
                         Cek dulu isian sama bumbunya di bawah, terus langsung atur jumlah cup dan rakit cirengmu di form order. Nggak usah kelamaan mikir, keburu habis.
                     </p>
                 </div>
 
-                <!-- Clear Pricing Banner -->
-                <div class="bg-cieng-black text-white rounded-2xl p-5 sm:p-6 mb-14 border-2 border-cieng-black shadow-editorial-red flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Cyber Pricing Banner -->
+                <div class="reveal-left cyber-glass cyber-frame text-white rounded-2xl p-5 sm:p-6 mb-14 border border-cieng-red/50 shadow-cyber-red flex flex-col md:flex-row items-center justify-between gap-4">
                     <div class="flex items-center gap-4 text-center md:text-left">
-                        <div class="hidden sm:flex w-12 h-12 rounded-xl bg-cieng-red text-white items-center justify-center flex-shrink-0">
+                        <div class="hidden sm:flex w-12 h-12 rounded-xl bg-cieng-red/20 border border-cieng-red text-cieng-red items-center justify-center flex-shrink-0">
                             <i class="fa-solid fa-tags text-xl"></i>
                         </div>
                         <div>
                             <p class="font-display font-black text-lg sm:text-2xl tracking-tight">
-                                1 Paket / Cup = 4 Pcs Cireng = <span class="text-[#FF4D54]">Rp 10.000 (Bebas Mix Isian)</span>
+                                1 Paket / Cup = 4 Pcs Cireng = <span class="text-cieng-cyan">Rp 10.000 (Bebas Mix Isian)</span>
                             </p>
                             <p class="text-xs sm:text-sm text-gray-300 mt-1">
                                 Tinggal klik atau seret cireng + bumbunya ke masing-masing cup di bagian order di bawah.
                             </p>
                         </div>
                     </div>
-                    <a href="#order" data-target="order" class="nav-trigger inline-flex items-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-display font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors whitespace-nowrap">
+                    <a href="#order" data-target="order" class="nav-trigger inline-flex items-center gap-2 bg-cieng-red hover:bg-cieng-redDark text-white font-cyber font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors whitespace-nowrap shadow-cyber-red">
                         <span>Sikat Sekarang</span>
                         <i class="fa-solid fa-arrow-down"></i>
                     </a>
@@ -496,12 +606,12 @@
 
                 <!-- PART A: 3 Filling Variants -->
                 <div class="mb-16">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
-                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-cieng-black flex items-center gap-2.5">
-                            <span class="w-3 h-7 bg-cieng-black rounded-sm inline-block"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 reveal-left">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white flex items-center gap-2.5">
+                            <span class="w-3 h-7 bg-cieng-cyan rounded-sm inline-block shadow-cyber-cyan"></span>
                             <span>Varian Isian (Bebas Mix per Paket/Cup)</span>
                         </h3>
-                        <span class="text-xs font-bold text-cieng-red bg-white border border-cieng-red/25 px-3 py-1.5 rounded-full self-start sm:self-auto shadow-xs">
+                        <span class="text-xs font-bold text-cieng-cyan bg-cyan-500/10 border border-cyan-400/30 px-3 py-1.5 rounded-full self-start sm:self-auto">
                             <i class="fa-solid fa-hand-pointer mr-1"></i> Bisa mix langsung per cup di bawah
                         </span>
                     </div>
@@ -509,66 +619,66 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
                         <!-- Filling 1: Kornet -->
-                        <article class="bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
-                            <div class="relative h-48 bg-gradient-to-br from-[#FFF9F9] to-[#F7ECEC] border-b border-gray-200 flex items-center justify-center p-6">
-                                <span class="absolute top-3.5 left-3.5 bg-cieng-black text-white font-display font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
-                                    Isian 01
+                        <article class="reveal-left cyber-glass border border-white/10 hover:border-cieng-cyan/60 rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
+                            <div class="relative h-48 bg-gradient-to-br from-[#0F121C] to-[#1A1018] border-b border-white/10 flex items-center justify-center p-6">
+                                <span class="absolute top-3.5 left-3.5 bg-white/10 border border-white/20 text-cieng-cyan font-cyber font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                                    UNIT // 01
                                 </span>
                                 <svg class="w-36 h-36 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Isian Kornet">
-                                    <circle cx="90" cy="92" r="60" fill="#FFFFFF"/>
-                                    <path d="M30 112 C52 90, 92 78, 132 64 C140 72, 138 86, 130 94 C134 105, 125 117, 112 118 C105 130, 90 134, 77 129 C63 137, 47 132, 41 122 C31 123, 25 117, 30 112 Z" fill="#111111" stroke="#FFFFFF" stroke-width="4"/>
-                                    <path d="M64 102 C78 92, 100 86, 116 82 C110 96, 94 108, 76 110 Z" fill="#BA1E24"/>
+                                    <circle cx="90" cy="92" r="60" fill="#181B28" stroke="#00F0FF" stroke-opacity="0.3" stroke-width="2"/>
+                                    <path d="M30 112 C52 90, 92 78, 132 64 C140 72, 138 86, 130 94 C134 105, 125 117, 112 118 C105 130, 90 134, 77 129 C63 137, 47 132, 41 122 C31 123, 25 117, 30 112 Z" fill="#0A0B10" stroke="#00F0FF" stroke-width="3"/>
+                                    <path d="M64 102 C78 92, 100 86, 116 82 C110 96, 94 108, 76 110 Z" fill="#FF2A3C"/>
                                     <circle cx="88" cy="96" r="3" fill="#FFFFFF" opacity="0.85"/>
                                     <circle cx="100" cy="91" r="2.5" fill="#FFFFFF" opacity="0.85"/>
-                                    <path d="M46 116 C68 123, 102 112, 124 90" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M46 116 C68 123, 102 112, 124 90" stroke="#00F0FF" stroke-width="2.5" stroke-linecap="round"/>
                                 </svg>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
-                                <h4 class="font-display font-extrabold text-xl text-cieng-black mb-2">Kornet</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <h4 class="font-display font-extrabold text-xl text-white mb-2">Kornet</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed">
                                     Isian kornet gurih berbumbu yang padat dan juicy di dalam cireng hangat. Pas buat yang ngakunya doyan gurih tapi sering ngeluh makanan kampus kurang nendang.
                                 </p>
                             </div>
                         </article>
 
                         <!-- Filling 2: Ayam Suwir -->
-                        <article class="bg-white border-2 border-cieng-red rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
-                            <div class="relative h-48 bg-gradient-to-br from-cieng-redTint to-[#FADBD8] border-b border-cieng-red/20 flex items-center justify-center p-6">
-                                <span class="absolute top-3.5 left-3.5 bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
-                                    <i class="fa-solid fa-star mr-1"></i> Paling Banyak Dicari
+                        <article class="reveal-left cyber-glass border border-cieng-red/60 rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-cyber-red group">
+                            <div class="relative h-48 bg-gradient-to-br from-[#1D0D14] to-[#11131D] border-b border-cieng-red/30 flex items-center justify-center p-6">
+                                <span class="absolute top-3.5 left-3.5 bg-cieng-red text-white font-cyber font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-cyber-red">
+                                    <i class="fa-solid fa-star mr-1"></i> TOP TIER
                                 </span>
                                 <svg class="w-36 h-36 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Isian Ayam Suwir">
-                                    <circle cx="90" cy="92" r="60" fill="#FFFFFF"/>
-                                    <path d="M30 112 C52 90, 92 78, 132 64 C140 72, 138 86, 130 94 C134 105, 125 117, 112 118 C105 130, 90 134, 77 129 C63 137, 47 132, 41 122 C31 123, 25 117, 30 112 Z" fill="#111111" stroke="#BA1E24" stroke-width="4"/>
-                                    <path d="M68 100 L96 86 M74 106 L108 90 M84 109 L114 96" stroke="#BA1E24" stroke-width="4" stroke-linecap="round"/>
-                                    <path d="M126 116 C138 116, 148 124, 150 138 C140 136, 130 128, 126 116 Z" fill="#BA1E24" stroke="#111111" stroke-width="2.5"/>
+                                    <circle cx="90" cy="92" r="60" fill="#181B28" stroke="#FF2A3C" stroke-opacity="0.4" stroke-width="2"/>
+                                    <path d="M30 112 C52 90, 92 78, 132 64 C140 72, 138 86, 130 94 C134 105, 125 117, 112 118 C105 130, 90 134, 77 129 C63 137, 47 132, 41 122 C31 123, 25 117, 30 112 Z" fill="#0A0B10" stroke="#FF2A3C" stroke-width="3.5"/>
+                                    <path d="M68 100 L96 86 M74 106 L108 90 M84 109 L114 96" stroke="#FF2A3C" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M126 116 C138 116, 148 124, 150 138 C140 136, 130 128, 126 116 Z" fill="#FF2A3C" stroke="#00F0FF" stroke-width="2"/>
                                 </svg>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
-                                <h4 class="font-display font-extrabold text-xl text-cieng-black mb-2">Ayam Suwir</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <h4 class="font-display font-extrabold text-xl text-white mb-2">Ayam Suwir</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed">
                                     Suwiran daging ayam yang bumbunya meresap sampai ke serat, bukan sekadar numpang lewat. Cocok banget dipasangkan sama Chili Oil kalau nyalimu lagi penuh.
                                 </p>
                             </div>
                         </article>
 
                         <!-- Filling 3: Keju -->
-                        <article class="bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
-                            <div class="relative h-48 bg-gradient-to-br from-[#FFF9F9] to-[#F7ECEC] border-b border-gray-200 flex items-center justify-center p-6">
-                                <span class="absolute top-3.5 left-3.5 bg-cieng-black text-white font-display font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
-                                    Isian 03
+                        <article class="reveal-left cyber-glass border border-white/10 hover:border-cieng-cyan/60 rounded-2xl overflow-hidden flex flex-col transition-all duration-200 shadow-card group">
+                            <div class="relative h-48 bg-gradient-to-br from-[#0F121C] to-[#1A1610] border-b border-white/10 flex items-center justify-center p-6">
+                                <span class="absolute top-3.5 left-3.5 bg-white/10 border border-white/20 text-cieng-cyan font-cyber font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                                    UNIT // 03
                                 </span>
                                 <svg class="w-36 h-36 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Isian Keju">
-                                    <circle cx="90" cy="92" r="60" fill="#FFFFFF"/>
-                                    <path d="M26 112 C40 94, 60 86, 76 82 L80 122 C62 128, 40 126, 26 112 Z" fill="#111111" stroke="#FFFFFF" stroke-width="3"/>
-                                    <path d="M74 84 C88 88, 102 86, 114 78 L118 114 C104 112, 92 114, 78 120 Z" fill="#F59E0B" stroke="#111111" stroke-width="2.5"/>
+                                    <circle cx="90" cy="92" r="60" fill="#181B28" stroke="#00F0FF" stroke-opacity="0.3" stroke-width="2"/>
+                                    <path d="M26 112 C40 94, 60 86, 76 82 L80 122 C62 128, 40 126, 26 112 Z" fill="#0A0B10" stroke="#00F0FF" stroke-width="2.5"/>
+                                    <path d="M74 84 C88 88, 102 86, 114 78 L118 114 C104 112, 92 114, 78 120 Z" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2"/>
                                     <circle cx="95" cy="98" r="3" fill="#FFFFFF" opacity="0.85"/>
-                                    <path d="M112 76 C128 70, 144 66, 154 68 C160 80, 154 98, 140 108 C130 114, 120 116, 114 114 Z" fill="#111111" stroke="#FFFFFF" stroke-width="3"/>
+                                    <path d="M112 76 C128 70, 144 66, 154 68 C160 80, 154 98, 140 108 C130 114, 120 116, 114 114 Z" fill="#0A0B10" stroke="#00F0FF" stroke-width="2.5"/>
                                 </svg>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
-                                <h4 class="font-display font-extrabold text-xl text-cieng-black mb-2">Keju</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <h4 class="font-display font-extrabold text-xl text-white mb-2">Keju</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed">
                                     Keju gurih creamy yang meleleh hangat pas digigit. Buat yang bilang nggak suka keju, biasanya sih cuma belum nyobain yang ini aja.
                                 </p>
                             </div>
@@ -579,99 +689,99 @@
 
                 <!-- PART B: 4 Interactive Seasoning Cards -->
                 <div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
-                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-cieng-black flex items-center gap-2.5">
-                            <span class="w-3 h-7 bg-cieng-red rounded-sm inline-block"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 reveal-left">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white flex items-center gap-2.5">
+                            <span class="w-3 h-7 bg-cieng-red rounded-sm inline-block shadow-cyber-red"></span>
                             <span>Pilihan Bumbu (Klik Buat Milih, Nggak Usah Ragu)</span>
                         </h3>
-                        <span class="text-xs font-semibold text-gray-600">Klik kartunya biar otomatis kepilih di form order</span>
+                        <span class="text-xs font-semibold text-gray-400">Klik kartunya biar otomatis kepilih di form order</span>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
                         <!-- Seasoning 1: Chili Oil -->
-                        <button type="button" onclick="selectSeasoningAndScroll('Chili Oil')" class="seasoning-showcase-card text-left bg-white border-2 border-cieng-red rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group relative flex flex-col justify-between">
+                        <button type="button" onclick="selectSeasoningAndScroll('Chili Oil')" class="reveal-left seasoning-showcase-card text-left cyber-glass border border-cieng-red/60 hover:border-cieng-cyan rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 shadow-cyber-red cursor-pointer group relative flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between gap-2 mb-3">
-                                    <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center">
+                                    <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center shadow-cyber-red">
                                         <i class="fa-solid fa-fire text-lg"></i>
                                     </div>
-                                    <span class="bg-cieng-red text-white font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                    <span class="bg-cieng-red/20 border border-cieng-red text-cieng-red font-cyber font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
                                         Uji Nyali
                                     </span>
                                 </div>
-                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Chili Oil</h4>
-                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                <h4 class="font-display font-extrabold text-lg text-white mb-1.5">Chili Oil</h4>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
                                     Minyak cabai aromatik yang khas. Cocok buat orang yang nggak sayang sama lidahnya (soalnya ini bakalan pedes).
                                 </p>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-red group-hover:translate-x-1 transition-transform">
+                            <span class="inline-flex items-center gap-1.5 font-cyber font-bold text-xs text-cieng-cyan group-hover:translate-x-1 transition-transform">
                                 <span>Pilih Kalau Berani</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </button>
 
                         <!-- Seasoning 2: Bumbu Asin -->
-                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Asin')" class="seasoning-showcase-card text-left bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col justify-between">
+                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Asin')" class="reveal-left seasoning-showcase-card text-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 shadow-card cursor-pointer group flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between gap-2 mb-3">
-                                    <div class="w-11 h-11 rounded-xl bg-cieng-black text-white flex items-center justify-center">
+                                    <div class="w-11 h-11 rounded-xl bg-cyan-500/20 border border-cyan-400/50 text-cieng-cyan flex items-center justify-center">
                                         <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
                                     </div>
-                                    <span class="bg-gray-100 border border-gray-200 text-cieng-black font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                    <span class="bg-white/5 border border-white/15 text-gray-300 font-cyber font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
                                         Anti Drama
                                     </span>
                                 </div>
-                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Bumbu Asin</h4>
-                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                <h4 class="font-display font-extrabold text-lg text-white mb-1.5">Bumbu Asin</h4>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
                                     Gurih klasik yang nggak neko-neko. Aman buat lidah yang gampang panik kena pedes, tapi tetep pengen ngemil enak.
                                 </p>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-black group-hover:text-cieng-red group-hover:translate-x-1 transition-all">
+                            <span class="inline-flex items-center gap-1.5 font-cyber font-bold text-xs text-gray-300 group-hover:text-cieng-cyan group-hover:translate-x-1 transition-all">
                                 <span>Ambil yang Aman</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </button>
 
                         <!-- Seasoning 3: Bumbu Jagung -->
-                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Jagung')" class="seasoning-showcase-card text-left bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col justify-between">
+                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Jagung')" class="reveal-left seasoning-showcase-card text-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 shadow-card cursor-pointer group flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between gap-2 mb-3">
-                                    <div class="w-11 h-11 rounded-xl bg-amber-500 text-white flex items-center justify-center">
+                                    <div class="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-400 flex items-center justify-center">
                                         <i class="fa-solid fa-seedling text-lg"></i>
                                     </div>
-                                    <span class="bg-gray-100 border border-gray-200 text-cieng-black font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                    <span class="bg-white/5 border border-white/15 text-gray-300 font-cyber font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
                                         Manis Gurih
                                     </span>
                                 </div>
-                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Bumbu Jagung</h4>
-                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                <h4 class="font-display font-extrabold text-lg text-white mb-1.5">Bumbu Jagung</h4>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
                                     Manis gurih harum khas jagung yang bikin suasana adem. Cocok buat kamu yang hidupnya udah cukup pedes sama realita.
                                 </p>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-black group-hover:text-cieng-red group-hover:translate-x-1 transition-all">
+                            <span class="inline-flex items-center gap-1.5 font-cyber font-bold text-xs text-gray-300 group-hover:text-cieng-cyan group-hover:translate-x-1 transition-all">
                                 <span>Pilih yang Adem</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </button>
 
                         <!-- Seasoning 4: Bumbu Balado -->
-                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Balado')" class="seasoning-showcase-card text-left bg-white border-2 border-gray-200 hover:border-cieng-black rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col justify-between">
+                        <button type="button" onclick="selectSeasoningAndScroll('Bumbu Balado')" class="reveal-left seasoning-showcase-card text-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 shadow-card cursor-pointer group flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between gap-2 mb-3">
-                                    <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center">
+                                    <div class="w-11 h-11 rounded-xl bg-cieng-red/20 border border-cieng-red/50 text-cieng-red flex items-center justify-center">
                                         <i class="fa-solid fa-pepper-hot text-lg"></i>
                                     </div>
-                                    <span class="bg-gray-100 border border-gray-200 text-cieng-black font-display font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                                    <span class="bg-white/5 border border-white/15 text-gray-300 font-cyber font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
                                         Pedas Manis
                                     </span>
                                 </div>
-                                <h4 class="font-display font-extrabold text-lg text-cieng-black mb-1.5">Bumbu Balado</h4>
-                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                                <h4 class="font-display font-extrabold text-lg text-white mb-1.5">Bumbu Balado</h4>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
                                     Kombinasi pedas, manis, dan gurih yang gampang bikin lupa diri. Bilangnya cuma nyicip satu, eh tahu-tahu cup-nya kosong.
                                 </p>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 font-display font-bold text-xs text-cieng-black group-hover:text-cieng-red group-hover:translate-x-1 transition-all">
+                            <span class="inline-flex items-center gap-1.5 font-cyber font-bold text-xs text-gray-300 group-hover:text-cieng-cyan group-hover:translate-x-1 transition-all">
                                 <span>Pilih yang Bikin Lupa Diri</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </span>
@@ -684,41 +794,41 @@
         </section>
 
         <!-- =====================================================================
-             SECTION 4: ORDER VIA WHATSAPP (#order) — RINGKAS (KLIK / DRAG & DROP)
+             SECTION 4: ORDER VIA WHATSAPP (#order) — CYBER CUP BUILDER
         ====================================================================== -->
-        <section id="order" class="relative py-16 lg:py-24 bg-order-gradient border-b border-white/10 scroll-mt-20 overflow-hidden">
+        <section id="order" class="relative py-16 lg:py-24 bg-order-cyber border-b border-cyan-500/20 scroll-mt-20 overflow-hidden">
             <img
                 id="order-bg-img"
                 src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80"
                 alt="Background Order THE CIENG"
                 draggable="false"
                 onerror="this.style.display='none'"
-                class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity pointer-events-none"
+                class="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-luminosity pointer-events-none"
             />
-            <div class="absolute inset-0 bg-gradient-to-br from-[#141416]/92 via-[#2B0A0D]/85 to-[#191213]/92 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-cyber-grid opacity-55 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-[#FF4D54] mb-2">RAKIT CUP &amp; KIRIM KE WHATSAPP</span>
+                <div class="text-center max-w-2xl mx-auto mb-10 reveal-left">
+                    <span class="inline-block font-cyber font-bold text-xs uppercase tracking-[0.22em] text-cieng-cyan mb-2">// RAKIT CUP &amp; KIRIM KE WHATSAPP</span>
                     <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-3">
-                        Form <span class="text-[#FF4D54]">Order</span> THE CIENG
+                        Form <span class="text-cieng-red">Order</span> THE CIENG
                     </h2>
                     <p class="text-gray-300 text-sm sm:text-base">
-                        Tentukan jumlah cup, lalu <strong>klik atau seret</strong> cireng isi (4 pcs/cup) &amp; bumbunya ke cup pilihanmu. Praktis, tanpa perlu ngetik catatan manual!
+                        Tentukan jumlah cup, lalu <strong class="text-cieng-cyan">klik atau seret</strong> cireng isi (4 pcs/cup) &amp; bumbunya ke cup pilihanmu. Praktis, tanpa perlu ngetik catatan manual!
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
 
-                    <!-- Left Column (7 cols): Compact Interactive Cup Builder -->
-                    <div class="lg:col-span-7 bg-white text-cieng-black border-2 border-white rounded-3xl p-5 sm:p-7 shadow-2xl space-y-5">
+                    <!-- Left Column (7 cols): Compact Interactive Cyber Cup Builder -->
+                    <div class="reveal-left lg:col-span-7 cyber-glass cyber-frame text-white border border-cyan-500/30 rounded-3xl p-5 sm:p-7 shadow-2xl space-y-5">
 
                         <!-- Top Bar: Nama + Jumlah Cup + Promo Minuman Gratis -->
-                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5 items-end pb-4 border-b border-gray-200">
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5 items-end pb-4 border-b border-white/15">
                             <!-- Nama Pemesan -->
                             <div class="sm:col-span-7">
-                                <label for="customer-name" class="block font-display font-extrabold text-xs uppercase tracking-wider text-cieng-black mb-1.5">
+                                <label for="customer-name" class="block font-cyber font-bold text-xs uppercase tracking-wider text-gray-200 mb-1.5">
                                     1. Nama Pemesan <span class="text-cieng-red">*</span>
                                 </label>
                                 <input
@@ -726,7 +836,7 @@
                                     id="customer-name"
                                     placeholder="Tulis nama kamu (boleh tambah kelas/NIM)"
                                     oninput="updateLiveOrderPreview()"
-                                    class="w-full px-3.5 py-2.5 rounded-xl bg-[#F9F9F9] border-2 border-gray-200 focus:border-cieng-black focus:bg-white focus:outline-none text-sm font-semibold transition-colors"
+                                    class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A0C12] border border-white/20 focus:border-cieng-cyan focus:outline-none text-sm font-semibold text-white placeholder-gray-500 transition-colors"
                                     required
                                 >
                                 <p id="error-name" class="hidden text-[11px] font-bold text-cieng-red mt-1">
@@ -737,13 +847,13 @@
                             <!-- Jumlah Cup Stepper -->
                             <div class="sm:col-span-5">
                                 <div class="flex items-center justify-between mb-1.5">
-                                    <label for="cup-qty-input" class="font-display font-extrabold text-xs uppercase tracking-wider text-cieng-black">
+                                    <label for="cup-qty-input" class="font-cyber font-bold text-xs uppercase tracking-wider text-gray-200">
                                         2. Jumlah Cup
                                     </label>
-                                    <span id="calc-total-price" class="font-display font-black text-xs text-cieng-red">Rp 10.000</span>
+                                    <span id="calc-total-price" class="font-cyber font-black text-xs text-cieng-cyan">Rp 10.000</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <button type="button" onclick="adjustCupQuantity(-1)" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-cieng-black hover:text-white border border-gray-300 font-bold flex items-center justify-center transition-colors cursor-pointer" aria-label="Kurangi 1 Cup">
+                                    <button type="button" onclick="adjustCupQuantity(-1)" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-cieng-cyan hover:text-cieng-black border border-white/20 font-bold flex items-center justify-center transition-colors cursor-pointer" aria-label="Kurangi 1 Cup">
                                         <i class="fa-solid fa-minus text-xs"></i>
                                     </button>
                                     <input
@@ -753,55 +863,55 @@
                                         min="1"
                                         max="10"
                                         oninput="handleManualQtyInput(this.value)"
-                                        class="w-14 h-10 text-center font-display font-black text-base text-cieng-black bg-white border-2 border-cieng-black rounded-xl focus:outline-none"
+                                        class="w-14 h-10 text-center font-cyber font-black text-base text-white bg-[#0A0C12] border border-cieng-cyan/60 rounded-xl focus:outline-none"
                                         aria-label="Jumlah Paket atau Cup"
                                     >
-                                    <button type="button" onclick="adjustCupQuantity(1)" class="w-10 h-10 rounded-xl bg-cieng-red hover:bg-cieng-redDark text-white font-bold flex items-center justify-center transition-colors cursor-pointer" aria-label="Tambah 1 Cup">
+                                    <button type="button" onclick="adjustCupQuantity(1)" class="w-10 h-10 rounded-xl bg-cieng-red hover:bg-cieng-redDark text-white font-bold flex items-center justify-center transition-colors cursor-pointer shadow-cyber-red" aria-label="Tambah 1 Cup">
                                         <i class="fa-solid fa-plus text-xs"></i>
                                     </button>
-                                    <span id="calc-total-pcs" class="text-xs font-bold text-gray-500 ml-1">(4 Pcs)</span>
+                                    <span id="calc-total-pcs" class="text-xs font-bold text-gray-400 ml-1">(4 Pcs)</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Compact Promo Strip (Beli 2 Gratis 1 Minuman) -->
-                        <div id="promo-banner-box" class="bg-gradient-to-r from-[#FFF5F5] to-[#FDECEC] border border-cieng-red/30 rounded-2xl px-4 py-3 flex flex-wrap items-center justify-between gap-2.5">
+                        <div id="promo-banner-box" class="bg-gradient-to-r from-cieng-red/20 to-cyan-500/10 border border-cieng-red/40 rounded-2xl px-4 py-3 flex flex-wrap items-center justify-between gap-2.5">
                             <div class="flex items-center gap-2.5">
-                                <span class="w-8 h-8 rounded-lg bg-cieng-red text-white flex items-center justify-center flex-shrink-0">
+                                <span class="w-8 h-8 rounded-lg bg-cieng-red text-white flex items-center justify-center flex-shrink-0 shadow-cyber-red">
                                     <i class="fa-solid fa-gift text-sm"></i>
                                 </span>
                                 <div>
-                                    <p class="font-display font-extrabold text-xs text-cieng-black">
-                                        Promo: Beli 2 Cup Gratis 1 Minuman <span class="text-cieng-red">(Berlaku Kelipatan)</span>
+                                    <p class="font-display font-extrabold text-xs text-white">
+                                        Promo: Beli 2 Cup Gratis 1 Minuman <span class="text-cieng-cyan">(Berlaku Kelipatan)</span>
                                     </p>
-                                    <p id="promo-helper-short" class="text-[11px] font-semibold text-gray-600">
+                                    <p id="promo-helper-short" class="text-[11px] font-semibold text-gray-300">
                                         Tambah 1 cup lagi buat aktifin bonus Es Teh / Es Jeruk gratis!
                                     </p>
                                 </div>
                             </div>
 
-                            <!-- Pilihan Minuman (Muncul/Aktif saat cup >= 2) -->
+                            <!-- Pilihan Minuman -->
                             <div class="flex items-center gap-1.5">
-                                <button type="button" id="drink-btn-esteh" onclick="selectFreeDrink('Es Teh')" class="px-3 py-1.5 rounded-lg text-xs font-display font-bold border-2 border-cieng-red bg-cieng-red text-white transition-all cursor-pointer">
+                                <button type="button" id="drink-btn-esteh" onclick="selectFreeDrink('Es Teh')" class="px-3 py-1.5 rounded-lg text-xs font-cyber font-bold border border-cieng-red bg-cieng-red text-white transition-all cursor-pointer">
                                     Es Teh
                                 </button>
-                                <button type="button" id="drink-btn-esjeruk" onclick="selectFreeDrink('Es Jeruk')" class="px-3 py-1.5 rounded-lg text-xs font-display font-bold border-2 border-gray-200 bg-white text-cieng-black hover:border-cieng-black transition-all cursor-pointer">
+                                <button type="button" id="drink-btn-esjeruk" onclick="selectFreeDrink('Es Jeruk')" class="px-3 py-1.5 rounded-lg text-xs font-cyber font-bold border border-white/20 bg-white/5 text-gray-200 hover:border-cieng-cyan transition-all cursor-pointer">
                                     Es Jeruk
                                 </button>
                             </div>
                         </div>
 
                         <!-- Action Control Bar: Pilih Cup Aktif + Kembalikan (Undo) + Reset -->
-                        <div class="flex flex-wrap items-center justify-between gap-2 bg-gray-100/90 border border-gray-200 rounded-xl px-3.5 py-2.5">
+                        <div class="flex flex-wrap items-center justify-between gap-2 bg-[#0A0C12] border border-white/15 rounded-xl px-3.5 py-2.5">
                             <div class="flex items-center gap-1.5 flex-wrap" id="active-cup-tabs">
                                 <!-- Diisi dinamis oleh JS -->
                             </div>
                             <div class="flex items-center gap-1.5">
-                                <button type="button" id="btn-undo-last" onclick="undoLastAction()" disabled class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-display font-bold bg-white border border-gray-300 text-cieng-black hover:bg-cieng-black hover:text-white disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer" title="Kembalikan aksi terakhir">
+                                <button type="button" id="btn-undo-last" onclick="undoLastAction()" disabled class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-cyber font-bold bg-white/10 border border-white/20 text-white hover:bg-cieng-cyan hover:text-cieng-black disabled:opacity-35 disabled:pointer-events-none transition-colors cursor-pointer" title="Kembalikan aksi terakhir">
                                     <i class="fa-solid fa-rotate-left text-[11px]"></i>
                                     <span>Kembalikan</span>
                                 </button>
-                                <button type="button" onclick="resetActiveCup()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-display font-bold bg-white border border-rose-200 text-cieng-red hover:bg-cieng-red hover:text-white transition-colors cursor-pointer" title="Kosongkan cup aktif">
+                                <button type="button" onclick="resetActiveCup()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-cyber font-bold bg-cieng-red/20 border border-cieng-red/40 text-cieng-red hover:bg-cieng-red hover:text-white transition-colors cursor-pointer" title="Kosongkan cup aktif">
                                     <i class="fa-solid fa-trash-can text-[11px]"></i>
                                     <span>Reset Cup</span>
                                 </button>
@@ -814,10 +924,10 @@
                             <!-- Kiri (7 cols): Daftar Cup -->
                             <div class="md:col-span-7 space-y-2.5">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-display font-extrabold text-xs uppercase tracking-wider text-gray-500">
+                                    <span class="font-cyber font-bold text-xs uppercase tracking-wider text-cieng-cyan">
                                         3. Daftar Cup Pesananmu
                                     </span>
-                                    <span class="text-[11px] font-semibold text-gray-500">Klik cup untuk target</span>
+                                    <span class="text-[11px] font-semibold text-gray-400">Klik cup untuk target</span>
                                 </div>
                                 <div id="cups-grid-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[380px] overflow-y-auto pr-1">
                                     <!-- Kartu Cup dirender dinamis via JS -->
@@ -825,90 +935,90 @@
                             </div>
 
                             <!-- Kanan (5 cols): Tray Cireng & Bumbu (Klik / Drag & Drop) -->
-                            <div class="md:col-span-5 bg-[#FDF8F8] border-2 border-rose-200/80 rounded-2xl p-3.5 space-y-4">
+                            <div class="md:col-span-5 bg-[#0A0C12] border border-cyan-500/25 rounded-2xl p-3.5 space-y-4">
                                 <!-- Tray 4 Cireng -->
                                 <div>
                                     <div class="flex items-center justify-between mb-2">
-                                        <span class="font-display font-extrabold text-xs text-cieng-black">
+                                        <span class="font-cyber font-bold text-xs text-white">
                                             Pilih / Seret Cireng
                                         </span>
-                                        <span class="text-[10px] font-bold text-cieng-red bg-white px-2 py-0.5 rounded-full border border-rose-200">
+                                        <span class="text-[10px] font-bold text-cieng-cyan bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-400/30">
                                             4 Pcs / Cup
                                         </span>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2" id="cireng-tray">
-                                        <button type="button" data-drag-type="cireng" data-item-name="Kornet" onclick="addCirengToCup('Kornet')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-white border-2 border-gray-200 hover:border-cieng-black active:scale-95 transition-all cursor-grab shadow-2xs text-center">
+                                        <button type="button" data-drag-type="cireng" data-item-name="Kornet" onclick="addCirengToCup('Kornet')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-white/5 border border-white/15 hover:border-cieng-cyan active:scale-95 transition-all cursor-grab text-center">
                                             <svg class="w-9 h-9 pointer-events-none" viewBox="0 0 64 64" fill="none">
-                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#18181B"/>
-                                                <path d="M24 36 C31 31, 41 28, 48 26 C45 33, 37 39, 29 40 Z" fill="#BA1E24"/>
+                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#18181B" stroke="#00F0FF" stroke-width="2"/>
+                                                <path d="M24 36 C31 31, 41 28, 48 26 C45 33, 37 39, 29 40 Z" fill="#FF2A3C"/>
                                             </svg>
-                                            <span class="font-display font-extrabold text-[11px] text-cieng-black leading-tight pointer-events-none">Kornet</span>
-                                            <span class="text-[10px] font-bold text-gray-500 pointer-events-none">+1 Pcs</span>
+                                            <span class="font-display font-extrabold text-[11px] text-white leading-tight pointer-events-none">Kornet</span>
+                                            <span class="text-[10px] font-bold text-cieng-cyan pointer-events-none">+1 Pcs</span>
                                         </button>
 
-                                        <button type="button" data-drag-type="cireng" data-item-name="Ayam Suwir" onclick="addCirengToCup('Ayam Suwir')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-white border-2 border-gray-200 hover:border-cieng-black active:scale-95 transition-all cursor-grab shadow-2xs text-center">
+                                        <button type="button" data-drag-type="cireng" data-item-name="Ayam Suwir" onclick="addCirengToCup('Ayam Suwir')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-white/5 border border-white/15 hover:border-cieng-cyan active:scale-95 transition-all cursor-grab text-center">
                                             <svg class="w-9 h-9 pointer-events-none" viewBox="0 0 64 64" fill="none">
-                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#18181B"/>
+                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#18181B" stroke="#00F0FF" stroke-width="2"/>
                                                 <path d="M24 36 L38 29 M28 40 L44 32" stroke="#F97316" stroke-width="3" stroke-linecap="round"/>
                                             </svg>
-                                            <span class="font-display font-extrabold text-[11px] text-cieng-black leading-tight pointer-events-none">Ayam Suwir</span>
-                                            <span class="text-[10px] font-bold text-gray-500 pointer-events-none">+1 Pcs</span>
+                                            <span class="font-display font-extrabold text-[11px] text-white leading-tight pointer-events-none">Ayam Suwir</span>
+                                            <span class="text-[10px] font-bold text-cieng-cyan pointer-events-none">+1 Pcs</span>
                                         </button>
 
-                                        <button type="button" data-drag-type="cireng" data-item-name="Keju" onclick="addCirengToCup('Keju')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-white border-2 border-gray-200 hover:border-cieng-black active:scale-95 transition-all cursor-grab shadow-2xs text-center">
+                                        <button type="button" data-drag-type="cireng" data-item-name="Keju" onclick="addCirengToCup('Keju')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-white/5 border border-white/15 hover:border-cieng-cyan active:scale-95 transition-all cursor-grab text-center">
                                             <svg class="w-9 h-9 pointer-events-none" viewBox="0 0 64 64" fill="none">
-                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#18181B"/>
+                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#18181B" stroke="#00F0FF" stroke-width="2"/>
                                                 <path d="M23 35 C30 33, 39 30, 46 27 L44 38 C36 40, 29 41, 24 41 Z" fill="#F59E0B"/>
                                             </svg>
-                                            <span class="font-display font-extrabold text-[11px] text-cieng-black leading-tight pointer-events-none">Keju</span>
-                                            <span class="text-[10px] font-bold text-gray-500 pointer-events-none">+1 Pcs</span>
+                                            <span class="font-display font-extrabold text-[11px] text-white leading-tight pointer-events-none">Keju</span>
+                                            <span class="text-[10px] font-bold text-cieng-cyan pointer-events-none">+1 Pcs</span>
                                         </button>
 
-                                        <button type="button" data-drag-type="cireng" data-item-name="Mix Kejutan" onclick="addCirengToCup('Mix Kejutan')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-gradient-to-br from-cieng-redTint to-white border-2 border-cieng-red/40 hover:border-cieng-red active:scale-95 transition-all cursor-grab shadow-2xs text-center">
+                                        <button type="button" data-drag-type="cireng" data-item-name="Mix Kejutan" onclick="addCirengToCup('Mix Kejutan')" class="draggable-source flex flex-col items-center gap-1 p-2 rounded-xl bg-gradient-to-br from-cieng-red/25 to-white/5 border border-cieng-red/50 hover:border-cieng-cyan active:scale-95 transition-all cursor-grab text-center">
                                             <svg class="w-9 h-9 pointer-events-none" viewBox="0 0 64 64" fill="none">
-                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#BA1E24"/>
+                                                <path d="M10 42 C18 28, 36 22, 52 16 C56 20, 55 28, 51 33 C53 39, 48 45, 41 46 C37 52, 29 54, 23 51 C16 55, 10 52, 8 47 Z" fill="#FF2A3C" stroke="#FFFFFF" stroke-width="2"/>
                                                 <circle cx="32" cy="34" r="6" fill="#FFFFFF"/>
                                             </svg>
                                             <span class="font-display font-extrabold text-[11px] text-cieng-red leading-tight pointer-events-none">Mix Kejutan</span>
-                                            <span class="text-[10px] font-extrabold text-cieng-black pointer-events-none">Langsung 4 Pcs</span>
+                                            <span class="text-[10px] font-extrabold text-white pointer-events-none">Langsung 4 Pcs</span>
                                         </button>
                                     </div>
                                 </div>
 
                                 <!-- Tray 4 Bumbu -->
-                                <div class="pt-3 border-t border-rose-200/80">
+                                <div class="pt-3 border-t border-white/15">
                                     <div class="flex items-center justify-between mb-2">
-                                        <span class="font-display font-extrabold text-xs text-cieng-black">
+                                        <span class="font-cyber font-bold text-xs text-white">
                                             Pilih / Seret Bumbu
                                         </span>
-                                        <span class="text-[10px] font-semibold text-gray-500">1 Bumbu / Cup</span>
+                                        <span class="text-[10px] font-semibold text-gray-400">1 Bumbu / Cup</span>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2" id="bumbu-tray">
-                                        <button type="button" data-drag-type="bumbu" data-item-name="Chili Oil" onclick="setBumbuToCup('Chili Oil')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white border-2 border-gray-200 hover:border-cieng-red active:scale-95 transition-all cursor-grab text-left">
+                                        <button type="button" data-drag-type="bumbu" data-item-name="Chili Oil" onclick="setBumbuToCup('Chili Oil')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white/5 border border-white/15 hover:border-cieng-red active:scale-95 transition-all cursor-grab text-left">
                                             <i class="fa-solid fa-fire text-cieng-red text-xs pointer-events-none"></i>
-                                            <span class="font-display font-bold text-[11px] text-cieng-black pointer-events-none">Chili Oil</span>
+                                            <span class="font-display font-bold text-[11px] text-white pointer-events-none">Chili Oil</span>
                                         </button>
 
-                                        <button type="button" data-drag-type="bumbu" data-item-name="Bumbu Asin" onclick="setBumbuToCup('Bumbu Asin')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white border-2 border-gray-200 hover:border-cieng-black active:scale-95 transition-all cursor-grab text-left">
-                                            <i class="fa-solid fa-wand-magic-sparkles text-cieng-black text-xs pointer-events-none"></i>
-                                            <span class="font-display font-bold text-[11px] text-cieng-black pointer-events-none">Asin</span>
+                                        <button type="button" data-drag-type="bumbu" data-item-name="Bumbu Asin" onclick="setBumbuToCup('Bumbu Asin')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white/5 border border-white/15 hover:border-cieng-cyan active:scale-95 transition-all cursor-grab text-left">
+                                            <i class="fa-solid fa-wand-magic-sparkles text-cieng-cyan text-xs pointer-events-none"></i>
+                                            <span class="font-display font-bold text-[11px] text-white pointer-events-none">Asin</span>
                                         </button>
 
-                                        <button type="button" data-drag-type="bumbu" data-item-name="Bumbu Jagung" onclick="setBumbuToCup('Bumbu Jagung')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white border-2 border-gray-200 hover:border-amber-500 active:scale-95 transition-all cursor-grab text-left">
-                                            <i class="fa-solid fa-seedling text-amber-500 text-xs pointer-events-none"></i>
-                                            <span class="font-display font-bold text-[11px] text-cieng-black pointer-events-none">Jagung</span>
+                                        <button type="button" data-drag-type="bumbu" data-item-name="Bumbu Jagung" onclick="setBumbuToCup('Bumbu Jagung')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white/5 border border-white/15 hover:border-amber-400 active:scale-95 transition-all cursor-grab text-left">
+                                            <i class="fa-solid fa-seedling text-amber-400 text-xs pointer-events-none"></i>
+                                            <span class="font-display font-bold text-[11px] text-white pointer-events-none">Jagung</span>
                                         </button>
 
-                                        <button type="button" data-drag-type="bumbu" data-item-name="Bumbu Balado" onclick="setBumbuToCup('Bumbu Balado')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white border-2 border-gray-200 hover:border-cieng-red active:scale-95 transition-all cursor-grab text-left">
+                                        <button type="button" data-drag-type="bumbu" data-item-name="Bumbu Balado" onclick="setBumbuToCup('Bumbu Balado')" class="draggable-source flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-white/5 border border-white/15 hover:border-cieng-red active:scale-95 transition-all cursor-grab text-left">
                                             <i class="fa-solid fa-pepper-hot text-cieng-red text-xs pointer-events-none"></i>
-                                            <span class="font-display font-bold text-[11px] text-cieng-black pointer-events-none">Balado</span>
+                                            <span class="font-display font-bold text-[11px] text-white pointer-events-none">Balado</span>
                                         </button>
                                     </div>
                                 </div>
 
-                                <p class="text-[11px] text-gray-500 leading-snug">
-                                    <i class="fa-solid fa-circle-info text-cieng-red mr-1"></i>
-                                    Klik item untuk masuk ke <strong>Cup Aktif</strong>, atau seret langsung ke kartu cup mana saja.
+                                <p class="text-[11px] text-gray-400 leading-snug">
+                                    <i class="fa-solid fa-circle-info text-cieng-cyan mr-1"></i>
+                                    Klik item untuk masuk ke <strong class="text-white">Cup Aktif</strong>, atau seret langsung ke kartu cup mana saja.
                                 </p>
                             </div>
                         </div>
@@ -916,30 +1026,30 @@
                     </div>
 
                     <!-- Right Column (5 cols): Real-Time Live WhatsApp Message Preview & Direct Send Button -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 rounded-3xl p-6 sm:p-7 shadow-2xl sticky top-24">
+                    <div class="reveal-left lg:col-span-5">
+                        <div class="cyber-glass cyber-frame text-white border border-cyan-500/30 rounded-3xl p-6 sm:p-7 shadow-2xl sticky top-24">
                             <div class="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-white/15">
                                 <div class="flex items-center gap-2.5">
-                                    <span class="w-8 h-8 rounded-full bg-cieng-wa text-white flex items-center justify-center">
+                                    <span class="w-8 h-8 rounded-full bg-cieng-wa text-cieng-black flex items-center justify-center">
                                         <i class="fa-brands fa-whatsapp text-lg"></i>
                                     </span>
                                     <div>
-                                        <p class="font-display font-extrabold text-sm text-white leading-tight">Preview Pesan WhatsApp</p>
-                                        <p class="text-[11px] text-gray-300">Rincian tiap cup otomatis tersusun</p>
+                                        <p class="font-cyber font-bold text-xs sm:text-sm text-white leading-tight">Preview Pesan WhatsApp</p>
+                                        <p class="text-[11px] text-gray-400">Rincian tiap cup otomatis tersusun</p>
                                     </div>
                                 </div>
-                                <span class="inline-flex items-center gap-1.5 text-[10px] font-display font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 text-cieng-wa border border-cieng-wa/30">
+                                <span class="inline-flex items-center gap-1.5 text-[10px] font-cyber font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/50 text-cieng-wa border border-cieng-wa/40">
                                     <span class="w-1.5 h-1.5 rounded-full bg-cieng-wa animate-ping"></span> Live
                                 </span>
                             </div>
 
                             <!-- WhatsApp Bubble-Style Message Preview -->
-                            <div class="bg-[#ECE5DD] rounded-2xl p-4 mb-5">
-                                <div class="bg-[#DCF8C6] text-cieng-black rounded-xl rounded-tr-none p-4 shadow-sm border border-black/5">
-                                    <pre id="live-wa-preview" class="font-sans text-xs sm:text-[13px] text-gray-900 whitespace-pre-wrap leading-relaxed"></pre>
-                                    <div class="flex items-center justify-end gap-1 mt-2 text-[10px] text-gray-500">
-                                        <span>Siap meluncur</span>
-                                        <i class="fa-solid fa-check-double text-sky-500"></i>
+                            <div class="bg-[#0B141A] border border-white/10 rounded-2xl p-4 mb-5">
+                                <div class="bg-[#005C4B] text-white rounded-xl rounded-tr-none p-4 shadow-sm border border-emerald-400/20">
+                                    <pre id="live-wa-preview" class="font-sans text-xs sm:text-[13px] text-gray-100 whitespace-pre-wrap leading-relaxed"></pre>
+                                    <div class="flex items-center justify-end gap-1 mt-2 text-[10px] text-emerald-200/80">
+                                        <span>Siap transmisi</span>
+                                        <i class="fa-solid fa-check-double text-cieng-cyan"></i>
                                     </div>
                                 </div>
                             </div>
@@ -948,14 +1058,14 @@
                             <button
                                 type="button"
                                 onclick="submitOrderToWhatsApp()"
-                                class="w-full flex items-center justify-center gap-3 bg-cieng-wa hover:bg-cieng-waDark active:scale-98 text-cieng-black font-display font-black text-sm sm:text-base uppercase tracking-wider py-4 px-6 rounded-2xl transition-all shadow-lg cursor-pointer"
+                                class="w-full flex items-center justify-center gap-3 bg-cieng-wa hover:bg-cieng-waDark active:scale-98 text-cieng-black font-cyber font-black text-xs sm:text-sm uppercase tracking-wider py-4 px-6 rounded-2xl transition-all shadow-lg cursor-pointer"
                             >
                                 <i class="fa-brands fa-whatsapp text-2xl"></i>
                                 <span>Kirim Order ke WhatsApp</span>
                             </button>
 
-                            <p class="text-xs text-gray-300 text-center mt-3 leading-relaxed">
-                                Pastikan setiap cup terisi <strong>4 pcs cireng</strong> dan <strong>1 bumbu</strong> sebelum dikirim ke WhatsApp.
+                            <p class="text-xs text-gray-400 text-center mt-3 leading-relaxed">
+                                Pastikan setiap cup terisi <strong class="text-white">4 pcs cireng</strong> dan <strong class="text-cieng-cyan">1 bumbu</strong> sebelum dikirim ke WhatsApp.
                             </p>
                         </div>
                     </div>
@@ -967,31 +1077,33 @@
         <!-- =====================================================================
              SECTION 5: TIM KAMI (#tim) — DENGAN PROTEKSI ANTI-SAVE FOTO
         ====================================================================== -->
-        <section id="tim" class="py-20 lg:py-28 bg-team-gradient border-b border-rose-200/60 scroll-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="tim" class="relative py-20 lg:py-28 bg-team-cyber border-b border-cyan-500/20 scroll-mt-20">
+            <div class="absolute inset-0 bg-cyber-grid opacity-45 pointer-events-none"></div>
 
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="inline-block font-display font-bold text-xs uppercase tracking-[0.2em] text-cieng-red mb-3">TIM KAMI</span>
-                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cieng-black tracking-tight mb-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <div class="text-center max-w-2xl mx-auto mb-10 reveal-left">
+                    <span class="inline-block font-cyber font-bold text-xs uppercase tracking-[0.22em] text-cieng-cyan mb-3">// TIM KAMI</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
                         Orang-Orang di Balik <span class="text-cieng-red">THE CIENG</span>
                     </h2>
-                    <p class="text-gray-600 text-base mb-6">
-                        Empat mahasiswa dengan pembagian peran yang jelas biar kerjaan nggak saling lempar.
+                    <p class="text-gray-400 text-base mb-6">
+                        Empat mahasiswa dengan pembagian peran yang jelas biar kerjaan nggak saling lempar. (Ya, satu orang fotonya masih nyusul—namanya juga proses).
                     </p>
 
-                    <!-- Prominent Operational Hours Info Card -->
-                    <div class="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-5 bg-white border-2 border-cieng-black rounded-2xl px-6 py-4 shadow-editorial text-left">
-                        <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center flex-shrink-0">
+                    <!-- Prominent Cyber Operational Hours Info Card -->
+                    <div class="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-5 cyber-glass cyber-frame border border-cyan-500/35 rounded-2xl px-6 py-4 shadow-cyber-cyan text-left">
+                        <div class="w-11 h-11 rounded-xl bg-cieng-red text-white flex items-center justify-center flex-shrink-0 shadow-cyber-red">
                             <i class="fa-solid fa-clock text-lg"></i>
                         </div>
                         <div>
-                            <p class="font-display font-extrabold text-[11px] uppercase tracking-[0.16em] text-cieng-red">
+                            <p class="font-cyber font-extrabold text-[11px] uppercase tracking-[0.16em] text-cieng-cyan">
                                 JAM OPERASIONAL BOOTH &amp; ORDER
                             </p>
-                            <p class="font-display font-black text-xl sm:text-2xl text-cieng-black leading-tight">
-                                08.00 &ndash; 17.00 <span class="text-xs sm:text-sm font-bold text-gray-500">WIB</span>
+                            <p class="font-cyber font-black text-xl sm:text-2xl text-white leading-tight">
+                                08.00 &ndash; 17.00 <span class="text-xs sm:text-sm font-sans font-bold text-gray-400">WIB</span>
                             </p>
-                            <p class="text-xs text-gray-600">
+                            <p class="text-xs text-gray-300">
                                 Datang di jam segitu ya—kalau datang jam 9 malam, yang ada cuma kenangan dan wajan dingin.
                             </p>
                         </div>
@@ -1002,7 +1114,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
 
                     <!-- 1. Rakha Pandu — CEO (Toast Khusus Foto Orang Ganteng) -->
-                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                    <div class="reveal-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
                             <div class="no-save-wrap w-full h-full">
                                 <img
@@ -1011,24 +1123,24 @@
                                     alt="Rakha Pandu - CEO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/111111/FFFFFF?text=RP';"
-                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial-red"
+                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-cyan shadow-cyber-cyan"
                                 />
                                 <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-red text-white font-cyber font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap shadow-cyber-red">
                                 CEO
                             </span>
                         </div>
-                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Rakha Pandu</h3>
-                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Executive Officer</p>
-                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Strategi &amp; Arah Gerak</p>
-                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                        <h3 class="font-display font-extrabold text-xl text-white mt-1">Rakha Pandu</h3>
+                        <p class="font-cyber font-bold text-[11px] text-cieng-cyan uppercase tracking-wider mt-1">Chief Executive Officer</p>
+                        <p class="text-xs font-semibold text-gray-400 mt-1 pb-4 border-b border-white/15 w-full">Strategi &amp; Arah Gerak</p>
+                        <p class="text-sm text-gray-300 leading-relaxed mt-4">
                             Ngatur arah usaha, nyatuin langkah antarbagian, dan memastikan tim nggak jalan sendiri-sendiri pas event kampus berlangsung.
                         </p>
                     </div>
 
                     <!-- 2. Gunung Iskandar — COO -->
-                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                    <div class="reveal-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
                             <div class="no-save-wrap w-full h-full">
                                 <img
@@ -1037,24 +1149,24 @@
                                     alt="Gunung Iskandar - COO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/BA1E24/FFFFFF?text=GI';"
-                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial"
+                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-red shadow-cyber-red"
                                 />
                                 <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-red text-white font-cyber font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 COO
                             </span>
                         </div>
-                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Gunung Iskandar</h3>
-                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Operating Officer</p>
-                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Produksi &amp; Dapur Booth</p>
-                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
-                            Jaga mutu isian, kebersihan, dan ritme goreng-menggoreng biar cireng tetap hangat.
+                        <h3 class="font-display font-extrabold text-xl text-white mt-1">Gunung Iskandar</h3>
+                        <p class="font-cyber font-bold text-[11px] text-cieng-cyan uppercase tracking-wider mt-1">Chief Operating Officer</p>
+                        <p class="text-xs font-semibold text-gray-400 mt-1 pb-4 border-b border-white/15 w-full">Produksi &amp; Dapur Booth</p>
+                        <p class="text-sm text-gray-300 leading-relaxed mt-4">
+                            Jaga mutu isian, kebersihan, dan ritme goreng-menggoreng biar cireng tetap hangat. Fotonya emang masih inisial, tapi kerjanya nyata.
                         </p>
                     </div>
 
                     <!-- 3. Erina Suhaima — CMO -->
-                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                    <div class="reveal-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
                             <div class="no-save-wrap w-full h-full">
                                 <img
@@ -1063,24 +1175,24 @@
                                     alt="Erina Suhaima - CMO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/18181B/FFFFFF?text=ES';"
-                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial-red"
+                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-cyan shadow-cyber-cyan"
                                 />
                                 <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-black text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-cyan text-cieng-black font-cyber font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CMO
                             </span>
                         </div>
-                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Erina Suhaima</h3>
-                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Marketing Officer</p>
-                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Tampilan, Promosi &amp; Pembeli</p>
-                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                        <h3 class="font-display font-extrabold text-xl text-white mt-1">Erina Suhaima</h3>
+                        <p class="font-cyber font-bold text-[11px] text-cieng-cyan uppercase tracking-wider mt-1">Chief Marketing Officer</p>
+                        <p class="text-xs font-semibold text-gray-400 mt-1 pb-4 border-b border-white/15 w-full">Tampilan, Promosi &amp; Pembeli</p>
+                        <p class="text-sm text-gray-300 leading-relaxed mt-4">
                             Bikin brand makin kelihatan niat, ngurus promosi, dan nyambut pembeli dengan senyum—meski kadang pembeli nanya yang udah jelas tertulis.
                         </p>
                     </div>
 
                     <!-- 4. Ranti — CFO -->
-                    <div class="bg-white/95 backdrop-blur-sm border-2 border-rose-200/80 hover:border-cieng-black rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
+                    <div class="reveal-left cyber-glass border border-white/15 hover:border-cieng-cyan rounded-2xl p-6 text-center transition-all duration-200 shadow-card flex flex-col items-center">
                         <div class="relative w-24 h-24 mb-5">
                             <div class="no-save-wrap w-full h-full">
                                 <img
@@ -1089,18 +1201,18 @@
                                     alt="Ranti - CFO THE CIENG"
                                     draggable="false"
                                     onerror="this.onerror=null; this.src='https://placehold.co/240x240/99161B/FFFFFF?text=RN';"
-                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-black shadow-editorial"
+                                    class="w-full h-full object-cover rounded-2xl border-2 border-cieng-red shadow-cyber-red"
                                 />
                                 <span class="no-save-shield" aria-hidden="true"></span>
                             </div>
-                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-red text-white font-display font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
+                            <span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-cieng-red text-white font-cyber font-extrabold text-[10px] uppercase tracking-widest px-3 py-0.5 rounded-full whitespace-nowrap">
                                 CFO
                             </span>
                         </div>
-                        <h3 class="font-display font-extrabold text-xl text-cieng-black mt-1">Ranti</h3>
-                        <p class="font-display font-bold text-xs text-cieng-red uppercase tracking-wider mt-1">Chief Financial Officer</p>
-                        <p class="text-xs font-semibold text-gray-500 mt-1 pb-4 border-b border-gray-200 w-full">Uang, HPP &amp; Anti Boncos</p>
-                        <p class="text-sm text-gray-600 leading-relaxed mt-4">
+                        <h3 class="font-display font-extrabold text-xl text-white mt-1">Ranti</h3>
+                        <p class="font-cyber font-bold text-[11px] text-cieng-cyan uppercase tracking-wider mt-1">Chief Financial Officer</p>
+                        <p class="text-xs font-semibold text-gray-400 mt-1 pb-4 border-b border-white/15 w-full">Uang, HPP &amp; Anti Boncos</p>
+                        <p class="text-sm text-gray-300 leading-relaxed mt-4">
                             Jaga modal, hitung HPP paket Rp 10.000/4 pcs, dan memastikan kas masuk nggak hilang ditelan angin atau rasa sungkan.
                         </p>
                     </div>
@@ -1111,16 +1223,16 @@
     </main>
 
     <!-- =====================================================================
-         6. DARK FOOTER (#kontak)
+         6. DARK CYBER FOOTER (#kontak)
     ====================================================================== -->
-    <footer id="kontak" class="bg-cieng-footer text-white border-t-4 border-cieng-red">
+    <footer id="kontak" class="bg-cieng-footer text-white border-t-2 border-cieng-cyan/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/15">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/10">
 
                 <!-- Footer Brand Logo & Campus Event Info -->
                 <div class="flex items-center gap-4">
-                    <div class="bg-white p-1.5 rounded-xl shadow-sm flex-shrink-0">
-                        <svg class="w-11 h-11" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Footer THE CIENG">
+                    <div class="p-0.5 rounded-xl bg-gradient-to-br from-cieng-cyan to-cieng-red flex-shrink-0">
+                        <svg class="w-11 h-11 rounded-[10px]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Footer THE CIENG">
                             <rect x="18" y="18" width="164" height="164" fill="#FFFFFF"/>
                             <rect x="26" y="26" width="148" height="148" stroke="#BA1E24" stroke-width="16"/>
                             <circle cx="57" cy="59" r="13" fill="#111111"/>
@@ -1133,42 +1245,42 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="font-display font-extrabold text-xl tracking-[0.25em] text-white uppercase">THE CIENG</p>
+                        <p class="font-cyber font-extrabold text-xl tracking-[0.25em] text-white uppercase">THE CIENG</p>
                         <p class="text-xs text-gray-300 mt-1">Event Kewirausahaan Kampus &bull; 1 Paket/Cup = 4 Pcs = Rp 10.000 &bull; Beli 2 Gratis 1 Minuman</p>
-                        <p class="text-[11px] text-gray-400 mt-0.5">Lokasi: Area Bazar Kewirausahaan Kampus &bull; Jam Operasional: 08.00 &ndash; 17.00 WIB</p>
+                        <p class="text-[11px] text-cieng-cyan mt-0.5">Lokasi: Area Bazar Kewirausahaan Kampus &bull; Jam Operasional: 08.00 &ndash; 17.00 WIB</p>
                     </div>
                 </div>
 
                 <!-- Quick Navigation Links -->
                 <nav class="flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-gray-300" aria-label="Navigasi Footer">
-                    <a href="#beranda" data-target="beranda" class="nav-trigger hover:text-white transition-colors">Beranda</a>
-                    <a href="#tentang" data-target="tentang" class="nav-trigger hover:text-white transition-colors">Tentang Kami</a>
-                    <a href="#menu" data-target="menu" class="nav-trigger hover:text-white transition-colors">Menu</a>
-                    <a href="#order" data-target="order" class="nav-trigger hover:text-white transition-colors">Order</a>
-                    <a href="#tim" data-target="tim" class="nav-trigger hover:text-white transition-colors">Tim Kami</a>
+                    <a href="#beranda" data-target="beranda" class="nav-trigger hover:text-cieng-cyan transition-colors">Beranda</a>
+                    <a href="#tentang" data-target="tentang" class="nav-trigger hover:text-cieng-cyan transition-colors">Tentang Kami</a>
+                    <a href="#menu" data-target="menu" class="nav-trigger hover:text-cieng-cyan transition-colors">Menu</a>
+                    <a href="#order" data-target="order" class="nav-trigger hover:text-cieng-cyan transition-colors">Order</a>
+                    <a href="#tim" data-target="tim" class="nav-trigger hover:text-cieng-cyan transition-colors">Tim Kami</a>
                 </nav>
             </div>
 
             <!-- Bottom Copyright Row -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-                <p>&copy; 2026 THE CIENG &mdash; Project Kewirausahaan Kampus. Dibikin pakai niat dan tepung tapioka.</p>
-                <p>Rakha Pandu &bull; Gunung Iskandar &bull; Erina Suhaima &bull; Ranti</p>
+                <p>&copy; 2026 THE CIENG // CYBER EDITION &mdash; Project Kewirausahaan Kampus. Dibikin pakai niat dan tepung tapioka.</p>
+                <p class="text-gray-300">Rakha Pandu &bull; Gunung Iskandar &bull; Erina Suhaima &bull; Ranti</p>
             </div>
         </div>
     </footer>
 
     <!-- =====================================================================
-         NON-BLOCKING TOAST FEEDBACK
+         NON-BLOCKING CYBER TOAST FEEDBACK
     ====================================================================== -->
     <div id="toast-notification" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[70] pointer-events-none opacity-0 transition-all duration-300 translate-y-3 w-[92%] max-w-md">
-        <div class="bg-cieng-black text-white border border-white/15 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-semibold">
-            <span class="w-2.5 h-2.5 rounded-full bg-cieng-red flex-shrink-0"></span>
+        <div class="bg-[#0B0D14]/95 backdrop-blur-xl text-white border border-cieng-cyan/50 px-5 py-3.5 rounded-2xl shadow-cyber-cyan flex items-center gap-3 text-xs sm:text-sm font-semibold">
+            <span class="w-2.5 h-2.5 rounded-full bg-cieng-cyan animate-ping flex-shrink-0"></span>
             <span id="toast-message">Notifikasi</span>
         </div>
     </div>
 
     <!-- =====================================================================
-         JAVASCRIPT: PROTEKSI FOTO, NAVIGASI, & ORDER CUP BUILDER (KLIK / DRAG)
+         JAVASCRIPT: SCROLL REVEAL (FADE LEFT), PROTEKSI FOTO, & CUP BUILDER
     ====================================================================== -->
     <script>
         // 1. KONFIGURASI NOMOR WHATSAPP ADMIN THE CIENG
@@ -1180,7 +1292,7 @@
             aboutProduct: 'foto propesional cireng.png',
             orderBg: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80',
             teamRakha: 'fotoraka.png',
-            teamGunung: 'fotogunug.png',
+            teamGunung: 'https://placehold.co/240x240/BA1E24/FFFFFF?text=GI',
             teamErina: 'fotoerinaa.png',
             teamRanti: 'fotoranti.png',
         };
@@ -1201,6 +1313,59 @@
                     el.src = imgUrl;
                 }
             });
+        }
+
+        function toggleModelAutoSpin() {
+    const modelViewer = document.getElementById('cieng-3d-cup');
+    const btnSpin = document.getElementById('btn-toggle-3d-spin');
+    const iconSpin = document.getElementById('icon-3d-spin');
+    const textSpin = document.getElementById('text-3d-spin');
+    if (!modelViewer || !btnSpin) return;
+
+    const isSpinning = modelViewer.hasAttribute('auto-rotate');
+
+    if (isSpinning) {
+        modelViewer.removeAttribute('auto-rotate');
+        iconSpin.className = 'fa-solid fa-play';
+        textSpin.textContent = 'Auto Spin';
+        btnSpin.className = 'mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cieng-red/20 hover:bg-cieng-red text-cieng-red hover:text-white border border-cieng-red/50 font-cyber font-bold text-[10px] uppercase tracking-wider transition-all cursor-pointer shadow-cyber-red';
+        showToast('Auto-spin 3D Cup dihentikan.');
+    } else {
+        modelViewer.setAttribute('auto-rotate', '');
+        iconSpin.className = 'fa-solid fa-pause';
+        textSpin.textContent = 'Stop Spin';
+        btnSpin.className = 'mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/15 hover:bg-cieng-cyan text-cieng-cyan hover:text-cieng-black border border-cyan-400/50 font-cyber font-bold text-[10px] uppercase tracking-wider transition-all cursor-pointer shadow-cyber-cyan';
+        showToast('Auto-spin 3D Cup aktif!');
+    }
+}
+
+        // =========================================================================
+        // SCROLL-TRIGGERED REVEAL ANIMATION (FADE LEFT)
+        // =========================================================================
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal-left');
+            if (!('IntersectionObserver' in window)) {
+                revealElements.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                let batchDelay = 0;
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        target.style.transitionDelay = `${batchDelay}ms`;
+                        target.classList.add('is-visible');
+                        batchDelay += 85;
+                        obs.unobserve(target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => observer.observe(el));
         }
 
         // Toast Feedback
@@ -1240,7 +1405,6 @@
             showToast(getProtectedPhotoMessage(targetEl));
         }
 
-        // Blokir klik kanan di desktop pada semua foto
         document.addEventListener('contextmenu', (e) => {
             const protectedEl = e.target.closest('img, .no-save-wrap, .no-save-shield');
             if (protectedEl) {
@@ -1249,14 +1413,12 @@
             }
         });
 
-        // Blokir drag gambar ke tab baru/desktop
         document.addEventListener('dragstart', (e) => {
             if (e.target.closest('img, .no-save-wrap, .no-save-shield')) {
                 e.preventDefault();
             }
         });
 
-        // Blokir tekan tahan (long-press) di HP / Android / iOS
         let photoLongPressTimer = null;
         let photoLongPressTarget = null;
 
@@ -1356,9 +1518,9 @@
 
         function handleWindowScroll() {
             if (window.scrollY > 12) {
-                navbar.classList.add('shadow-md');
+                navbar.classList.add('shadow-cyber-cyan');
             } else {
-                navbar.classList.remove('shadow-md');
+                navbar.classList.remove('shadow-cyber-cyan');
             }
 
             if (isClickScrolling) return;
@@ -1507,7 +1669,6 @@
                 showToast(`+1 ${cirengName} masuk ke Cup ${targetCupIdx + 1} (${getCupPcsCount(cupsState[targetCupIdx])}/4 Pcs)`);
             }
 
-            // Otomatis pindah fokus ke cup berikutnya jika cup ini sudah penuh & punya bumbu
             if (getCupPcsCount(cupsState[targetCupIdx]) === 4 && cupsState[targetCupIdx].bumbu) {
                 const nextIncomplete = cupsState.findIndex(c => getCupPcsCount(c) < 4 || !c.bumbu);
                 if (nextIncomplete !== -1) activeCupIndex = nextIncomplete;
@@ -1564,7 +1725,6 @@
             showToast(`Cup ${activeCupIndex + 1} dikosongkan.`);
         }
 
-        // Dipanggil dari kartu bumbu di Section Menu (#menu)
         function selectSeasoningAndScroll(seasoning) {
             setBumbuToCup(seasoning, activeCupIndex);
             navigateToSection('order');
@@ -1589,17 +1749,17 @@
 
             const isEsTeh = selectedFreeDrink === 'Es Teh';
             btnEsTeh.className = isEsTeh
-                ? 'px-3 py-1.5 rounded-lg text-xs font-display font-bold border-2 border-cieng-red bg-cieng-red text-white transition-all cursor-pointer'
-                : 'px-3 py-1.5 rounded-lg text-xs font-display font-bold border-2 border-gray-200 bg-white text-cieng-black hover:border-cieng-black transition-all cursor-pointer';
+                ? 'px-3 py-1.5 rounded-lg text-xs font-cyber font-bold border border-cieng-red bg-cieng-red text-white transition-all cursor-pointer shadow-cyber-red'
+                : 'px-3 py-1.5 rounded-lg text-xs font-cyber font-bold border border-white/20 bg-white/5 text-gray-200 hover:border-cieng-cyan transition-all cursor-pointer';
 
             btnEsJeruk.className = !isEsTeh
-                ? 'px-3 py-1.5 rounded-lg text-xs font-display font-bold border-2 border-cieng-red bg-cieng-red text-white transition-all cursor-pointer'
-                : 'px-3 py-1.5 rounded-lg text-xs font-display font-bold border-2 border-gray-200 bg-white text-cieng-black hover:border-cieng-black transition-all cursor-pointer';
+                ? 'px-3 py-1.5 rounded-lg text-xs font-cyber font-bold border border-cieng-red bg-cieng-red text-white transition-all cursor-pointer shadow-cyber-red'
+                : 'px-3 py-1.5 rounded-lg text-xs font-cyber font-bold border border-white/20 bg-white/5 text-gray-200 hover:border-cieng-cyan transition-all cursor-pointer';
 
             if (freeCount > 0) {
-                helperShort.innerHTML = `<span class="text-emerald-700 font-extrabold">AKTIF! Gratis ${freeCount}x ${selectedFreeDrink}</span> (tiap kelipatan 2 cup).`;
+                helperShort.innerHTML = `<span class="text-cieng-cyan font-extrabold">AKTIF! Gratis ${freeCount}x ${selectedFreeDrink}</span> (tiap kelipatan 2 cup).`;
             } else {
-                helperShort.innerHTML = `Tambah 1 cup lagi buat aktifin bonus <strong>${selectedFreeDrink}</strong> gratis!`;
+                helperShort.innerHTML = `Tambah 1 cup lagi buat aktifin bonus <strong class="text-cieng-cyan">${selectedFreeDrink}</strong> gratis!`;
             }
         }
 
@@ -1608,25 +1768,23 @@
             const gridContainer = document.getElementById('cups-grid-container');
             if (!tabsContainer || !gridContainer) return;
 
-            // Render Tabs
             tabsContainer.innerHTML = cupsState.map((cup, idx) => {
                 const pcs = getCupPcsCount(cup);
                 const isComplete = pcs === 4 && Boolean(cup.bumbu);
                 const isActive = idx === activeCupIndex;
                 return `
                     <button type="button" onclick="setActiveCup(${idx})"
-                        class="px-2.5 py-1 rounded-lg text-xs font-display font-extrabold transition-all cursor-pointer flex items-center gap-1 ${
+                        class="px-2.5 py-1 rounded-lg text-xs font-cyber font-extrabold transition-all cursor-pointer flex items-center gap-1 ${
                             isActive
-                                ? 'bg-cieng-black text-white shadow-xs'
-                                : 'bg-white text-cieng-black border border-gray-300 hover:border-cieng-black'
+                                ? 'bg-cieng-cyan text-cieng-black shadow-cyber-cyan'
+                                : 'bg-white/5 text-gray-200 border border-white/15 hover:border-cieng-cyan'
                         }">
                         <span>Cup ${idx + 1}</span>
-                        ${isComplete ? '<i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i>' : `<span class="text-[10px] opacity-75">(${pcs}/4)</span>`}
+                        ${isComplete ? '<i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i>' : `<span class="text-[10px] opacity-80">(${pcs}/4)</span>`}
                     </button>
                 `;
             }).join('');
 
-            // Render Cup Cards
             gridContainer.innerHTML = cupsState.map((cup, idx) => {
                 const pcs = getCupPcsCount(cup);
                 const isActive = idx === activeCupIndex;
@@ -1636,9 +1794,9 @@
                 let slotsHtml = '';
                 if (isMixFull) {
                     slotsHtml = `
-                        <div class="col-span-2 flex items-center justify-between px-2.5 py-2 rounded-lg bg-cieng-red text-white text-xs font-display font-bold">
+                        <div class="col-span-2 flex items-center justify-between px-2.5 py-2 rounded-lg bg-cieng-red text-white text-xs font-display font-bold shadow-cyber-red">
                             <span><i class="fa-solid fa-shuffle mr-1"></i> Mix Kejutan (4 Pcs)</span>
-                            <button type="button" onclick="event.stopPropagation(); removeCirengFromCup(${idx}, 0)" class="w-5 h-5 rounded-full bg-black/30 hover:bg-black text-white flex items-center justify-center text-[10px] cursor-pointer" title="Kembalikan">&times;</button>
+                            <button type="button" onclick="event.stopPropagation(); removeCirengFromCup(${idx}, 0)" class="w-5 h-5 rounded-full bg-black/40 hover:bg-black text-white flex items-center justify-center text-[10px] cursor-pointer" title="Kembalikan">&times;</button>
                         </div>
                     `;
                 } else {
@@ -1646,14 +1804,14 @@
                         const item = cup.items[s];
                         if (item) {
                             slotsHtml += `
-                                <div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-cieng-black text-white text-[11px] font-bold">
+                                <div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-white/15 border border-white/15 text-white text-[11px] font-bold">
                                     <span class="truncate">${item}</span>
                                     <button type="button" onclick="event.stopPropagation(); removeCirengFromCup(${idx}, ${s})" class="ml-1 w-4 h-4 rounded-full bg-white/20 hover:bg-cieng-red text-white flex items-center justify-center text-[10px] flex-shrink-0 cursor-pointer" title="Kembalikan">&times;</button>
                                 </div>
                             `;
                         } else {
                             slotsHtml += `
-                                <div class="px-2 py-1.5 rounded-lg border border-dashed border-amber-900/25 bg-white/60 text-[10px] font-semibold text-amber-900/50 text-center">
+                                <div class="px-2 py-1.5 rounded-lg border border-dashed border-white/20 bg-black/25 text-[10px] font-semibold text-gray-500 text-center">
                                     + Cireng ${s + 1}
                                 </div>
                             `;
@@ -1662,27 +1820,27 @@
                 }
 
                 const bumbuHtml = cup.bumbu
-                    ? `<div class="mt-2 flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-cieng-redTint border border-cieng-red/40 text-cieng-red text-[11px] font-display font-extrabold">
-                            <span><i class="fa-solid fa-pepper-hot mr-1"></i> ${cup.bumbu}</span>
+                    ? `<div class="mt-2 flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-cieng-red/20 border border-cieng-red/50 text-rose-200 text-[11px] font-display font-extrabold">
+                            <span><i class="fa-solid fa-pepper-hot text-cieng-red mr-1"></i> ${cup.bumbu}</span>
                             <button type="button" onclick="event.stopPropagation(); removeBumbuFromCup(${idx})" class="w-4 h-4 rounded-full bg-cieng-red text-white flex items-center justify-center text-[10px] cursor-pointer" title="Hapus bumbu">&times;</button>
                        </div>`
-                    : `<div class="mt-2 px-2.5 py-1.5 rounded-lg border border-dashed border-amber-900/30 bg-white/60 text-[10px] font-semibold text-amber-900/60 text-center">
+                    : `<div class="mt-2 px-2.5 py-1.5 rounded-lg border border-dashed border-cyan-500/30 bg-black/25 text-[10px] font-semibold text-cyan-400/70 text-center">
                             + Pilih / Seret Bumbu
                        </div>`;
 
                 return `
                     <div data-cup-index="${idx}" onclick="setActiveCup(${idx})"
-                        class="cup-drop-card rounded-2xl p-3 border-2 transition-all cursor-pointer ${
+                        class="cup-drop-card rounded-2xl p-3 border transition-all cursor-pointer ${
                             isActive
-                                ? 'border-cieng-red bg-[#FDF3E7] shadow-sm'
-                                : 'border-amber-900/20 bg-[#F9EFE3] hover:border-cieng-black'
+                                ? 'border-cieng-cyan bg-[#141A29] shadow-cyber-cyan'
+                                : 'border-white/15 bg-[#0D1019] hover:border-white/40'
                         }">
                         <div class="flex items-center justify-between gap-1 mb-2">
-                            <span class="font-display font-black text-xs text-cieng-black flex items-center gap-1.5">
+                            <span class="font-cyber font-black text-xs text-white flex items-center gap-1.5">
                                 Cup ${idx + 1}
-                                ${isActive ? '<span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-cieng-red text-white">Aktif</span>' : ''}
+                                ${isActive ? '<span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-cieng-cyan text-cieng-black">Aktif</span>' : ''}
                             </span>
-                            <span class="text-[11px] font-extrabold ${isComplete ? 'text-emerald-700' : 'text-amber-900'}">
+                            <span class="text-[11px] font-extrabold ${isComplete ? 'text-emerald-400' : 'text-cieng-cyan'}">
                                 ${pcs}/4 Pcs
                             </span>
                         </div>
@@ -1740,9 +1898,11 @@
                             ghost.style.width = `${source.offsetWidth}px`;
                             ghost.style.zIndex = '9999';
                             ghost.style.pointerEvents = 'none';
-                            ghost.style.opacity = '0.92';
+                            ghost.style.opacity = '0.95';
+                            ghost.style.background = '#121624';
+                            ghost.style.borderColor = '#00F0FF';
                             ghost.style.transform = 'scale(1.06) rotate(-2deg)';
-                            ghost.style.boxShadow = '0 14px 28px rgba(0,0,0,0.25)';
+                            ghost.style.boxShadow = '0 0 24px rgba(0, 240, 255, 0.45)';
                             document.body.appendChild(ghost);
                         }
 
@@ -1751,7 +1911,6 @@
                             ghost.style.left = `${moveEvt.clientX - 45}px`;
                             ghost.style.top = `${moveEvt.clientY - 30}px`;
 
-                            // Cari cup terdekat dalam radius 150px
                             const cupCards = document.querySelectorAll('.cup-drop-card');
                             let nearestCard = null;
                             let minDistance = 150;
@@ -1903,6 +2062,7 @@
                 applySiteImages();
                 syncOrderUI();
                 initDragAndDrop();
+                initScrollReveal();
             } catch (err) {
                 console.error('Gagal menginisialisasi THE CIENG:', err);
             }
